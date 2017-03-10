@@ -15,7 +15,6 @@
   <graph edgedefault="directed" id="G">
     <data key="d0"/>
     <node id="n0">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.terminator">
           <y:Geometry height="40.0" width="200.0" x="155.0" y="196.0"/>
@@ -34,11 +33,10 @@ Review der Anforderungen<y:LabelModel>
       </data>
     </node>
     <node id="n1">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="40.0" width="80.0" x="189.0" y="21.0"/>
-          <y:Fill color="#FFFF00" color2="#FFFF00" transparent="false"/>
+          <y:Fill color="#FFCC00" color2="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="38.0" y="18.0">
             <y:LabelModel>
@@ -59,7 +57,6 @@ Review der Anforderungen<y:LabelModel>
       </data>
     </node>
     <node id="n2">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="40.0" width="80.0" x="189.0" y="-72.0"/>
@@ -84,7 +81,6 @@ Review der Anforderungen<y:LabelModel>
       </data>
     </node>
     <node id="n3">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="40.0" width="80.0" x="189.0" y="-25.5"/>
@@ -109,7 +105,6 @@ Review der Anforderungen<y:LabelModel>
       </data>
     </node>
     <node id="n4">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.terminator">
           <y:Geometry height="40.0" width="200.0" x="983.0" y="196.0"/>
@@ -127,7 +122,6 @@ Funktionstests<y:LabelModel>
       </data>
     </node>
     <node id="n5">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.terminator">
           <y:Geometry height="40.0" width="200.0" x="776.0" y="196.0"/>
@@ -146,7 +140,6 @@ System-Integration<y:LabelModel>
       </data>
     </node>
     <node id="n6">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.terminator">
           <y:Geometry height="40.0" width="200.0" x="569.0" y="196.0"/>
@@ -164,7 +157,6 @@ Codereview<y:LabelModel>
       </data>
     </node>
     <node id="n7">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.terminator">
           <y:Geometry height="40.0" width="200.0" x="362.0" y="196.0"/>
@@ -183,11 +175,10 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n8">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="20.0" width="20.0" x="246.0" y="144.0"/>
-          <y:Fill color="#FFFF00" color2="#FFFF00" transparent="false"/>
+          <y:Fill color="#FFCC00" color2="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="8.0" y="8.0">
             <y:LabelModel>
@@ -209,11 +200,10 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n9">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="30.0" width="30.0" x="447.0" y="131.0"/>
-          <y:Fill color="#FFFF00" color2="#FFFF00" transparent="false"/>
+          <y:Fill color="#FFCC00" color2="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="13.0" y="13.0">
             <y:LabelModel>
@@ -235,11 +225,10 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n10">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="50.0" width="50.0" x="644.0" y="121.0"/>
-          <y:Fill color="#FFFF00" color2="#FFFF00" transparent="false"/>
+          <y:Fill color="#FFCC00" color2="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="23.0" y="23.0">
             <y:LabelModel>
@@ -261,11 +250,10 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n11">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="70.0" width="70.0" x="836.0" y="101.0"/>
-          <y:Fill color="#FFFF00" color2="#FFFF00" transparent="false"/>
+          <y:Fill color="#FFCC00" color2="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="33.0" y="33.0">
             <y:LabelModel>
@@ -287,11 +275,10 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n12">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="100.0" width="100.0" x="1028.0" y="71.0"/>
-          <y:Fill color="#FFFF00" color2="#FFFF00" transparent="false"/>
+          <y:Fill color="#FFCC00" color2="#FFFF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="48.0" y="48.0">
             <y:LabelModel>
@@ -313,7 +300,6 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n13">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="20.0" width="20.0" x="452.0" y="111.0"/>
@@ -339,7 +325,6 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n14">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="30.0" width="30.0" x="654.0" y="91.0"/>
@@ -365,7 +350,6 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n15">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="50.0" width="50.0" x="846.0" y="51.0"/>
@@ -391,7 +375,6 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n16">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="70.0" width="70.0" x="1043.0" y="1.0"/>
@@ -417,7 +400,6 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n17">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="20.0" width="20.0" x="659.0" y="71.0"/>
@@ -443,7 +425,6 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n18">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="30.0" width="30.0" x="856.0" y="21.0"/>
@@ -469,7 +450,6 @@ Review des Entwurfs<y:LabelModel>
       </data>
     </node>
     <node id="n19">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.sequentialData">
           <y:Geometry height="50.0" width="80.0" x="1038.0" y="-49.0"/>
