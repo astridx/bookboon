@@ -15,7 +15,6 @@
   <graph edgedefault="directed" id="G">
     <data key="d0"/>
     <node id="n0">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="337.3333333333333" x="39.666666666666714" y="345.0"/>
@@ -34,7 +33,6 @@
       </data>
     </node>
     <node id="n1">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="348.0" x="457.0" y="345.0"/>
@@ -54,7 +52,6 @@
     </node>
     <node id="n2">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
           <y:Geometry height="45.0" width="337.3333333333333" x="39.666666666666686" y="257.0"/>
@@ -76,7 +73,6 @@
     </node>
     <node id="n3">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
           <y:Geometry height="104.0" width="488.0" x="317.0" y="108.0"/>
@@ -101,10 +97,9 @@ _before()
     </node>
     <node id="n4">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="54.0" width="416.33333333333337" x="70.66666666666663" y="-10.0"/>
+          <y:Geometry height="135.0" width="416.33333333333337" x="70.66666666666663" y="-91.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="34.265625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="396.615234375" x="9.859049479166686" y="3.0">PHPUnit_Framework_TestCase
@@ -117,14 +112,17 @@ vendor/phpunit/phpunit/src/Framework/TestCase.php<y:LabelModel>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
-            <y:MethodLabel/>
+            <y:MethodLabel>setUp()
+setUpBeforeClass()
+tearDown()
+tearDownAfterClass()
+...</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
     </node>
     <node id="n5">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
           <y:Geometry height="45.0" width="348.0" x="457.0" y="257.0"/>
@@ -146,7 +144,6 @@ vendor/phpunit/phpunit/src/Framework/TestCase.php<y:LabelModel>
       </data>
     </node>
     <edge id="e0" source="n5" target="n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -157,7 +154,6 @@ vendor/phpunit/phpunit/src/Framework/TestCase.php<y:LabelModel>
       </data>
     </edge>
     <edge id="e1" source="n2" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -168,7 +164,6 @@ vendor/phpunit/phpunit/src/Framework/TestCase.php<y:LabelModel>
       </data>
     </edge>
     <edge id="e2" source="n3" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
