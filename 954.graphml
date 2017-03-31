@@ -54,6 +54,7 @@ tests/_support/_generated/FunctionalTesterActions.php<y:LabelModel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
             <y:MethodLabel>...
+amOnPage()
 seeInFormFields()
 dontseeInFormFields()
 ...</y:MethodLabel>
