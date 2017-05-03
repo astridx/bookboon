@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="98Kreis.svg"
-   inkscape:export-filename="/media/astrid/AstridsAktuelleDatenPlatte/Daten/arbeit/Schreiben/bookboon/softwaretesting/BuchZuGit/98Kreis.svg.png"
+   inkscape:export-filename="/media/astrid/AstridsAktuelleDatenPlatte/Daten/arbeit/Schreiben/bookboon/softwaretesting/BuchZuGit/98Kreis.png"
    inkscape:export-xdpi="44"
    inkscape:export-ydpi="44">
   <defs
@@ -29,9 +29,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.19550008"
-     inkscape:cx="296.3736"
-     inkscape:cy="-87.678278"
+     inkscape:zoom="0.088388348"
+     inkscape:cx="376.78043"
+     inkscape:cy="544.87291"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -49,7 +49,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -59,7 +59,7 @@
      id="layer1">
     <g
        id="g4977"
-       transform="translate(1.2397766e-5,0)">
+       transform="translate(705.2663,-31.320133)">
       <ellipse
          ry="498.83133"
          rx="498.8313"
@@ -659,7 +659,7 @@
            height="3033.2468"
            x="-849.10449"
            y="361.82541" /></flowRegion><flowPara
-         id="flowPara4848"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4848" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5129"
        style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
@@ -669,5 +669,14 @@
            height="3774.9346"
            x="-915.60065"
            y="167.45207" /></flowRegion><flowPara
-         id="flowPara5135"></flowPara></flowRoot>  </g>
+         id="flowPara5135" /></flowRoot>    <rect
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:5;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:11.68499947;stroke-opacity:1"
+       id="rect3471"
+       width="3000"
+       height="1115.236"
+       x="-294.73392"
+       y="-36.575748"
+       rx="5"
+       ry="238.33299" />
+  </g>
 </svg>

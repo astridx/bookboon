@@ -15,7 +15,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="99Kreis.svg">
+   sodipodi:docname="99Kreis.svg"
+   inkscape:export-filename="/media/astrid/AstridsAktuelleDatenPlatte/Daten/arbeit/Schreiben/bookboon/softwaretesting/BuchZuGit/99Kreis.png"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,8 +28,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-173.57143"
+     inkscape:zoom="0.15307617"
+     inkscape:cx="-112.11483"
      inkscape:cy="520"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -45,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -54,11 +57,20 @@
      inkscape:groupmode="layer"
      id="layer1">
     <ellipse
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.33699989;stroke-miterlimit:4;stroke-dasharray:2.33699989,7.01099968;stroke-dashoffset:11.68499947;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:11.68499947;stroke-opacity:1"
        id="path4136"
-       cx="-526.74829"
-       cy="304.82477"
+       cx="396"
+       cy="304.36218"
        rx="498.8313"
        ry="498.83133" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:2.33699989;stroke-miterlimit:4;stroke-dasharray:2.33699989, 7.01099968;stroke-dashoffset:11.68499947;stroke-opacity:1"
+       id="rect5396"
+       width="3000"
+       height="1144"
+       x="-1104"
+       y="-267.63782"
+       rx="5"
+       ry="238.33333" />
   </g>
 </svg>
