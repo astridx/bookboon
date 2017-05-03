@@ -29,9 +29,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.1767767"
-     inkscape:cx="1793.0091"
-     inkscape:cy="-7828.0798"
+     inkscape:zoom="0.062500002"
+     inkscape:cx="3045.6295"
+     inkscape:cy="-1542.4534"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -656,7 +656,7 @@
        xml:space="preserve"
        id="flowRoot4869"
        style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(-35.579594,1597.4861)"><flowRegion
+       transform="translate(23.141463,1597.4861)"><flowRegion
          id="flowRegion4871"><rect
            id="rect4873"
            width="1124.6287"
@@ -668,7 +668,7 @@
          id="flowPara4875"
          style="font-size:125px">16.04.2017</flowPara><flowPara
          id="flowPara4877"
-         style="font-size:125px">Startbild</flowPara></flowRoot>    <g
+         style="font-size:125px">Stern als Mitte</flowPara></flowRoot>    <g
        id="g5033"
        transform="translate(11.716504,263.88191)">
       <ellipse
@@ -5489,11 +5489,11 @@
        xml:space="preserve"
        id="flowRoot4869-3"
        style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(-34.7291,413.55396)"><flowRegion
+       transform="translate(23.141463,413.55396)"><flowRegion
          id="flowRegion4871-9"><rect
            id="rect4873-2"
-           width="1124.6287"
-           height="325.45984"
+           width="2272.9702"
+           height="331.11673"
            x="1117.3583"
            y="423.72055"
            style="font-size:50px"
@@ -5501,7 +5501,7 @@
          id="flowPara4875-8"
          style="font-size:125px">15.04.2017</flowPara><flowPara
          id="flowPara4877-3"
-         style="font-size:125px">Startbild</flowPara></flowRoot>    <text
+         style="font-size:125px">Rote Quadrate und ovale Elemente</flowPara></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="1664.4637"
@@ -5541,7 +5541,7 @@
        xml:space="preserve"
        id="flowRoot4869-5"
        style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(-150.47032,2909.224)"><flowRegion
+       transform="translate(23.141463,2909.224)"><flowRegion
          id="flowRegion4871-4"><rect
            id="rect4873-9"
            width="1124.6287"
@@ -5553,11 +5553,11 @@
          id="flowPara4875-2"
          style="font-size:125px">17.04.2017</flowPara><flowPara
          id="flowPara4877-5"
-         style="font-size:125px">Startbild</flowPara></flowRoot>    <flowRoot
+         style="font-size:125px">Grüner Stern </flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4869-7"
        style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(-63.664403,4095.5715)"><flowRegion
+       transform="translate(23.141463,4095.5715)"><flowRegion
          id="flowRegion4871-49"><rect
            id="rect4873-94"
            width="1124.6287"
@@ -5573,7 +5573,7 @@
        xml:space="preserve"
        id="flowRoot4869-35"
        style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(23.141506,5289.1528)"><flowRegion
+       transform="translate(23.141463,5289.1528)"><flowRegion
          id="flowRegion4871-7"><rect
            id="rect4873-0"
            width="1124.6287"
@@ -5652,7 +5652,7 @@
        xml:space="preserve"
        id="flowRoot4869-3-4"
        style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(-26.508581,-922.6122)"><flowRegion
+       transform="translate(23.141463,-922.6122)"><flowRegion
          id="flowRegion4871-9-7"><rect
            id="rect4873-2-6"
            width="1124.6287"
@@ -13058,5 +13058,16 @@
          y="0"
          x="0" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2126.9771"
+       y="3643.2014"
+       id="text4665"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4667"
+         x="2126.9771"
+         y="3643.2014">-</tspan></text>
   </g>
 </svg>

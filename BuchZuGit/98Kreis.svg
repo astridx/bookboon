@@ -29,11 +29,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.088388348"
-     inkscape:cx="376.78043"
+     inkscape:zoom="0.30615234"
+     inkscape:cx="604.30927"
      inkscape:cy="544.87291"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4481"
      showgrid="false"
      showguides="false"
      inkscape:window-width="1301"
@@ -370,17 +370,6 @@
            id="use4429"
            inkscape:transform-center-x="-307.92374"
            inkscape:transform-center-y="233.20354"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           inkscape:tiled-clone-of="#path4239"
-           xlink:href="#path4239"
-           transform="matrix(-0.70710678,0.70710678,-0.70710678,-0.70710678,2942.4798,-188.25897)"
-           id="use4431"
-           inkscape:transform-center-x="-267.6516"
-           inkscape:transform-center-y="278.5023"
            width="100%"
            height="100%" />
         <use
