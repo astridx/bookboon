@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="93baum.svg"
-   inkscape:export-filename="/media/astrid/AstridsAktuelleDatenPlatte/Daten/arbeit/Schreiben/bookboon/softwaretesting/BuchZuGit/943baum.png"
+   inkscape:export-filename="/media/astrid/AstridsAktuelleDatenPlatte/Daten/arbeit/Schreiben/bookboon/softwaretesting/BuchZuGit/93baum.png"
    inkscape:export-xdpi="44"
    inkscape:export-ydpi="44">
   <defs
@@ -87,9 +87,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.06561048"
-     inkscape:cx="925.53303"
-     inkscape:cy="3952.6999"
+     inkscape:zoom="0.028407028"
+     inkscape:cx="338.84597"
+     inkscape:cy="1990.4712"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -106,7 +106,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -132,13 +132,15 @@
              style="font-size:50px"
              y="423.72055"
              x="1117.3583"
-             height="325.45984"
-             width="1124.6287"
+             height="524.59558"
+             width="1286.4263"
              id="rect4873" /></flowRegion><flowPara
            style="font-size:125px"
            id="flowPara4875">16.04.2017</flowPara><flowPara
            style="font-size:125px"
-           id="flowPara4877">Stern als Mitte</flowPara></flowRoot>      <g
+           id="flowPara4877">Stern als Mitte</flowPara><flowPara
+           style="font-size:125px"
+           id="flowPara3863">Vorgänger: Bild 1</flowPara></flowRoot>      <g
          transform="translate(-827.46421,-662.50072)"
          id="g4920">
         <ellipse
@@ -1348,15 +1350,30 @@
              style="font-size:50px"
              y="423.72055"
              x="1117.3583"
-             height="545.76245"
-             width="2282.3027"
+             height="682.66827"
+             width="2375.6477"
              id="rect4873-2" /></flowRegion><flowPara
            style="font-size:125px"
            id="flowPara4875-8">15.04.2017</flowPara><flowPara
            style="font-size:125px"
            id="flowPara4877-3">Rote Quadrate und </flowPara><flowPara
            id="flowPara5279"
-           style="font-size:125px">ovale Elemente</flowPara></flowRoot>    </g>
+           style="font-size:125px">ovale Elemente</flowPara><flowPara
+           style="font-size:125px"
+           id="flowPara3865">Vorgänger: Bild 0</flowPara><flowPara
+           style="font-size:125px"
+           id="flowPara3809">Vorgänger: Bild</flowPara></flowRoot>      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="1312.2977"
+         y="378.99084"
+         id="text3803"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3805"
+           x="1312.2977"
+           y="378.99084"></tspan></text>
+    </g>
     <g
        id="g8076"
        transform="translate(2164.2883,1539.3882)">
@@ -1389,13 +1406,15 @@
              style="font-size:50px"
              y="423.72055"
              x="1117.3583"
-             height="325.45984"
-             width="1124.6287"
+             height="524.59558"
+             width="1385.9941"
              id="rect4873-2-6" /></flowRegion><flowPara
            style="font-size:125px"
            id="flowPara4875-8-5">14.04.2017</flowPara><flowPara
            style="font-size:125px"
-           id="flowPara4877-3-6">Startbild</flowPara></flowRoot>    </g>
+           id="flowPara4877-3-6">Startbild</flowPara><flowPara
+           style="font-size:125px"
+           id="flowPara3867">Vorgänger: -</flowPara></flowRoot>    </g>
     <g
        id="g11379"
        transform="translate(2164.2884,-6599.5555)">
@@ -2037,8 +2056,8 @@
            transform="translate(-812.42243,2082.663)"><flowRegion
              id="flowRegion4871-4"><rect
                id="rect4873-9"
-               width="1124.6287"
-               height="325.45984"
+               width="1342.4332"
+               height="543.26459"
                x="1117.3583"
                y="423.72055"
                style="font-size:50px"
@@ -2046,7 +2065,9 @@
              id="flowPara4875-2"
              style="font-size:125px">17.04.2017</flowPara><flowPara
              id="flowPara4877-5"
-             style="font-size:125px">Grüner Stern </flowPara></flowRoot>      </g>
+             style="font-size:125px">Grüner Stern</flowPara><flowPara
+             style="font-size:125px"
+             id="flowPara3861">Vorgänger: Bild 2 </flowPara></flowRoot>      </g>
       <text
          sodipodi:linespacing="125%"
          id="text4665"
@@ -2743,7 +2764,7 @@
            id="tspan4814-9-1"
            sodipodi:role="line">Bild 6</tspan></text>
       <flowRoot
-         transform="translate(1522.1886,2280.9692)"
+         transform="translate(1235.931,2274.7462)"
          style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          id="flowRoot4869-5-2"
          xml:space="preserve"><flowRegion
@@ -2752,13 +2773,15 @@
              style="font-size:50px"
              y="423.72055"
              x="1117.3583"
-             height="325.45984"
-             width="1124.6287"
+             height="530.8186"
+             width="1261.5343"
              id="rect4873-9-1" /></flowRegion><flowPara
            style="font-size:125px"
-           id="flowPara4875-2-9">20.04.2017</flowPara><flowPara
+           id="flowPara4877-5-6">20.04.2017</flowPara><flowPara
            style="font-size:125px"
-           id="flowPara4877-5-6">Startbild</flowPara></flowRoot>      <text
+           id="flowPara3857">Fehlerkorrektur</flowPara><flowPara
+           style="font-size:125px"
+           id="flowPara3859">Vorgänger: Bild 3</flowPara></flowRoot>      <text
          sodipodi:linespacing="125%"
          id="text4665-2"
          y="2790.698"
@@ -3620,13 +3643,15 @@
              style="font-size:50px"
              y="423.72055"
              x="1117.3583"
-             height="325.45984"
-             width="1124.6287"
+             height="960.20502"
+             width="1473.1161"
              id="rect4873-94" /></flowRegion><flowPara
            style="font-size:125px"
-           id="flowPara4875-5">18.04.2017</flowPara><flowPara
+           id="flowPara4877-9">18.04.2017</flowPara><flowPara
            style="font-size:125px"
-           id="flowPara4877-9">Startbild</flowPara></flowRoot>    </g>
+           id="flowPara3851">Äußerer blauer Kreis</flowPara><flowPara
+           style="font-size:125px"
+           id="flowPara3847">Vorgänger: Bild 3</flowPara></flowRoot>    </g>
     <g
        id="g7973"
        transform="translate(1500.1483,-12315.106)">
@@ -4689,12 +4714,14 @@
              style="font-size:50px"
              y="423.72055"
              x="1117.3583"
-             height="325.45984"
-             width="1124.6287"
+             height="530.8186"
+             width="1367.3252"
              id="rect4873-0" /></flowRegion><flowPara
            style="font-size:125px"
-           id="flowPara4875-81">19.04.2017</flowPara><flowPara
+           id="flowPara4877-99">19.04.2017</flowPara><flowPara
            style="font-size:125px"
-           id="flowPara4877-99">Startbild</flowPara></flowRoot>    </g>
+           id="flowPara3871">Innerer blauer Kreis</flowPara><flowPara
+           style="font-size:125px"
+           id="flowPara3873">Vorgänger: Bild 4</flowPara></flowRoot>    </g>
   </g>
 </svg>
