@@ -1,20 +1,20 @@
 <html>
 <head><title>Leaflet.js Essentials</title>
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" />
 </head>
 <body>
-<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
 
 <div id="map" style="width: 600px; height: 400px"></div>
 <script>
 var map = L.map('map', 
 {
-center: [35.10418, -106.62987],
+center: [50.27264, 7.26469],
 zoom: 10
 });
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
 
-L.circle([35.10418, -106.62987], 8046.72,{color: "red", weight: 8,fillColor:"blue"}).addTo(map);
+L.circle([50.27264, 7.26469], 8046.72,{color: "red", weight: 8,fillColor:"blue"}).addTo(map);
 
 </script>
 </body>

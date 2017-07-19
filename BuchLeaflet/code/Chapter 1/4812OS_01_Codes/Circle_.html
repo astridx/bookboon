@@ -1,0 +1,21 @@
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Leaflet.js Essentials&lt;/title&gt;
+&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"&gt;&lt;/script&gt;
+
+&lt;div id="map" style="width: 600px; height: 400px"&gt;&lt;/div&gt;
+&lt;script&gt;
+var map = L.map('map', 
+{
+center: [35.10418, -106.62987],
+zoom: 10
+});
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+
+L.circle([35.10418, -106.62987], 8046.72,{color: "red", weight: 8,fillColor:"blue"}).addTo(map);
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
