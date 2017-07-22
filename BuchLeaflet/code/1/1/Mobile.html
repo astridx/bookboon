@@ -1,6 +1,7 @@
 <html>
-<head><title>Leaflet.js Essentials</title>
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+<head>
+<title>Eine OSM Karte mit Leaflet</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <style>
@@ -18,11 +19,13 @@ html, body, #map {
 <div id="map"></div>
 <script>
 var map = L.map('map');
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+
 function onLocationFound(e) {
 var mydate = new Date(e.timestamp);
 L.marker(e.latlng).addTo(map).bindPopup(mydate.toString());
-    
+
+
 }
 
 function onLocationError(e) {
@@ -37,4 +40,5 @@ map.locate({setView: true, maxZoom:12});
 
 </script>
 </body>
-</html>
+</html>
+
