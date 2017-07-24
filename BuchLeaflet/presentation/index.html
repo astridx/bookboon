@@ -61,6 +61,7 @@
 					</section>
 					<section>
 						<pre><code data-trim data-noescape>
+							&lt;!DOCTYPE HTML&gt;
 							&lt;html&gt;
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
@@ -73,33 +74,142 @@
 					<section>Integrieren Sie die notwendigen JavaScript und Cascading Style Sheet (CSS) Dateien</section>
 					<section>
 						<pre><code data-trim data-noescape>
+							&lt;!DOCTYPE HTML&gt;
 							&lt;html&gt;
+							&lt;head&gt;
+							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+							<mark>
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							</mark>
+							&lt;/head&gt;
+							&lt;body&gt;
+							&lt;/body&gt;
+							&lt;/html&gt;
 						</code></pre>
 					</section>
 					<section>Erstellen Sie ein &lt;div&gt;-Element in dem die Karte angezeigt werden soll</section>
 					<section>
 						<pre><code data-trim data-noescape>
+							&lt;!DOCTYPE HTML&gt;
 							&lt;html&gt;
+							&lt;head&gt;
+							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;/head&gt;
+							&lt;body&gt;
+							<mark>
+							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+							</mark>
+							&lt;/body&gt;
+							&lt;/html&gt;
 						</code></pre>
 					</section>
-					<section>Erstellen Sie das Karten-Objekt</section>
+					<section>Nun wird es spannend: Erstellen Sie das Karten-Objekt</section>
 					<section>
 						<pre><code data-trim data-noescape>
+							&lt;!DOCTYPE HTML&gt;
 							&lt;html&gt;
+							&lt;head&gt;
+							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;/head&gt;
+							&lt;body&gt;
+							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+							<mark>
+							&lt;script&gt;
+							var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+							&lt;/script&gt;&lt;/body&gt;
+							</mark>
+							&lt;/html&gt;
 						</code></pre>
 					</section>
 					<section>Fügen Sie einen Karten-Layer zur Karte hinzu</section>
 					<section>
 						<pre><code data-trim data-noescape>
+							&lt;!DOCTYPE HTML&gt;
 							&lt;html&gt;
+							&lt;head&gt;
+							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;/head&gt;
+							&lt;body&gt;
+							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+							&lt;script&gt;
+							var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+							<mark>
+							L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+							</mark>
+							&lt;/script&gt;
+							&lt;/body&gt;
+							&lt;/html&gt;
 						</code></pre>
 					</section>
 					<section>Das Ergebnis:</section>
+					<section>Das Ergebnis:</section>
+
 				</section>
 
 
 
 
+				<!-- Exkurs-->
+				<section>Exkurs</section>
+
+				<!-- Zweites Kapitel -->
+				<section data-background-color="#eeeeee">
+					<section>Wie weiß Leaflet welche Kacheln angezeigt werden sollen?</section>
+					<section>
+					<table>
+						<thead>
+							<tr>
+								<th>Zoom­stufe</th>
+								<th>Kachelanzahl</th>
+								<th>Die Kachelbreite entspricht</th>
+								<th>Ein Pixel entspricht</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>0</td>
+								<td>1</td>
+								<td>40.038 km</td>
+								<td>156 km</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>4</td>
+								<td>20.019 km</td>
+								<td>78 km</td>
+							</tr>
+							<tr>
+								<td>..</td>
+								<td>..</td>
+								<td>..</td>
+								<td>..</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td>69 Mrd.</td>
+								<td>153 m</td>
+								<td>0,6 m</td>
+							</tr>
+							<tr>
+								<td>19</td>
+								<td>275 Mrd.</td>
+								<td>76 m</td>
+								<td>0,3 m</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Die vollständige Tabelle finden Sie unter der Adresse <a href="http://wiki.openstreetmap.org/wiki/Zoom_levels">http://wiki.openstreetmap.org/wiki/Zoom_levels</a>.</p>
+					</section>
+					<section>Vertical Slide 2</section>
+					<section>Vertical Slide 1</section>
+				</section>
 
 
 
