@@ -1,0 +1,17 @@
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
+&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+&lt;script&gt;
+var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+var layer = new L.StamenTileLayer("watercolor");
+mymap.addLayer(layer);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

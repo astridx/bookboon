@@ -154,7 +154,6 @@
 							<img data-src="./images/999.png">
 						</a>
 					</section>
-
 				</section>
 
 
@@ -217,8 +216,80 @@
 					</table>
 					<p>Die vollständige Tabelle finden Sie unter der Adresse <a href="http://wiki.openstreetmap.org/wiki/Zoom_levels">http://wiki.openstreetmap.org/wiki/Zoom_levels</a>.</p>
 					</section>
+					<section>Tile layer providers</section>
+					<section>Thunderforest (https://thunderforest.com/)</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							&lt;!DOCTYPE HTML&gt;
+							&lt;html&gt;
+							&lt;head&gt;
+							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;/head&gt;
+							&lt;body&gt;
+							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+							&lt;script&gt;
+							var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+							<span style="text-decoration:line-through;">
+							L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+							</span>
+							<mark style="text-decoration:line-through;">
+							L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=8db5bf38e3d841b6a57a7201f78cfbec').addTo(mymap);
+							</mark>
+							&lt;/script&gt;
+							&lt;/body&gt;
+							&lt;/html&gt;
+						</code></pre>
+					</section>
+					<section>
+						<a href="./code/index_994_thunderforest.html">
+							<img data-src="./images/997pioneer.png">
+						</a>
+					</section>
+					<section>Vertical Slide 2</section>
+					<section>Stamen (https://stamen.com/)</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							&lt;!DOCTYPE HTML&gt;
+							&lt;html&gt;
+							&lt;head&gt;
+							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							<mark>
+							&lt;script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js"&gt;&lt;/script&gt;
+							</mark>
+							&lt;/head&gt;
+							&lt;body&gt;
+							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+							&lt;script&gt;
+							var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+							<span style="text-decoration:line-through;">
+							L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+							</span>
+							<mark>
+							var layer = new L.StamenTileLayer("watercolor");
+							mymap.addLayer(layer);
+							</mark>
+							&lt;/script&gt;
+							&lt;/body&gt;
+							&lt;/html&gt;
+						</code></pre>
+					</section>
+					<section>
+						<a href="./code/index_993_stamen.html">
+							<img data-src="./images/996watercolor.png">
+						</a>
+					</section>
 					<section>Vertical Slide 2</section>
 					<section>Vertical Slide 1</section>
+					<section>
+						<p>Weitere Anbieter:</p>
+						<a href="http://wiki.openstreetmap.org/wiki/Tiles">
+							http://wiki.openstreetmap.org/wiki/Tiles
+						</a>
+					</section>
 				</section>
 
 
