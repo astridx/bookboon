@@ -61,8 +61,8 @@ var geojsonFeatureCollection =
 var geoJsonLayer = L.geoJson(geojsonFeatureCollection,{style:styleFunction}).addTo(mymap);
 
 geoJsonLayer.on('mouseover', styleWhenMouseOver);
-geoJsonLayer.on('mouseout', styleWhenMouseOut);
-//geoJsonLayer.on('mouseout',function(e){geoJsonLayer.resetStyle(e.target);});
+//geoJsonLayer.on('mouseout', styleWhenMouseOut);
+geoJsonLayer.on('mouseout',function(e){console.log(e);geoJsonLayer.resetStyle(e.layer);});
 
 function styleWhenMouseOver(e){
 geoJsonLayer.setStyle({color:"green"});
