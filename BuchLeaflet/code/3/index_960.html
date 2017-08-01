@@ -6,15 +6,25 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
 <script src="heatmap.js"></script>
-<script src="heatmap-leaflet.js"></script>
+<script src="leaflet-heatmap.js"></script>
 </head>
 <body>
 
 <div style="height: 700px;" id="mapid"></div>
 <script>
+// don't forget to include leaflet-heatmap.js
+var testData = {
+  max: 8,
+  data: [{lat: 24.6408, lng:46.7728, count: 3},{lat: 50.75, lng:-1.55, count: 1}]
+};
+
 var myData={
 max: 100,
-data: [{lat: 50.0855, lon:7.652502, value: 1},
+data: [
+{lat: 51.0934, lon:8.666819, value: 99},
+{lat: 51.0972, lon:8.667964, value: 99},
+{lat: 49.0934, lon:8.666819, value: 10},
+{lat: 49.0972, lon:8.667964, value: 10},
 {lat: 50.0934, lon:7.666819, value: 15},
 {lat: 50.0972, lon:7.667964, value: 5},
 {lat: 50.0979, lon:7.638486, value: 26},
@@ -727,30 +737,58 @@ data: [{lat: 50.0855, lon:7.652502, value: 1},
 {lat: 50.088041, lon:7.652033, value: 23}]
 };
 
-var baseLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 
-var heatmapLayer = L.TileLayer.heatMap({
-radius: 20,
-opacity: 0.8,
-gradient: {
-0.45: "rgb(0,0,255)",
-0.55: "rgb(0,255,255)",
-0.65: "rgb(0,255,0)",
-0.95: "rgb(255,255,0)",
-1.0: "rgb(255,0,0)"
-}
+var baseLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+
+var cfg = {
+  // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+  // if scaleRadius is false it will be the constant radius used in pixels
+  "radius": .1,
+  "maxOpacity": .5,
+  // scales the radius based on map zoom
+  "scaleRadius": true,
+  // if set to false the heatmap uses the global maximum for colorization
+  // if activated: uses the data maximum within the current map boundaries
+  //   (there will always be a red spot with useLocalExtremas true)
+  "useLocalExtrema": true,
+  // which field name in your data represents the latitude - default "lat"
+  latField: 'lat',
+  // which field name in your data represents the longitude - default "lng"
+  lngField: 'lon',
+  // which field name in your data represents the data value - default "value"
+  valueField: 'value',
+  gradient: {
+    // enter n keys between 0 and 1 here
+    // for gradient color customization
+    '.4': 'blue',
+    '.8': 'lime',
+    '.95': 'red'
+  },
+  blur: 0.75
+};
+
+
+var heatmapLayer = new HeatmapOverlay(cfg);
+
+var map = new L.Map('mapid', {
+  center: new L.LatLng(50.0586, 7.6568),
+  zoom: 8,
+  layers: [baseLayer, heatmapLayer]
 });
-heatmapLayer.addData(myData.data);
 
-var mymap = L.map('mapid', {
-                    center: new L.LatLng(35.10418, -106.62987),
-                    zoom: 12,
-                    layers: [baseLayer, heatmapLayer]
-                });
+heatmapLayer.setData(myData);
 
-heatmapLayer.addDataPoint(35,-106,45);
+var test1 = {lat:51,lon:6,value:99};
+var test2 = {lat:50.91,lon:6,value:60};
+var test3 = {lat:50.92,lon:6,value:40};
+var test4 = {lat:50.93,lon:6,value:20};
+//Use length because it returns number of items.
+//Index at 0 so length is always the integer thats next.
 
-
+heatmapLayer.addData(test1);
+heatmapLayer.addData(test2);
+heatmapLayer.addData(test3);
+heatmapLayer.addData(test4);
 </script>
 </body>
 </html>
