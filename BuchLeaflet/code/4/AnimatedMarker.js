@@ -1,4 +1,4 @@
-﻿L.AnimatedMarker = L.Marker.extend({
+L.AnimatedMarker = L.Marker.extend({
   options: {
     // meters
     distance: 200,
@@ -61,7 +61,7 @@
         speed = this.options.interval;
 
     // Normalize the transition speed from vertex to vertex
-    if (this._i < len) {
+    if (this._i < len && this._i > 0) {
       speed = this._latlngs[this._i-1].distanceTo(this._latlngs[this._i]) / this.options.distance * this.options.interval;
     }
 
@@ -107,7 +107,7 @@
       this.options.distance = 10;
       this.options.interval = 30;
     }
-    this._i = 1;
+    this._i = 0;
   }
 
 });
