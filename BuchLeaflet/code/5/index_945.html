@@ -15,8 +15,14 @@
 <script>
 var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
 
-  L.esri.basemapLayer('Gray').addTo(mymap);
-  L.esri.basemapLayer('ImageryLabels').addTo(mymap);
+var gray = L.esri.basemapLayer('Gray').addTo(mymap);
+//var imagery = L.esri.basemapLayer('ImageryLabels').addTo(mymap);
+
+gray.setOpacity(1);
+gray.on('load', alertme);
+function alertme(){
+alert("Fertig!");
+}
 
 </script>
 

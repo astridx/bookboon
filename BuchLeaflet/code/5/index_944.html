@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Eine OSM Karte mit Leaflet</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/esri-leaflet@2.1.0/dist/esri-leaflet.js"
+    integrity="sha512-Tojl3UMd387f6DdAJlo+fKfJZiP55fYT+6Y58yKbHydnueOdSFOxrgLPuUxm7VW1szEt3hZVwv3V2sSUCuT35w=="
+    crossorigin=""></script>
+<style>
+  #basemaps-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 400;
+    background: white;
+    padding: 10px;
+  }
+  #basemaps {
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div style="height: 700px;" id="mapid"></div>
+<div id="basemaps-wrapper" class="leaflet-bar">
+  <select name="basemaps" id="basemaps" onChange="changeBasemap(basemaps)">
+    <option value="Topographic">Topographic</option>
+    <option value="Streets">Streets</option>
+    <option value="NationalGeographic">National Geographic</option>
+    <option value="Oceans">Oceans</option>
+    <option value="Gray">Gray</option>
+    <option value="DarkGray">Dark Gray</option>
+    <option value="Imagery">Imagery</option>
+    <option value="ShadedRelief">Shaded Relief</option>
+  </select>
+</div>
+<script>
+var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
+
+var layer = L.esri.basemapLayer('Gray').addTo(mymap);
+
+function setBasemap(basemap) {
+}
+
+function changeBasemap(basemaps){
+var basemap = basemaps.value;
+if (layer) {
+mymap.removeLayer(layer);
+}
+layer = L.esri.basemapLayer(basemap);
+mymap.addLayer(layer);
+}
+//L.esri.basemapLayer('ImageryLabels').addTo(mymap);
+
+</script>
+
+</body>
+</html>
