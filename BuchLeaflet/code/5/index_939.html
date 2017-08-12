@@ -3,25 +3,14 @@
 <head>
 <meta charset="utf-8"/>
 <title>Eine OSM Karte mit Leaflet</title>
-<!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
-    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
-    crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
-    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
-    crossorigin=""></script>
-
-
-  <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@2.1.0/dist/esri-leaflet.js"
-    integrity="sha512-Tojl3UMd387f6DdAJlo+fKfJZiP55fYT+6Y58yKbHydnueOdSFOxrgLPuUxm7VW1szEt3hZVwv3V2sSUCuT35w=="
-    crossorigin=""></script>
-
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
+<script src="esri-leaflet.js"></script>
 </head>
 <body>
 <div style="height: 700px;" id="mapid"></div>
 <script>
-var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.26469], 11);
+var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
 //L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 
 //var art = L.esri.dynamicMapLayer("https://geoportal.stadt-koeln.de/arcgis/rest/services/Behindertenparkplaetze/MapServer").addTo(mymap);
@@ -43,14 +32,19 @@ var dMap = L.esri.dynamicMapLayer({
 
 });*/
 
+dMap.bindPopup(
+  function(err, featureCollection, response){
+    return featureCollection.features[0].properties.Bezeichnung + '<br>Anzahl: ' + featureCollection.features[0].properties.Anzahl;
 
+});
+/*
 dMap.bindPopup(
   function(err, featureCollection, response){
     var count = featureCollection.features.length;
-    return (count) ? featureCollection.features[0].properties.Bezeichnung : 'kein feature';
+    return (count) ? featureCollection.features[0].properties.Bezeichnung : '';
 
 });
-
+*/
 
 </script>
 </body>
