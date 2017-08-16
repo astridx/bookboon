@@ -29,26 +29,30 @@
 
 
 
+				<!-- Teil 0 Einleitung-->
+				<section>Einleitung</section>
+				<section data-background-color="#679ed4"> <!-- 679ed4 f9b431 85c03c-->
+						<h2>
+							Worum geht es hier?
+						</h2>
+				</section>
 
 
 
 
 
-				<!-- Einleitung-->
+
+
+
+				<!-- Teil 1 Wir beginnen mit einer einfachen Karte-->
 				<section>Teil 1</section>
 
-
-
-
-
-
-
-
-
-
-				<!-- Erstes Kapitel -->
-				<section data-background-color="#f9b431">
-					<section>Eine Leaflet-Karte erstellen</section>
+				<section data-background-color="#f9b431"> <!-- 679ed4 f9b431 85c03c-->
+					<section>
+						<h2>
+							Eine Leaflet-Karte erstellen
+						</h2>
+					</section>
 
 					<section id="fragments">
 						<h2>Um eine Karte mit Leaflet auf einer Internetseite anzuzeigen, reichen wenige Schritte aus:</h2>
@@ -79,8 +83,8 @@
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
 							<mark>
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
 							</mark>
 							&lt;/head&gt;
 							&lt;body&gt;
@@ -95,8 +99,8 @@
 							&lt;html&gt;
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
 							&lt;/head&gt;
 							&lt;body&gt;
 							<mark>
@@ -113,8 +117,8 @@
 							&lt;html&gt;
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
 							&lt;/head&gt;
 							&lt;body&gt;
 							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
@@ -133,8 +137,8 @@
 							&lt;html&gt;
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
 							&lt;/head&gt;
 							&lt;body&gt;
 							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
@@ -151,7 +155,7 @@
 					<section>Das Ergebnis:</section>
 					<section>
 						<a href="./code/index_995.html">
-							<img data-src="./images/999.png">
+							<img data-src="./images/999_.png">
 						</a>
 					</section>
 				</section>
@@ -165,12 +169,38 @@
 
 
 
-				<!-- Exkurs-->
+
+
+				<!-- Teil 1a Exkurs-->
 				<section>Exkurs</section>
 
-				<!-- Zweites Kapitel -->
-				<section data-background-color="#eeeeee">
-					<section>Wie weiß Leaflet welche Kacheln angezeigt werden sollen?</section>
+				<section data-background-color="#eeeeee"> <!-- 679ed4 f9b431 85c03c-->
+					<section>
+						<h2>
+							Wie weiß Leaflet welche Kacheln angezeigt werden sollen
+						</h2>
+					</section>
+					<section>
+						<img data-src="./images/999.png">
+						<div>
+						Zoom­stufe 0; Kachelanzahl: 1<br>
+						Kachelbreite 40.038 km; 1 Pixel entspricht 156 km<br>
+						</div>
+					</section>
+					<section>
+						<img data-src="./images/999a.png">
+						<div>
+						Zoom­stufe 1; Kachelanzahl: 4<br>
+						Kachelbreite 20.019 km; 1 Pixel entspricht 78 km<br>
+						</div>
+					</section>
+					<section>
+						<img data-src="./images/999b.png">
+						<div>
+						Zoom­stufe 2; Kachelanzahl: 16<br>
+						Kachelbreite 5.005 km; 1 Pixel entspricht 39 km<br>
+						</div>
+					</section>
 					<section>
 					<table>
 						<thead>
@@ -216,6 +246,24 @@
 					</table>
 					<p>Die vollständige Tabelle finden Sie unter der Adresse <a href="http://wiki.openstreetmap.org/wiki/Zoom_levels">http://wiki.openstreetmap.org/wiki/Zoom_levels</a>.</p>
 					</section>
+					<section>
+						<p style="font-size:smaller;">
+						http://{s}.tile.osm.org/{z}/{x}/{y}.png
+						</p>
+						<p style="font-size:smaller;">
+						https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=x
+						</p>
+						<img data-src="./images/998.png">
+					</section>
+					<section>
+						<p style="font-size:smaller;">
+						http://{s}.tile.osm.org/{z}/{x}/{y}.png
+						</p>
+						<p style="font-size:smaller;">
+						https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=x
+						</p>
+						<img data-src="./images/998a.png">
+					</section>
 					<section>Tile layer providers</section>
 					<section>Thunderforest (https://thunderforest.com/)</section>
 					<section>
@@ -224,8 +272,8 @@
 							&lt;html&gt;
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
 							&lt;/head&gt;
 							&lt;body&gt;
 							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
@@ -234,8 +282,8 @@
 							<span style="text-decoration:line-through;">
 							L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 							</span>
-							<mark style="text-decoration:line-through;">
-							L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=8db5bf38e3d841b6a57a7201f78cfbec').addTo(mymap);
+							<mark>
+							L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=xxxx').addTo(mymap);
 							</mark>
 							&lt;/script&gt;
 							&lt;/body&gt;
@@ -247,7 +295,6 @@
 							<img data-src="./images/997pioneer.png">
 						</a>
 					</section>
-					<section>Vertical Slide 2</section>
 					<section>Stamen (https://stamen.com/)</section>
 					<section>
 						<pre><code data-trim data-noescape>
@@ -255,8 +302,8 @@
 							&lt;html&gt;
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
 							<mark>
 							&lt;script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js"&gt;&lt;/script&gt;
 							</mark>
@@ -282,8 +329,6 @@
 							<img data-src="./images/996watercolor.png">
 						</a>
 					</section>
-					<section>Vertical Slide 2</section>
-					<section>Vertical Slide 1</section>
 					<section>
 						<p>Weitere Anbieter:</p>
 						<a href="http://wiki.openstreetmap.org/wiki/Tiles">
@@ -296,40 +341,280 @@
 
 
 
-				<!-- Einleitung-->
+
+
+
+
+
+
+
+				<!-- Teil 2 WMS Service-->
 				<section>Teil 2</section>
 
-				<!-- Zweites Kapitel -->
-				<section data-background-color="#679ed4">
-					<section>Vertical Slide 1</section>
-					<section>Vertical Slide 2</section>
-					<section>Vertical Slide 1</section>
+				<section data-background-color="#85c03c"> <!-- 679ed4 f9b431 85c03c-->
+					<section>
+						<h2>Images als Layer – Web-Map-Service</h2>
+					</section>
+					<section>
+						<p>
+							Sie haben eine Satellitenaufnahme und möchten diese
+							als Layer verwenden.
+						</p>
+					</section>
+					<section>
+						<p>
+							Eine Möglichkeit wäre ein Umwandeln dieser Satellitenaufnahme
+							in 275 Milliarden Kacheln - es gibt aber alternative Techniken.
+						</p>
+					</section>
+					<section>
+						<p>
+							Eine Alternative zur beschriebenen Kachel-Technik ist der
+							Web-Map-Service.
+						</p>
+					</section>
+					<section>
+						<p>
+							Ein Web-Map-Service (WMS) ist eine Schnittstelle die
+							Auszügen aus Landkarten über das Internet anbietet.
+						</p>
+					</section>
+					<section>
+						<p>
+							Der Anfrage liefert ein <b>georeferenziertes</b> Rasterbild zurück.
+						</p>
+					</section>
+					<section>
+						<p>
+							Beispielweise bietet der
+							Deutsche Wetterdienst (DWD) WMS Dienste
+							mithilfe der Open Source Software Geoserver.
+						</p>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							&lt;!DOCTYPE HTML&gt;
+							&lt;html&gt;
+							&lt;head&gt;
+							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
+							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;/head&gt;
+							&lt;body&gt;
+							&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+							&lt;script&gt;
+							var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+							L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+							<mark>
+							var dwd = L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms", {
+							format: 'image/png',
+							transparent: true,
+							layers:'dwd:Warngebiete_Kreise',
+							attribution: "Deutscher Wetterdienst"
+							}).addTo(mymap);
+							</mark>
+							<mark>
+							var dwd = L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms", {
+							format: 'image/png',
+							transparent: true,
+							layers:'dwd:Warnungen_Gemeinden_vereinigt',
+							attribution: "Deutscher Wetterdienst"
+							}).addTo(mymap);
+							</mark>
+							&lt;/script&gt;
+							&lt;/body&gt;
+							&lt;/html&gt;
+						</code></pre>
+						<p style="font-size:smaller">Mit obigem Aufruf erhält man ein speziell zusammengestelltes Bild vom DWD Geo Webservice - sofern Warnungen vorhanden sind.</p>
+					</section>
+					<section>
+						<p>Erinnern Sie sich an den 27. Juli 2017?</p>
+						<img data-src="./images/994.png">
+						<p>Weitere Informationen beim
+							<a href="http://www.dwd.de/DE/wetter/warnungen_aktuell/objekt_einbindung/einbindung_karten_geowebservice.pdf?__blob=publicationFile&v=2">
+								Deutschen Wetterdienst.
+							</a>
+						</p>
+					</section>
 				</section>
 
-				<!-- Einleitung-->
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Teil 3 Die Karte mit Daten bestücken -->
 				<section>Teil 3</section>
 
-
-
-				<!-- Drittes Kapitel -->
-				<section data-background-color="#85c03c">
-					<section>Vertical Slide 1</section>
-					<section>Vertical Slide 2</section>
-					<section>Vertical Slide 1</section>
+				<section data-background-color="#e84032"> <!-- 679ed4 f9b431 85c03c-->
+					<section>
+						<h2>
+							Die Karte mit Daten bestücken
+						</h2>
+					</section>
+					<section>Punkt</section>
+					<section>Marker</section>
+					<section>Polyline</section>
+					<section>Polygon</section>
+					<section>Rectangle</section>
+					<section>Circle</section>
+					<section>MultiPolygon</section>
+					<section>MultiPolyline</section>
+					<section>LayerGroup</section>
+					<section>FeatureGroup</section>
+					<section>Popup</section>
 				</section>
 
-				<!-- Einleitung-->
+
+
+
+
+
+
+
+				<!-- Teil 4 GeoJSON-->
 				<section>Teil 4</section>
 
-				<!-- Drittes Kapitel -->
-				<section data-background-color="#e84032">
-					<section>Vertical Slide 1</section>
+				<section data-background-color="#679ed4">  <!-- 679ed4 f9b431 85c03c e84032-->
+					<section>
+						<h2>
+							GeoJSON
+						</h2>
+					</section>
+					<section>GeoJSON - Was ist das?</section>
+					<section>Marker</section>
+					<section>FeatureCollection</section>
+					<section>addData()</section>
+					<section>Einen GeoJSON Layer stylen</section>
+					<section>onEachFeature</section>
+					<section>pointToLayer</section>
+					<section>filter</section>
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Teil 5 Heatmaps und Choroplethenkarten-->
+				<section>Teil 5</section>
+
+				<section data-background-color="#f9b431"> <!-- 679ed4 f9b431 85c03c e84032-->
+					<section>
+						<h2>
+							Heatmaps und Choroplethenkarten
+						</h2>
+					</section>
 					<section>Vertical Slide 2</section>
 					<section>Vertical Slide 1</section>
 				</section>
 
-				<!-- Einleitung-->
-				<section>Das war's</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Teil 6 Benutzerdefinierte Marker-->
+				<section>Teil 6</section>
+
+				<section data-background-color="#85c03c"> <!-- 679ed4 f9b431 85c03c e84032-->
+					<section>
+						<h2>
+							Benutzerdefinierte Marker
+						</h2>
+					</section>
+					<section>Vertical Slide 2</section>
+					<section>Vertical Slide 1</section>
+				</section>
+
+
+
+
+
+
+
+				<!-- Teil 7 ESRI-->
+				<section>Teil 7</section>
+
+				<section data-background-color="#e84032"> <!-- 679ed4 f9b431 85c03c e84032-->
+					<section>
+						<h2>
+							ESRI
+						</h2>
+					</section>
+					<section>Vertical Slide 2</section>
+					<section>Vertical Slide 1</section>
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Teil 8 Ein Joomla! Modul-->
+				<section>Teil 8</section>
+
+				<section data-background-color="#679ed4"> <!-- 679ed4 f9b431 85c03c e84032-->
+					<section>
+						<h2>
+							Leaflet in Joomla! einbinden
+						</h2>
+					</section>
+					<section>Vertical Slide 2</section>
+					<section>Vertical Slide 1</section>
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Das war es-->
+				<section>Das war mein Beitrag!</section>
 
 
 

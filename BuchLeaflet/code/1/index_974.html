@@ -3,18 +3,16 @@
 <head>
 <meta charset="utf-8"/>
 <title>Eine OSM Karte mit Leaflet</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
+<link rel="stylesheet" href="../leaflet/leaflet.css" />
+<script src="../leaflet/leaflet.js"></script>
 </head>
 <body>
-
 <p>Bitte geben Sie eine Koordinte an:</p><br>
 Geographische Breite:<input type="text" id="lat"><br>
 Geographische Länge:<input type="text" id="long"><br>
 Name:<input type="text" id="name"><br>
 <button onclick="save()">Speichern</button>
 <button onclick="clean()">Löschen</button>
-
 <div style="height: 700px;" id="mapid"></div>
 <script>
 var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
@@ -32,7 +30,7 @@ L.marker([p1,p2]).bindPopup(document.getElementById("name").value).addTo(mymap);
 
 for (var i=0; i <localStorage.length;i++)
 {
-	alert(localStorage.key(i));
+	//alert(localStorage.key(i));
 }
 
 }
