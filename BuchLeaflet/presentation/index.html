@@ -4,10 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Let's learn Leaflet</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/beige.css">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -30,11 +31,28 @@
 
 
 				<!-- Teil 0 Einleitung-->
-				<section>Einleitung</section>
+				<section>
+					<table>
+						<tr>
+							<td style="border: 0px solid black;">
+								<p>Guten Morgen</p>
+							</td>
+							<td>
+								<iframe data-src="../code/koenigstein.html"></iframe>
+							</td>
+						</tr>
+					</table>
+				</section>
 				<section data-background-color="#679ed4"> <!-- 679ed4 f9b431 85c03c-->
 						<h2>
-							Worum geht es hier?
+							Hier und Jetzt!
 						</h2>
+						<ul>
+							<li class="fragment">Wer bin ich</li>
+							<li class="fragment">Was solltest du mitbringen</li>
+							<li class="fragment">Was machen wir konkret in den nächsten 45 Minuten?</li>
+							<li class="fragment">Link zur Präsentation</li>
+						</ul>
 				</section>
 
 
@@ -50,113 +68,151 @@
 				<section data-background-color="#f9b431"> <!-- 679ed4 f9b431 85c03c-->
 					<section>
 						<h2>
-							Eine Leaflet-Karte erstellen
+							Let's learn Leaflet
 						</h2>
 					</section>
 
-					<section id="fragments">
-						<h2>Um eine Karte mit Leaflet auf einer Internetseite anzuzeigen, reichen wenige Schritte aus:</h2>
-						<ul>
-							<li class="fragment">Integrieren Sie die notwendigen JavaScript und Cascading Style Sheet (CSS) Dateien.</li>
-							<li class="fragment">Erstellen Sie ein &lt;div&gt;-Element in dem die Karte angezeigt werden soll.</li>
-							<li class="fragment">Erstellen Sie das Karten-Objekt.</li>
-							<li class="fragment">Fügen Sie einen Karten-Layer zur Karte hinzu.</li>
-						</ul>
+					<section>
+						<h3>In vier Schritten ein Karte zaubern!
+						</h3>
 					</section>
 					<section>
-						<pre><code data-trim data-noescape>
-							&lt;!DOCTYPE HTML&gt;
-							&lt;html&gt;
-							&lt;head&gt;
-							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;/head&gt;
-							&lt;body&gt;
-							&lt;/body&gt;
-							&lt;/html&gt;
-						</code></pre>
+						<p>Wir beginnen mit einer ganz einfachen HTML-Datei</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/1/index_999.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
-					<section>Integrieren Sie die notwendigen JavaScript und Cascading Style Sheet (CSS) Dateien</section>
+
 					<section>
-						<pre><code data-trim data-noescape>
-							&lt;!DOCTYPE HTML&gt;
-							&lt;html&gt;
-							&lt;head&gt;
-							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							<mark>
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
-							</mark>
-							&lt;/head&gt;
-							&lt;body&gt;
-							&lt;/body&gt;
-							&lt;/html&gt;
-						</code></pre>
+						<p>Integriere die notwendigen JavaScript und Cascading Style Sheet (CSS) Dateien</p>
+						<table>
+							<tr>
+								<td>
+									<p><a href="http://leafletjs.com/download.html">http://leafletjs.com/download.html</a></p>
+									<iframe data-src="../code/1/index_998.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										<mark>
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										</mark>
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
-					<section>Erstellen Sie ein &lt;div&gt;-Element in dem die Karte angezeigt werden soll</section>
 					<section>
-						<pre><code data-trim data-noescape>
-							&lt;!DOCTYPE HTML&gt;
-							&lt;html&gt;
-							&lt;head&gt;
-							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
-							&lt;/head&gt;
-							&lt;body&gt;
-							<mark>
-							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
-							</mark>
-							&lt;/body&gt;
-							&lt;/html&gt;
-						</code></pre>
+						<p>Erstellen Sie ein &lt;div&gt;-Element in dem die Karte angezeigt werden soll</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/1/index_997.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										<mark>
+										&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+										</mark>
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
-					<section>Nun wird es spannend: Erstellen Sie das Karten-Objekt</section>
 					<section>
-						<pre><code data-trim data-noescape>
-							&lt;!DOCTYPE HTML&gt;
-							&lt;html&gt;
-							&lt;head&gt;
-							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
-							&lt;/head&gt;
-							&lt;body&gt;
-							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
-							<mark>
-							&lt;script&gt;
-							var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
-							&lt;/script&gt;&lt;/body&gt;
-							</mark>
-							&lt;/html&gt;
-						</code></pre>
+						<p>Nun wird es spannend: Erstellen Sie das Karten-Objekt</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/1/index_996.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+										<mark>
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										&lt;/script&gt;
+										</mark>
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
-					<section>Fügen Sie einen Karten-Layer zur Karte hinzu</section>
 					<section>
-						<pre><code data-trim data-noescape>
-							&lt;!DOCTYPE HTML&gt;
-							&lt;html&gt;
-							&lt;head&gt;
-							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
-							&lt;/head&gt;
-							&lt;body&gt;
-							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
-							&lt;script&gt;
-							var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
-							<mark>
-							L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-							</mark>
-							&lt;/script&gt;
-							&lt;/body&gt;
-							&lt;/html&gt;
-						</code></pre>
-					</section>
-					<section>Das Ergebnis:</section>
-					<section>
-						<a href="./code/index_995.html">
-							<img data-src="./images/999_.png">
-						</a>
+						<p>Füge einen Karten-Layer zur Karte hinzu</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/1/index_995.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										<mark>
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png')
+										.addTo(mymap);
+										</mark>
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
 				</section>
 
@@ -181,25 +237,25 @@
 						</h2>
 					</section>
 					<section>
-						<img data-src="./images/999.png">
-						<div>
+						<p>
 						Zoom­stufe 0; Kachelanzahl: 1<br>
 						Kachelbreite 40.038 km; 1 Pixel entspricht 156 km<br>
-						</div>
+						</p>
+						<img data-src="./images/999.png">
 					</section>
 					<section>
-						<img data-src="./images/999a.png">
-						<div>
+						<p>
 						Zoom­stufe 1; Kachelanzahl: 4<br>
 						Kachelbreite 20.019 km; 1 Pixel entspricht 78 km<br>
-						</div>
+						</p>
+						<img data-src="./images/999a.png">
 					</section>
 					<section>
-						<img data-src="./images/999b.png">
-						<div>
+						<p>
 						Zoom­stufe 2; Kachelanzahl: 16<br>
 						Kachelbreite 5.005 km; 1 Pixel entspricht 39 km<br>
-						</div>
+						</p>
+						<img data-src="./images/999b.png">
 					</section>
 					<section>
 					<table>
@@ -244,7 +300,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<p>Die vollständige Tabelle finden Sie unter der Adresse <a href="http://wiki.openstreetmap.org/wiki/Zoom_levels">http://wiki.openstreetmap.org/wiki/Zoom_levels</a>.</p>
+					<p>Die vollständige Tabelle findet Ihr unter der Adresse <a href="http://wiki.openstreetmap.org/wiki/Zoom_levels">http://wiki.openstreetmap.org/wiki/Zoom_levels</a>.</p>
 					</section>
 					<section>
 						<p style="font-size:smaller;">
@@ -272,8 +328,8 @@
 							&lt;html&gt;
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+							&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
 							&lt;/head&gt;
 							&lt;body&gt;
 							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
@@ -302,8 +358,8 @@
 							&lt;html&gt;
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+							&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
 							<mark>
 							&lt;script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js"&gt;&lt;/script&gt;
 							</mark>
@@ -356,33 +412,29 @@
 						<h2>Images als Layer – Web-Map-Service</h2>
 					</section>
 					<section>
-						<p>
+						<h3>
 							Sie haben eine Satellitenaufnahme und möchten diese
 							als Layer verwenden.
-						</p>
-					</section>
-					<section>
-						<p>
-							Eine Möglichkeit wäre ein Umwandeln dieser Satellitenaufnahme
-							in 275 Milliarden Kacheln - es gibt aber alternative Techniken.
-						</p>
-					</section>
-					<section>
-						<p>
-							Eine Alternative zur beschriebenen Kachel-Technik ist der
-							Web-Map-Service.
-						</p>
-					</section>
-					<section>
-						<p>
-							Ein Web-Map-Service (WMS) ist eine Schnittstelle die
-							Auszügen aus Landkarten über das Internet anbietet.
-						</p>
-					</section>
-					<section>
-						<p>
-							Der Anfrage liefert ein <b>georeferenziertes</b> Rasterbild zurück.
-						</p>
+						</h3>
+						<ul>
+							<li class="fragment">
+								Eine Möglichkeit wäre ein Umwandeln dieser Satellitenaufnahme
+								in <b>275 Milliarden Kacheln</b> - es gibt alternative Techniken.
+							</li>
+							<li class="fragment">
+								Eine Alternative zur beschriebenen Kachel-Technik ist der
+								<br><b>Web-Map-Service</b>.
+							</li>
+							<li class="fragment">
+								Ein Web-Map-Service (WMS) ist eine Schnittstelle die
+								Auszüge aus Landkarten über das Internet anbietet.
+							</li>
+						<li class="fragment">
+								Die Anfrage liefert ein <b>georeferenziertes</b>
+								Rasterbild zurück.
+							</li>
+							</ul>
+
 					</section>
 					<section>
 						<p>
@@ -392,13 +444,13 @@
 						</p>
 					</section>
 					<section>
-						<pre><code data-trim data-noescape>
+						<pre style="font-size: 16px"><code data-trim data-noescape>
 							&lt;!DOCTYPE HTML&gt;
 							&lt;html&gt;
 							&lt;head&gt;
 							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
-							&lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
+							&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+							&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
 							&lt;/head&gt;
 							&lt;body&gt;
 							&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
@@ -412,8 +464,8 @@
 							layers:'dwd:Warngebiete_Kreise',
 							attribution: "Deutscher Wetterdienst"
 							}).addTo(mymap);
-							</mark>
 							<mark>
+							</mark>
 							var dwd = L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms", {
 							format: 'image/png',
 							transparent: true,
@@ -428,13 +480,55 @@
 						<p style="font-size:smaller">Mit obigem Aufruf erhält man ein speziell zusammengestelltes Bild vom DWD Geo Webservice - sofern Warnungen vorhanden sind.</p>
 					</section>
 					<section>
-						<p>Erinnern Sie sich an den 27. Juli 2017?</p>
+						<p>Erinnert ihr euch an den 27. Juli 2017?</p>
 						<img data-src="./images/994.png">
+					</section>
+					<section>
 						<p>Weitere Informationen beim
 							<a href="http://www.dwd.de/DE/wetter/warnungen_aktuell/objekt_einbindung/einbindung_karten_geowebservice.pdf?__blob=publicationFile&v=2">
 								Deutschen Wetterdienst.
 							</a>
 						</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/1/index_990.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										<mark>
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var dwd = L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms", {
+										format: 'image/png',
+										transparent: true,
+										layers:'dwd:Warngebiete_Kreise',
+										attribution: "Deutscher Wetterdienst"
+										}).addTo(mymap);
+										var dwd = L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms", {
+										format: 'image/png',
+										transparent: true,
+										layers:'dwd:Warnungen_Gemeinden_vereinigt',
+										attribution: "Deutscher Wetterdienst"
+										}).addTo(mymap);
+										</mark>
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
 				</section>
 
@@ -634,7 +728,12 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				],
+				width: "100%",
+				height: "100%",
+				margin: 0,
+				minScale: 0.2,
+				maxScale: 1.5
 			});
 		</script>
 	</body>
