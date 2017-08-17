@@ -1,13 +1,13 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Eine OSM Karte mit Leaflet</title>
-<link rel="stylesheet" href="../leaflet/leaflet.css" />
-<script src="../leaflet/leaflet.js"></script>
-</head>
-<body>
-<div style="height: 700px;" id="mapid"></div>
-<script>
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+&lt;script&gt;
 var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 var marker1 = L.marker([50.27264, 7.26469],
@@ -33,6 +33,6 @@ myfeatureGroup.setStyle({color:'red', opacity:0.5, weight:8})
 //myfeatureGroup.on('click', function() { alert('Ein Gruppenmitglied wurde angeklickt!'); })
 //myfeatureGroup.on('click', function() { myfeatureGroup.removeLayer(polyline); })
 myfeatureGroup.addLayer(marker2);
-</script>
-</body>
-</html>
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
