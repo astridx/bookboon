@@ -7,13 +7,10 @@
 <script src="../leaflet/leaflet.js"></script>
 </head>
 <body>
-
 <div style="height: 700px;" id="mapid"></div>
 <script>
 var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
-
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-
 function styleFunction(feature)
 {
 //alert(JSON.stringify(feature) );
@@ -23,19 +20,16 @@ case 'LineString': return {color: "red"};
 case 'Polygon':   return {color: "purple"};
 }
 }
-
 var geojsonFeatureCollection =
 {
 "type": "FeatureCollection",
 "features":
 [
-
 {
 "type": "Feature",
 "geometry": {"type": "Point", "coordinates": [7, 50]},
 "properties": {"prop0": "value0"}
 },
-
 {
 "type": "Feature",
 "geometry": { "type": "LineString", "coordinates": [
@@ -43,7 +37,6 @@ var geojsonFeatureCollection =
 ]},
 "properties": { "prop0": "value0", "prop1": 0.0 }
 },
-
 { "type": "Feature",
 "geometry": { "type": "Polygon", "coordinates": [
 [ [6, 49], [5, 49], [5, 48], [4, 49], [4, 50] ]
@@ -52,26 +45,22 @@ var geojsonFeatureCollection =
 "properties": { "prop0": "value0", "prop1": {"this": "that"}
 }
 }
-
 ]
 }
-
-
 //var geoJsonLayer = L.geoJson(geojsonFeatureCollection,{color: "purple"}).addTo(mymap);
 var geoJsonLayer = L.geoJson(geojsonFeatureCollection,{style:styleFunction}).addTo(mymap);
-
 geoJsonLayer.on('mouseover', styleWhenMouseOver);
-//geoJsonLayer.on('mouseout', styleWhenMouseOut);
-geoJsonLayer.on('mouseout',function(e){console.log(e);geoJsonLayer.resetStyle(e.layer);});
-
+geoJsonLayer.on('mouseout', styleWhenMouseOut);
+//geoJsonLayer.on('mouseout',function(e){console.log(e);geoJsonLayer.resetStyle(e.layer);});
 function styleWhenMouseOver(e){
 geoJsonLayer.setStyle({color:"green"});
 }
-
 function styleWhenMouseOut(e){
-geoJsonLayer.setStyle({color:"gray"});
+//geoJsonLayer.setStyle({color:"gray"});
+geoJsonLayer.eachLayer(function (layer) {
+    geoJsonLayer.resetStyle(layer);
+});
 }
-
 </script>
 </body>
 </html>
