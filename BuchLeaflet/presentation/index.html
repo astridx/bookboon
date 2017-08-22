@@ -73,7 +73,7 @@
 					</section>
 
 					<section>
-						<h3>In vier Schritten ein Karte zaubern!
+						<h3>In vier Schritten eine Karte zaubern!
 						</h3>
 					</section>
 					<section>
@@ -221,20 +221,34 @@
 
 
 
+				<!-- Teil 1a Exkurs-->
+				<section>Exkurs 1</section>
 
+				<section data-background-color="#eeeeee"> <!-- 679ed4 f9b431 85c03c-->
+					<section>
+						<h2>
+							Koordinaten todo
+						</h2>
+					</section>
+					<section>
+					</section>
+				</section>
 
 
 
 
 
 				<!-- Teil 1a Exkurs-->
-				<section>Exkurs</section>
+				<section>Exkurs 2</section>
 
 				<section data-background-color="#eeeeee"> <!-- 679ed4 f9b431 85c03c-->
 					<section>
 						<h2>
 							Wie weiß Leaflet welche Kacheln angezeigt werden sollen
 						</h2>
+					</section>
+					<section>
+						Vektor oder Pixelgrafik? todo
 					</section>
 					<section>
 						<p>
@@ -321,75 +335,91 @@
 						<img data-src="./images/998a.png">
 					</section>
 					<section>Tile layer providers</section>
-					<section>Thunderforest (https://thunderforest.com/)</section>
 					<section>
-						<pre><code data-trim data-noescape>
-							&lt;!DOCTYPE HTML&gt;
-							&lt;html&gt;
-							&lt;head&gt;
-							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-							&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-							&lt;/head&gt;
-							&lt;body&gt;
-							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
-							&lt;script&gt;
-							var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
-							<span style="text-decoration:line-through;">
-							L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-							</span>
-							<mark>
-							L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=xxxx').addTo(mymap);
-							</mark>
-							&lt;/script&gt;
-							&lt;/body&gt;
-							&lt;/html&gt;
-						</code></pre>
+						<p>Thunderforest (https://thunderforest.com/)</p>
+						<small>API Key notwendig</small>
 					</section>
 					<section>
-						<a href="./code/index_994_thunderforest.html">
-							<img data-src="./images/997pioneer.png">
-						</a>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/1/index_994.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										<span style="text-decoration:line-through;">
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										</span>
+										<mark>
+										L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=xxxx').addTo(mymap);
+										</mark>
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
-					<section>Stamen (https://stamen.com/)</section>
 					<section>
-						<pre><code data-trim data-noescape>
-							&lt;!DOCTYPE HTML&gt;
-							&lt;html&gt;
-							&lt;head&gt;
-							&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-							&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-							&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-							<mark>
-							&lt;script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js"&gt;&lt;/script&gt;
-							</mark>
-							&lt;/head&gt;
-							&lt;body&gt;
-							&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
-							&lt;script&gt;
-							var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
-							<span style="text-decoration:line-through;">
-							L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-							</span>
-							<mark>
-							var layer = new L.StamenTileLayer("watercolor");
-							mymap.addLayer(layer);
-							</mark>
-							&lt;/script&gt;
-							&lt;/body&gt;
-							&lt;/html&gt;
-						</code></pre>
+						<p>Stamen (https://stamen.com/)<p>
+						<small>Künstlerische Karten</small>
 					</section>
 					<section>
-						<a href="./code/index_993_stamen.html">
-							<img data-src="./images/996watercolor.png">
-						</a>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/1/index_993.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										<mark>
+										&lt;script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js"&gt;&lt;/script&gt;
+										</mark>
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										<span style="text-decoration:line-through;">
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										</span>
+										<mark>
+										var layer = new L.StamenTileLayer("watercolor");
+										mymap.addLayer(layer);
+										</mark>
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+									<p><small>Eine zusätzliche JavaScript-Datei ist notwendig.</small></p>
+								</td>
+							</tr>
+						</table>
 					</section>
 					<section>
 						<p>Weitere Anbieter:</p>
-						<a href="http://wiki.openstreetmap.org/wiki/Tiles">
+						<p><a href="http://wiki.openstreetmap.org/wiki/Tiles">
 							http://wiki.openstreetmap.org/wiki/Tiles
-						</a>
+						</a></p>
+						<p><small>OpenCycleMap - OpenSkiMap - OpenSeeMap</small></p>
 					</section>
 				</section>
 
@@ -442,6 +472,9 @@
 							Deutsche Wetterdienst (DWD) WMS Dienste
 							mithilfe der Open Source Software Geoserver.
 						</p>
+						<p><small>Die Karten kennt Ihr von vielen Apps.
+						        Neben den amtlichen Warnungen gibt es auch
+								andere Themen wie Pollenflug Gefahrenindex.</small></p>
 					</section>
 					<section>
 						<pre style="font-size: 16px"><code data-trim data-noescape>
@@ -1011,16 +1044,72 @@
 
 
 
+
+
+
+				<!-- Teil 4a Exkurs-->
+				<section>Exkurs 3</section>
+
+				<section data-background-color="#eeeeee"> <!-- 679ed4 f9b431 85c03c-->
+					<section>
+						<h2>
+							GeoJSON einmal genau angeguckt
+						</h2>
+					</section>
+					<section>
+						<h2>
+							Warum GeoJSON
+						</h2>
+					</section>
+					<section>
+						<h2>
+							GeoJSON Objekte
+						</h2>
+						<small>
+							Im Juni 2008 wurde die Formatspezifikation verabschiedet.<br>
+							Im August 2016 wurde die RFC (Requests for Comments) 7946 veröffentlicht.<br>
+							<a href="http://geojson.org">http://geojson.org/</a>
+						</small>
+					</section>
+					<section>
+						<p>
+							Position
+						</p>
+					</section>
+					<section>
+						<p>Point</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../963point.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "Point",
+											"coordinates": [30, 10]
+										}
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>
+							Grenzen von GeoJSON
+						</h2>
+					</section>
+				</section>
+
+
 				<!-- Teil 4 GeoJSON-->
 				<section>Teil 4</section>
 
 				<section data-background-color="#679ed4">  <!-- 679ed4 f9b431 85c03c e84032-->
 					<section>
 						<h2>
-							GeoJSON
+							GeoJSON in Leaflet
 						</h2>
 					</section>
-					<section>GeoJSON - Was ist das?</section>
 					<section>Marker</section>
 					<section>FeatureCollection</section>
 					<section>addData()</section>
@@ -1029,8 +1118,6 @@
 					<section>pointToLayer</section>
 					<section>filter</section>
 				</section>
-
-
 
 
 
