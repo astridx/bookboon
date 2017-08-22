@@ -1058,8 +1058,36 @@
 					</section>
 					<section>
 						<h2>
-							Warum GeoJSON
+							Die Wurzeln von GeoJSON
 						</h2>
+						<p>
+							XML wurde 1998 veröffentlicht, um Daten zwischen Maschinen austauschen zu können.
+						</p>
+					</section>
+					<section>
+						<small>
+							Durch das Tag-System von XML werden oft kleine Datenbestände sehr aufgebläht und unübersichtlich.
+						</small>
+						<pre style="width:50%"><code data-trim data-noescape>
+							&lt;joomlers&gt;
+							&lt;number&gt;1721&lt;/number&gt;
+							&lt;vorname&gt;Astrid&lt;/vorname&gt;
+							&lt;nachname&gt;Günther&lt;/nachname&gt;
+							&lt;/joomlers&gt; 95 Zeichen
+
+							„joomlers“: {
+							„number“: „1721“,
+							„vorname“: „Astrid“,
+							„nachname“: „Günther“
+							}, 73 Zeichen
+						</code></pre>
+						<small>
+							Da JSON selbst gültiges Javascript darstellt, kann es direkt ausgeführt werden.
+						</small>
+						<small>
+							GeoJSON ist ein JSON Format, dass sich auf Geodaten spezialisiert hat.
+						</small>
+
 					</section>
 					<section>
 						<h2>
@@ -1092,6 +1120,167 @@
 								</td>
 							</tr>
 						</table>
+					</section>
+					<section>
+						<p>Multipoint</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../963multipoint.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "MultiPoint",
+											"coordinates": [
+												[10, 40], [40, 30], [20, 20], [30, 10]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>LineStrings</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../963linestring.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "LineString",
+											"coordinates": [
+												[30, 10], [10, 30], [40, 40]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>MultiLineString</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../963multilinesstring.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "MultiLineString",
+											"coordinates": [
+												[[10, 10], [20, 20], [10, 40]],
+												[[40, 40], [30, 30], [40, 20], [30, 10]]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+						<small>Linien und Punkte die beiden einfachsten Geometrieformen.
+							Punkte und Linien haben keine Fläche – somit gibt es auch kein
+							Außen und kein Innen.</small>
+					</section>
+					<section>
+						<p>Polygone</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../963polygon.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "Polygon",
+											"coordinates": [
+												[[30, 10], [40, 40], [20, 40], [10, 20], [30, 10]]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img data-src="../963polygondonut.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "Polygon",
+											"coordinates": [
+												[[35, 10], [45, 45], [15, 40], [10, 20], [35, 10]],
+												[[20, 30], [35, 35], [30, 20], [20, 30]]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+						<small>todo bild oder innen außen erklären</small>
+					</section>
+					<section>
+						<p>Multipolygon</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../963multipolygon.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "MultiPolygon",
+											"coordinates": [
+												[
+													[[30, 20], [45, 40], [10, 40], [30, 20]]
+												],
+												[
+													[[15, 5], [40, 10], [10, 20], [5, 10], [15, 5]]
+												]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img data-src="../963multipolygondonut.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "MultiPolygon",
+											"coordinates": [
+												[
+													[[40, 40], [20, 45], [45, 30], [40, 40]]
+												],
+												[
+													[[20, 35], [10, 30], [10, 10], [30, 5], [45, 20], [20, 35]],
+													[[30, 20], [20, 15], [20, 25], [30, 20]]
+												]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>GeometryCollection</p>
+						<pre><code data-trim data-noescape>
+							{
+							  "type": "Feature",
+							  "geometry": <mark>{
+								"type": "GeometryCollection",
+								"geometries": [{
+								  "type": "Point",
+								  "coordinates": [0, 0]
+								}, {
+								  "type": "LineString",
+								  "coordinates": [[0, 0], [1, 0]]
+								}]
+							  },</mark>
+							  "properties": {
+								"name": "Der Name dieser GeometryCollection"
+							  }
+							}
+						</code></pre>
 					</section>
 					<section>
 						<h2>
