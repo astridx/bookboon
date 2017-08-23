@@ -1136,7 +1136,7 @@
 										{ "type": "MultiPoint",
 											"coordinates": <mark>[</mark>
 												[10, 40], [40, 30], [20, 20], [30, 10]
-											]
+											<mark>]</mark>
 										}
 									</code></pre>
 								</td>
@@ -1169,8 +1169,8 @@
 									<pre><code data-trim data-noescape>
 										{ "type": "MultiLineString",
 											"coordinates": [
-												<mark>[[</mark>10, 10], [20, 20], [10, 40]],
-												[[40, 40], [30, 30], [40, 20], [30, 10]]
+												<mark>[</mark>[10, 10], [20, 20], [10, 40]<mark>]</mark>,
+												<mark>[</mark>[40, 40], [30, 30], [40, 20], [30, 10]<mark>]</mark>
 											]
 										}
 									</code></pre>
@@ -1179,12 +1179,15 @@
 						</table>
 					</section>
 					<section>
-						<p>Linien und Punkte die beiden einfachsten Geometrieformen.
-							Punkte und Linien haben keine Fläche – somit gibt es auch kein
+						<p>Linien und Punkte sind die beiden einfachsten Geometrieformen.<br>
+							Punkte und Linien haben <b>keine Fläche</b> – somit gibt es auch kein
 							Außen und kein Innen.</p>
 					</section>
 					<section>
 						<p>Polygone</p>
+						<small>Polygone verfügen über eine Fläche. Es gibt also einen Innenbereich, der sich von einem Außenbereich unterscheidet.
+							<br>Und hinzu kommt: Der Innenbereich kann Löcher haben!
+						</small>
 						<table>
 							<tr>
 								<td>
@@ -1216,7 +1219,31 @@
 								</td>
 							</tr>
 						</table>
-						<small>todo bild oder innen außen erklären</small>
+					</section>
+					<section>
+						<p>Polygone</p>
+						<small>Es kann eine beliebige Anzahl von Innenringen geben,
+							einschließlich null Innenringe. Wenn das Polygon über keinen
+							Innenring verfügt bedeutet dies, dass das Polygon keine Löcher hat.
+						</small>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../todo.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "Polygon",
+											"coordinates": [
+												[[35, 10], [45, 45], [15, 40], [10, 20], [35, 10]],
+												[[20, 30], [35, 35], [30, 20], [20, 30]],
+												[[15, 21], [20, 23], [20, 17]]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
 					<section>
 						<p>Multipolygon</p>
@@ -1280,6 +1307,46 @@
 							  "properties": {
 								"name": "Der Name dieser GeometryCollection"
 							  }
+							}
+						</code></pre>
+					</section>
+					<section>
+						<p>Feature</p>
+						<pre><code data-trim data-noescape>
+							{
+							  "type": "Feature",
+							  "geometry": {
+								"type": "Polygon",
+								"coordinates": [[30, 20], [45, 40], [10, 40], [30, 20]]
+							  },
+							  "properties": {
+								"prop0": "value0",
+								"prop1": {"this": "that"},
+								"prop2": true,
+								"prop3": null,
+								"prop4": ["wert1", "wert2", "wert3"],
+								"prop5": 0.0
+							  }
+							}
+						</code></pre>
+					</section>
+					<section>
+						<p>FeatureCollection</p>
+						<pre><code data-trim data-noescape>
+							{
+							  "type": "FeatureCollection",
+							  "features": [
+								{
+								  "type": "Feature",
+								  "geometry": {
+									"type": "Point",
+									"coordinates": [0, 0]
+								  },
+								  "properties": {
+									"name": "Der Name des Features"
+								  }
+								}
+							  ]
 							}
 						</code></pre>
 					</section>
