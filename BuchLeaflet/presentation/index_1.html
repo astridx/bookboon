@@ -44,19 +44,15 @@
 					</table>
 				</section>
 				<section data-background-color="#679ed4"> <!-- 679ed4 f9b431 85c03c-->
-						<section>
 						<h2>
 							Hier und Jetzt!
 						</h2>
-						</section>
-						<section>
-							<ul>
-								<li>Wer bin ich</li>
-								<li class="fragment">Was solltest du mitbringen</li>
-								<li class="fragment">Was machen wir konkret in den nächsten 45 Minuten?</li>
-								<li class="fragment">Link zur Präsentation</li>
-							</ul>
-						</section>
+						<ul>
+							<li class="fragment">Wer bin ich</li>
+							<li class="fragment">Was solltest du mitbringen</li>
+							<li class="fragment">Was machen wir konkret in den nächsten 45 Minuten?</li>
+							<li class="fragment">Link zur Präsentation</li>
+						</ul>
 				</section>
 
 
@@ -1069,25 +1065,29 @@
 						</p>
 					</section>
 					<section>
-						<ul>
-							<li>
-								Durch das Tag-System von XML werden oft kleine Datenbestände sehr aufgebläht und sind so unübersichtlich.
-								<pre style="width:50%"><code data-trim data-noescape>
-									&lt;joomlers&gt;
-									&lt;number&gt;1721&lt;/number&gt;
-									&lt;vorname&gt;Astrid Günther&lt;/vorname&gt;
-									&lt;/joomlers&gt;
+						<small>
+							Durch das Tag-System von XML werden oft kleine Datenbestände sehr aufgebläht und unübersichtlich.
+						</small>
+						<pre style="width:50%"><code data-trim data-noescape>
+							&lt;joomlers&gt;
+							&lt;number&gt;1721&lt;/number&gt;
+							&lt;vorname&gt;Astrid&lt;/vorname&gt;
+							&lt;nachname&gt;Günther&lt;/nachname&gt;
+							&lt;/joomlers&gt; 95 Zeichen
 
-									„joomlers“: {
-									„number“: „1721“,
-									„vorname“: „Astrid Günther“
-									},
-								</code></pre>
-							</li>
-							<li class="fragment">Da JSON selbst gültiges Javascript darstellt, kann es direkt ausgeführt werden.</li>
-							<li class="fragment">Im Gegensatz zu XML ist JSON nicht beschreibend oder deklarativ.</li>
-							<li class="fragment">GeoJSON ist ein JSON Format, dass sich auf Geodaten spezialisiert hat.</li>
-						</ul>
+							„joomlers“: {
+							„number“: „1721“,
+							„vorname“: „Astrid“,
+							„nachname“: „Günther“
+							}, 73 Zeichen
+						</code></pre>
+						<small>
+							Da JSON selbst gültiges Javascript darstellt, kann es direkt ausgeführt werden.
+						</small>
+						<small>
+							GeoJSON ist ein JSON Format, dass sich auf Geodaten spezialisiert hat.
+						</small>
+
 					</section>
 					<section>
 						<h2>
@@ -1103,17 +1103,9 @@
 						<p>
 							Position
 						</p>
-						<ul>
-							<li class="fragment">Das wichtigste Element beim Arbeiten mit Geodaten ist die Beschreibung des Punktes auf der Erde, dem die Geodaten zugeordnet werden.</li>
-							<li class="fragment">Diesen Wert kennen wir auch unter dem Namen <b>Koordinate</b>.</li>
-							<li class="fragment">Eine Koordinate ist eine <b>Zahlenkombination</b>. Jede Zahl in einer Koordinate steht für eine <b>Dimension</b>.</li>
-							<li class="fragment">Die Koordinaten werden in JSON in im <b>Dezimalformat</b> formatiert.</li>
-							<li class="fragment">Koordinaten in GeoJSON: [Länge, Breite, Höhe]<small>Wir beschränken uns hier auf zwei Dimensionen | Die vierte Dimension ist die Zeit | Beachte die Reihenfolge</small></li>
-						</ul>
 					</section>
 					<section>
-						<p>Point | Multipoint</p>
-						<small>Ein Point – also ein Punkt – ist die einfachste Geometrie in GeoJSON. Die genaue Schreibweise ist</small>
+						<p>Point</p>
 						<table>
 							<tr>
 								<td>
@@ -1127,6 +1119,11 @@
 									</code></pre>
 								</td>
 							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Multipoint</p>
+						<table>
 							<tr>
 								<td>
 									<img data-src="../963multipoint.png">
@@ -1134,7 +1131,7 @@
 								<td>
 									<pre><code data-trim data-noescape>
 										{ "type": "MultiPoint",
-											"coordinates": <mark>[</mark>
+											"coordinates": [
 												[10, 40], [40, 30], [20, 20], [30, 10]
 											]
 										}
@@ -1144,8 +1141,7 @@
 						</table>
 					</section>
 					<section>
-						<p>LineStrings | MultiLineString</p>
-						<small>Um eine Linie darzustellen, benötigen Sie mindestens zwei Punkte. Die Linie ist dann die Verbindung zwischen diesen Punkten.</small>
+						<p>LineStrings</p>
 						<table>
 							<tr>
 								<td>
@@ -1161,6 +1157,11 @@
 									</code></pre>
 								</td>
 							</tr>
+						</table>
+					</section>
+					<section>
+						<p>MultiLineString</p>
+						<table>
 							<tr>
 								<td>
 									<img data-src="../963multilinesstring.png">
@@ -1169,7 +1170,7 @@
 									<pre><code data-trim data-noescape>
 										{ "type": "MultiLineString",
 											"coordinates": [
-												<mark>[[</mark>10, 10], [20, 20], [10, 40]],
+												[[10, 10], [20, 20], [10, 40]],
 												[[40, 40], [30, 30], [40, 20], [30, 10]]
 											]
 										}
@@ -1177,11 +1178,9 @@
 								</td>
 							</tr>
 						</table>
-					</section>
-					<section>
-						<p>Linien und Punkte die beiden einfachsten Geometrieformen.
+						<small>Linien und Punkte die beiden einfachsten Geometrieformen.
 							Punkte und Linien haben keine Fläche – somit gibt es auch kein
-							Außen und kein Innen.</p>
+							Außen und kein Innen.</small>
 					</section>
 					<section>
 						<p>Polygone</p>
