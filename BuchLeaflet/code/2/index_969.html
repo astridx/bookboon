@@ -13,7 +13,6 @@ var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 function styleFunction(feature)
 {
-//alert(JSON.stringify(feature) );
 switch (feature.geometry.type)
 {
 case 'LineString': return {color: "red"};
@@ -47,18 +46,16 @@ var geojsonFeatureCollection =
 }
 ]
 }
-//var geoJsonLayer = L.geoJson(geojsonFeatureCollection,{color: "purple"}).addTo(mymap);
 var geoJsonLayer = L.geoJson(geojsonFeatureCollection,{style:styleFunction}).addTo(mymap);
 geoJsonLayer.on('mouseover', styleWhenMouseOver);
 geoJsonLayer.on('mouseout', styleWhenMouseOut);
-//geoJsonLayer.on('mouseout',function(e){console.log(e);geoJsonLayer.resetStyle(e.layer);});
 function styleWhenMouseOver(e){
 geoJsonLayer.setStyle({color:"green"});
 }
 function styleWhenMouseOut(e){
 //geoJsonLayer.setStyle({color:"gray"});
 geoJsonLayer.eachLayer(function (layer) {
-    geoJsonLayer.resetStyle(layer);
+geoJsonLayer.resetStyle(layer);
 });
 }
 </script>

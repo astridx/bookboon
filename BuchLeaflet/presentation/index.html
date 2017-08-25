@@ -1376,13 +1376,470 @@
 							GeoJSON in Leaflet
 						</h2>
 					</section>
-					<section>Marker</section>
-					<section>FeatureCollection</section>
-					<section>addData()</section>
-					<section>Einen GeoJSON Layer stylen</section>
-					<section>onEachFeature</section>
-					<section>pointToLayer</section>
-					<section>filter</section>
+
+					<section>
+						<p>Marker</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_973.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+									</code></pre>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var geojsonFeature1 = {
+										"type": "Feature",
+										"geometry": {
+										"type": "Point",
+										"coordinates": [7.26469, 50.27264]
+										},
+										"properties": {
+										"name": "Gering"
+										}
+										};
+										L.geoJSON(geojsonFeature1).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>FeatureCollection</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_972.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var geojsonFeatureCollection =
+										{
+										"type": "FeatureCollection",
+										"features":
+										[
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [7, 50]},
+										"properties": {"prop0": "value0"}
+										},
+										{
+										"type": "Feature",
+										"geometry": { "type": "LineString", "coordinates": [
+										[7, 50], [7, 51], [6, 51], [6, 52]
+										]},
+										"properties": { "prop0": "value0", "prop1": 0.0 }
+										},
+										{ "type": "Feature",
+										"geometry": { "type": "Polygon", "coordinates": [
+										[ [6, 49], [5, 49], [5, 48], [4, 49], [4, 50] ]
+										]
+										},
+										"properties": { "prop0": "value0", "prop1": {"this": "that"}
+										}
+										}
+										]
+										}
+										L.geoJSON(geojsonFeatureCollection).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>addData() - GeoJSON aus Leaflet exportieren</section>
+					<section>
+						<p>Marker</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_971.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var myMarker=L.marker([50.27264, 7.26469]);
+										var markerAsGeoJSON = myMarker.toGeoJSON();
+										var geoJsonLayer = L.geoJson().addTo(mymap);
+										geoJsonLayer.addData(markerAsGeoJSON).bindPopup("Ich bin mit der Methode .addData() zur Karte hinzugefügt worden. In GeoJson sehe ich so aus:&lt;br&gt; " + JSON.stringify(markerAsGeoJSON));
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>Eine GeoJSON Layer wird gestyled</section>
+					<section>
+						<p>Marker</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_970.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										function styleFunction(feature)
+										{
+										switch (feature.geometry.type)
+										{
+										case 'LineString': return {color: "red"};
+										case 'Polygon':   return {color: "purple"};
+										}
+										}
+										var geojsonFeatureCollection =
+										{
+										"type": "FeatureCollection",
+										"features":
+										[
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [7, 50]},
+										"properties": {"prop0": "value0"}
+										},
+										{
+										"type": "Feature",
+										"geometry": { "type": "LineString", "coordinates": [
+										[7, 50], [7, 51], [6, 51], [6, 52]
+										]},
+										"properties": { "prop0": "value0", "prop1": 0.0 }
+										},
+										{ "type": "Feature",
+										"geometry": { "type": "Polygon", "coordinates": [
+										[ [6, 49], [5, 49], [5, 48], [4, 49], [4, 50] ]
+										]
+										},
+										"properties": { "prop0": "value0", "prop1": {"this": "that"}
+										}
+										}
+										]
+										}
+										//var geoJsonLayer = L.geoJson(geojsonFeatureCollection,{color: "purple"}).addTo(mymap);
+										var geoJsonLayer = L.geoJson(geojsonFeatureCollection,{style:styleFunction}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Eine GeoJSON Layer reagiert auf Ereignisse</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_969.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										function styleFunction(feature)
+										{
+										switch (feature.geometry.type)
+										{
+										case 'LineString': return {color: "red"};
+										case 'Polygon':   return {color: "purple"};
+										}
+										}
+										var geojsonFeatureCollection =
+										{
+										"type": "FeatureCollection",
+										"features":
+										[
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [7, 50]},
+										"properties": {"prop0": "value0"}
+										},
+										{
+										"type": "Feature",
+										"geometry": { "type": "LineString", "coordinates": [
+										[7, 50], [7, 51], [6, 51], [6, 52]
+										]},
+										"properties": { "prop0": "value0", "prop1": 0.0 }
+										},
+										{ "type": "Feature",
+										"geometry": { "type": "Polygon", "coordinates": [
+										[ [6, 49], [5, 49], [5, 48], [4, 49], [4, 50] ]
+										]
+										},
+										"properties": { "prop0": "value0", "prop1": {"this": "that"}
+										}
+										}
+										]
+										}
+										var geoJsonLayer = L.geoJson(geojsonFeatureCollection,{style:styleFunction}).addTo(mymap);
+										geoJsonLayer.on('mouseover', styleWhenMouseOver);
+										geoJsonLayer.on('mouseout', styleWhenMouseOut);
+										function styleWhenMouseOver(e){
+										geoJsonLayer.setStyle({color:"green"});
+										}
+										function styleWhenMouseOut(e){
+										//geoJsonLayer.setStyle({color:"gray"});
+										geoJsonLayer.eachLayer(function (layer) {
+										geoJsonLayer.resetStyle(layer);
+										});
+										}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>onEachFeature()</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_968.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										...
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var geojsonFeatureCollection =
+										{
+										"type": "FeatureCollection",
+										"features":
+										[
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [6, 50]},
+										"properties": {"name": "Dorf 1"}
+										},
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [7, 50]},
+										"properties": {"name": "Dorf 2"}
+										},
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [7, 51]},
+										"properties": {"name": "Dorf 3"}
+										}
+										]
+										};
+										var options = {
+										draggable: true,
+										title: "Ein Dorf in der Nähe von Gering"
+										};
+										L.geoJson(geojsonFeatureCollection, {
+										onEachFeature: function(feature, layer) {
+										layer.bindPopup(feature.properties.name);
+										}
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>pointToLayer()</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_967.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										...
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var geojsonFeatureCollection =
+										{
+										"type": "FeatureCollection",
+										"features":
+										[
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [6, 50]},
+										"properties": {"name": "Dorf 1"}
+										},
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [7, 50]},
+										"properties": {"name": "Dorf 2"}
+										},
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [7, 51]},
+										"properties": {"name": "Dorf 3"}
+										}
+										]
+										};
+										var options_draggable = {
+										draggable: true,
+										title: "Ein Ort in der Nähe von Gering"
+										};
+										var options_notdraggable = {
+										draggable: false,
+										title: "Ein Ort in der Nähe von Gering"
+										};
+										L.geoJson(geojsonFeatureCollection, {
+										pointToLayer: function(feature, latlng) {
+										switch(feature.properties.name)
+										{
+										case "Dorf 1": return L.marker(latlng, options_draggable).bindPopup(feature.properties.name);
+										case "Dorf 2": return L.marker(latlng, options_notdraggable).bindPopup(feature.properties.name);
+										case "Dorf 3": return L.marker(latlng, options_notdraggable).bindPopup(feature.properties.name);
+										}
+										}
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Filter</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_966.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var geojsonFeatureCollection =
+										{
+										"type": "FeatureCollection",
+										"features":
+										[
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [6, 50]},
+										"properties": {"name": "Dorf 1"}
+										},
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [7, 50]},
+										"properties": {"name": "Dorf 2"}
+										},
+										{
+										"type": "Feature",
+										"geometry": {"type": "Point", "coordinates": [7, 51]},
+										"properties": {"name": "Dorf 3"}
+										}
+										]
+										};
+										var options = {
+										draggable: true,
+										title: "Ein Ort in der Nähe von Gering"
+										};
+										L.geoJson(geojsonFeatureCollection, {
+										filter: function(feature, latlng) {
+										switch (feature.properties.name) {
+										case "Dorf 1": return true;
+										default:  return false;
+										}
+										}
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
 				</section>
 
 
