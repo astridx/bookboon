@@ -9,15 +9,12 @@
 <script src="leaflet-heatmap.js"></script>
 </head>
 <body>
-
 <div style="height: 700px;" id="mapid"></div>
 <script>
-// don't forget to include leaflet-heatmap.js
 var testData = {
   max: 8,
   data: [{lat: 24.6408, lng:46.7728, count: 3},{lat: 50.75, lng:-1.55, count: 1}]
 };
-
 var myData={
 max: 100,
 data: [
@@ -758,16 +755,12 @@ var cfg = {
   // which field name in your data represents the data value - default "value"
   valueField: 'value'
 };
-
-
 var heatmapLayer = new HeatmapOverlay(cfg);
-
 var map = new L.Map('mapid', {
   center: new L.LatLng(50.0586, 7.6568),
   zoom: 8,
   layers: [baseLayer, heatmapLayer]
 });
-
 heatmapLayer.setData(myData);
 </script>
 </body>

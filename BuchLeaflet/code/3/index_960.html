@@ -9,7 +9,6 @@
 <script src="leaflet-heatmap.js"></script>
 </head>
 <body>
-
 <div style="height: 700px;" id="mapid"></div>
 <script>
 // don't forget to include leaflet-heatmap.js
@@ -17,7 +16,6 @@ var testData = {
   max: 8,
   data: [{lat: 24.6408, lng:46.7728, count: 3},{lat: 50.75, lng:-1.55, count: 1}]
 };
-
 var myData={
 max: 100,
 data: [
@@ -736,55 +734,33 @@ data: [
 {lat: 50.088041, lon:7.652033, value: 23},
 {lat: 50.088041, lon:7.652033, value: 23}]
 };
-
-
 var baseLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
-
 var cfg = {
-  // radius should be small ONLY if scaleRadius is true (or small radius is intended)
-  // if scaleRadius is false it will be the constant radius used in pixels
-  "radius": .1,
-  "maxOpacity": .5,
-  // scales the radius based on map zoom
-  "scaleRadius": true,
-  // if set to false the heatmap uses the global maximum for colorization
-  // if activated: uses the data maximum within the current map boundaries
-  //   (there will always be a red spot with useLocalExtremas true)
-  "useLocalExtrema": true,
-  // which field name in your data represents the latitude - default "lat"
-  latField: 'lat',
-  // which field name in your data represents the longitude - default "lng"
-  lngField: 'lon',
-  // which field name in your data represents the data value - default "value"
-  valueField: 'value',
-  gradient: {
-    // enter n keys between 0 and 1 here
-    // for gradient color customization
-    '.4': 'blue',
-    '.8': 'lime',
-    '.95': 'red'
-  },
-  blur: 0.75
+"radius": .1,
+"maxOpacity": .5,
+"scaleRadius": true,
+"useLocalExtrema": true,
+latField: 'lat',
+lngField: 'lon',
+valueField: 'value',
+gradient: {
+'.4': 'blue',
+'.8': 'lime',
+'.95': 'red'
+},
+blur: 0.75
 };
-
-
 var heatmapLayer = new HeatmapOverlay(cfg);
-
 var map = new L.Map('mapid', {
-  center: new L.LatLng(50.0586, 7.6568),
-  zoom: 8,
-  layers: [baseLayer, heatmapLayer]
+center: new L.LatLng(50.0586, 7.6568),
+zoom: 8,
+layers: [baseLayer, heatmapLayer]
 });
-
 heatmapLayer.setData(myData);
-
 var test1 = {lat:51,lon:6,value:99};
 var test2 = {lat:50.91,lon:6,value:60};
 var test3 = {lat:50.92,lon:6,value:40};
 var test4 = {lat:50.93,lon:6,value:20};
-//Use length because it returns number of items.
-//Index at 0 so length is always the integer thats next.
-
 heatmapLayer.addData(test1);
 heatmapLayer.addData(test2);
 heatmapLayer.addData(test3);

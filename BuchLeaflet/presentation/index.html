@@ -32,7 +32,7 @@
 
 				<!-- Teil 0 Einleitung-->
 				<section>
-					<table>
+					<table style="height:700px">
 						<tr>
 							<td style="border: 0px solid black;">
 								<p>Guten Morgen</p>
@@ -54,7 +54,6 @@
 								<li>Wer bin ich</li>
 								<li class="fragment">Was solltest du mitbringen</li>
 								<li class="fragment">Was machen wir konkret in den nächsten 45 Minuten?</li>
-								<li class="fragment">Link zur Präsentation</li>
 							</ul>
 						</section>
 				</section>
@@ -259,21 +258,21 @@
 						Zoom­stufe 0; Kachelanzahl: 1<br>
 						Kachelbreite 40.038 km; 1 Pixel entspricht 156 km<br>
 						</p>
-						<img data-src="./images/999.png">
+						<img data-src="../999.png">
 					</section>
 					<section>
 						<p>
 						Zoom­stufe 1; Kachelanzahl: 4<br>
 						Kachelbreite 20.019 km; 1 Pixel entspricht 78 km<br>
 						</p>
-						<img data-src="./images/999a.png">
+						<img data-src="../999a.png">
 					</section>
 					<section>
 						<p>
 						Zoom­stufe 2; Kachelanzahl: 16<br>
 						Kachelbreite 5.005 km; 1 Pixel entspricht 39 km<br>
 						</p>
-						<img data-src="./images/999b.png">
+						<img data-src="../999b.png">
 					</section>
 					<section>
 					<table>
@@ -327,7 +326,7 @@
 						<p style="font-size:smaller;">
 						https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=x
 						</p>
-						<img data-src="./images/998.png">
+						<img data-src="../998.png">
 					</section>
 					<section>
 						<p style="font-size:smaller;">
@@ -336,7 +335,7 @@
 						<p style="font-size:smaller;">
 						https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=x
 						</p>
-						<img data-src="./images/998a.png">
+						<img data-src="../998a.png">
 					</section>
 					<section>Tile layer providers</section>
 					<section>
@@ -518,7 +517,7 @@
 					</section>
 					<section>
 						<p>Erinnert ihr euch an den 27. Juli 2017?</p>
-						<img data-src="./images/994.png">
+						<img data-src="../994.png">
 					</section>
 					<section>
 						<p>Weitere Informationen beim
@@ -1229,7 +1228,7 @@
 						<table>
 							<tr>
 								<td>
-									<img data-src="../todo.png">
+									<img data-src="../962b.jpg">
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
@@ -1861,8 +1860,105 @@
 							Heatmaps und Choroplethenkarten
 						</h2>
 					</section>
-					<section>Vertical Slide 2</section>
-					<section>Vertical Slide 1</section>
+					<section>
+						<h3>Heatmap / Wärmebild</h3>
+					</section>
+					<section>
+						<ul>
+							<li>In der grafischen Darstellung kristallisieren sich besonders markante Werte oft schnell heraus.</li>
+							<li class="fragment">Eine Heatmap ist im Grunde genommen ein Diagramm, mit dem Daten visualisiert werden.</li>
+							<li class="fragment">Heatmaps färben Bereich unterschiedlich, wenn die Intensität oder die Dichte des untersuchten Objektes unterschiedlich ist.</li>
+						</ul>
+					</section>
+					<section>
+						<p>https://github.com/Leaflet/Leaflet.heat</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_965.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.1555, 7.591838], 10);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var points = [
+										[50.1555, 7.591838, 0.2],
+										[50.0931, 7.664177, 0.2],
+										...
+										[50.088041, 7.652033, 0.2]
+										];
+										var heat = L.heatLayer(points,
+										{
+										minOpacity: 0.95,
+										blur: 15,
+										maxZoom: 15,
+										max: 1,
+										radius: 15,
+										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>blur</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../980a.png">
+									<p>blur: 1</p>
+								</td>
+								<td>
+									<img data-src="../980b.png">
+									<p>blur: 40</p>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>maxZoom</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../980d.png">
+									<p>maxZoom: 13</p>
+								</td>
+								<td>
+									<img data-src="../980c.png">
+									<p>maxZoom: 6</p>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h3>Choroplethenkarten</h3>
+					</section>
+					<section>
+						<ul>
+							<li>In der grafischen Darstellung kristallisieren sich besonders markante Werte oft schnell heraus.</li>
+							<li class="fragment">Eine Heatmap ist im Grunde genommen ein Diagramm, mit dem Daten visualisiert werden.</li>
+							<li class="fragment">Heatmaps färben Bereich unterschiedlich, wenn die Intensität oder die Dichte des untersuchten Objektes unterschiedlich ist.</li>
+						</ul>
+					</section>
+					<section>
+						<p>todo</p>
+					</section>
 				</section>
 
 
