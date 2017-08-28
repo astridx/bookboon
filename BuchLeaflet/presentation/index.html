@@ -1871,7 +1871,8 @@
 						</ul>
 					</section>
 					<section>
-						<p>https://github.com/Leaflet/Leaflet.heat</p>
+						<p>Leaflet.heat - Eine Heatmap die die <b>Dichte</b> darstellt</p>
+						<small>https://github.com/Leaflet/Leaflet.heat</small>
 						<table>
 							<tr>
 								<td>
@@ -1917,7 +1918,7 @@
 						</table>
 					</section>
 					<section>
-						<p>blur</p>
+						<p>blur (unscharf)</p>
 						<table>
 							<tr>
 								<td>
@@ -1947,17 +1948,250 @@
 						</table>
 					</section>
 					<section>
+						<p>Die Methoden eines Leaflet.heat Layers</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_963.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										..
+										&lt;body&gt;
+										&lt;button onclick="add()"&gt;Punkt hinzufügen&lt;/button&gt;
+										&lt;br&gt;
+										&lt;button onclick="newPoint()"&gt;Daten neu setzen&lt;/button&gt;
+										&lt;br&gt;
+										&lt;button onclick="reset()"&gt;Reset&lt;/button&gt;
+										&lt;br&gt;
+										&lt;button onclick="setOptions()"&gt;Farben ändern&lt;/button&gt;
+										..
+									</code></pre>
+									<pre><code data-trim data-noescape>
+										..
+										function add() {
+										heat.addLatLng([50.1, 7.1, 0.2]);
+										}
+										function newPoint() {
+										heat.setLatLngs([[50.5, 7, 0.2]]);
+										}
+										function reset() {
+										heat.setLatLngs(points);
+										}
+										function setOptions() {
+										heat.setOptions({gradient: {0.4: 'black', 0.65: 'gray', 1: 'white'}
+										});
+										}
+										..
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>heatmap.js - Eine Heatmap die die <b>Intensität</b> darstellt</p>
+						<small>https://github.com/pa7/heatmap.js</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_961.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.1555, 7.591838], 10);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var points = [
+										[50.1555, 7.591838, 0.2],
+										[50.0931, 7.664177, 0.2],
+										...
+										[50.088041, 7.652033, 0.2]
+										];
+										var heat = L.heatLayer(points,
+										{
+										minOpacity: 0.95,
+										blur: 15,
+										maxZoom: 15,
+										max: 1,
+										radius: 15,
+										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Unterschiedliche Ausprägungen der Intensitätspunkte</p>
+						<img data-src="../949.png">
+					</section>
+					<section>
+						<p>Interaktive Heatmaps</p>
+						<small>todo</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_959.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.1555, 7.591838], 10);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var points = [
+										[50.1555, 7.591838, 0.2],
+										[50.0931, 7.664177, 0.2],
+										...
+										[50.088041, 7.652033, 0.2]
+										];
+										var heat = L.heatLayer(points,
+										{
+										minOpacity: 0.95,
+										blur: 15,
+										maxZoom: 15,
+										max: 1,
+										radius: 15,
+										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Animierte Heatmaps</p>
+						<small>todo</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_958.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 15);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var points = [];
+										var heat = L.heatLayer(points,
+										{
+										blur: 15,
+										maxZoom: 15,
+										max: 1.0,
+										radius: 25,
+										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+										}).addTo(mymap);
+										function addpoint(e){
+										heat.addLatLng(e.latlng);
+										}
+										mymap.on('click', addpoint);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
 						<h3>Choroplethenkarten</h3>
 					</section>
 					<section>
 						<ul>
-							<li>In der grafischen Darstellung kristallisieren sich besonders markante Werte oft schnell heraus.</li>
-							<li class="fragment">Eine Heatmap ist im Grunde genommen ein Diagramm, mit dem Daten visualisiert werden.</li>
-							<li class="fragment">Heatmaps färben Bereich unterschiedlich, wenn die Intensität oder die Dichte des untersuchten Objektes unterschiedlich ist.</li>
+							<li>Die Choroplethenkarten ist eine Variante der Heatmap.</li>
+							<li class="fragment">In einer Choroplethenkarte folgen die Farbflächen keinem starren Rechteckraster, sondern sind Gebieten auf einer Landkarte zugeordnet.</li>
+							<li class="fragment">Das Schöne ist, dass wir mit Leaflet keine zusätzlichen Plugins benötigen. Leaflet ist wie dafür gemacht, GeoJSON Daten als Choroplethenkarte anzuzeigen.</li>
+							<li class="fragment">Choroplethenkarten werden in Deutschland auch Flächenkartogramme oder Flächenwertstufenkarten genannt.</li>
 						</ul>
 					</section>
 					<section>
+						<p>http://opendatalab.de/projects/geojson-utilities/</p>
+					</section>
+					<section>
 						<p>todo</p>
+					</section>
+					<section>
+						<p>Landkreise in Deutschland auf einer Choroplethenkarten</p>
+						<small>todo</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_958.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 15);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var points = [];
+										var heat = L.heatLayer(points,
+										{
+										blur: 15,
+										maxZoom: 15,
+										max: 1.0,
+										radius: 25,
+										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+										}).addTo(mymap);
+										function addpoint(e){
+										heat.addLatLng(e.latlng);
+										}
+										mymap.on('click', addpoint);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
 				</section>
 

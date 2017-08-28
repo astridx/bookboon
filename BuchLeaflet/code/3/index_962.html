@@ -737,14 +737,14 @@ var points = [
 [50.088041 , 7.652033 , "<img src='http://lorempixel.com/200/200/'>"],
 [50.088041 , 7.652033 , "<img src='http://lorempixel.com/200/200/'>"]
 ];
-/*
+
 for(var i=0;i<points.length;i++)
 {
 L.marker(
 [parseFloat(points[i][0]),parseFloat(points[i][1])],
 {opacity:0}).bindPopup(points[i][2],{keepInView:true}).addTo(mymap);
 }
-*/
+
 var heat = L.heatLayer(points,
 {
 minOpacity: 0.95,

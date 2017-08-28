@@ -11,11 +11,6 @@
 <body>
 <div style="height: 700px;" id="mapid"></div>
 <script>
-// don't forget to include leaflet-heatmap.js
-var testData = {
-  max: 8,
-  data: [{lat: 24.6408, lng:46.7728, count: 3},{lat: 50.75, lng:-1.55, count: 1}]
-};
 var myData={
 max: 100,
 data: [
@@ -758,9 +753,9 @@ layers: [baseLayer, heatmapLayer]
 });
 heatmapLayer.setData(myData);
 var test1 = {lat:51,lon:6,value:99};
-var test2 = {lat:50.91,lon:6,value:60};
-var test3 = {lat:50.92,lon:6,value:40};
-var test4 = {lat:50.93,lon:6,value:20};
+var test2 = {lat:50.5,lon:6,value:60};
+var test3 = {lat:50,lon:6,value:40};
+var test4 = {lat:49.5,lon:6,value:20};
 heatmapLayer.addData(test1);
 heatmapLayer.addData(test2);
 heatmapLayer.addData(test3);
