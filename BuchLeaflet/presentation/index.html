@@ -1861,14 +1861,30 @@
 						</h2>
 					</section>
 					<section>
+						<p>In diesem Teil werden wir ...</p>
+						<ul>
+							<li>... die in den vorangehenden Kapiteln besprochenen Objekte zum visualisieren einsetzen.</li>
+							<li class="fragment">... Plugins kennenlernen, die dich beim Erstellen von Heatmaps unterstützen</li>
+							<li class="fragment">... sehen wie wir mit einer Leaflet Karte interagieren und diese animieren können.</li>
+							<li class="fragment">... Choroplethenkarte von Heatmaps abgegrenzt und auf diesen absolute und relative Werte darstellt.</li>
+						</ul>
+					</section>
+					<section>
 						<h3>Heatmap / Wärmebild</h3>
 					</section>
 					<section>
 						<ul>
 							<li>In der grafischen Darstellung kristallisieren sich besonders markante Werte oft schnell heraus.</li>
 							<li class="fragment">Eine Heatmap ist im Grunde genommen ein Diagramm, mit dem Daten visualisiert werden.</li>
-							<li class="fragment">Heatmaps färben Bereich unterschiedlich, wenn die Intensität oder die Dichte des untersuchten Objektes unterschiedlich ist.</li>
+							<li class="fragment">Heatmaps färben Bereich unterschiedlich, wenn die <b>Intensität</b> oder die <b>Dichte</b> des untersuchten Objektes unterschiedlich ist.</li>
 						</ul>
+					</section>
+					<section>
+						<p>Möchtet ihr gerne wissen, wie die Darstellung einer Heatmap technisch umgesetzt
+							wird? <br>
+							Vereinfacht ausgedrückt wird ein Grid über die Karte gelegt.
+						</p>
+						<img data-src="../946.png">
 					</section>
 					<section>
 						<p>Leaflet.heat - Eine Heatmap die die <b>Dichte</b> darstellt</p>
@@ -1887,19 +1903,20 @@
 										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
 										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
 										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										<mark>&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;</mark>
 										&lt;/head&gt;
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
 										&lt;script&gt;
 										var mymap = L.map('mapid').setView([50.1555, 7.591838], 10);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var points = [
+										<mark>var points = [
 										[50.1555, 7.591838, 0.2],
 										[50.0931, 7.664177, 0.2],
 										...
 										[50.088041, 7.652033, 0.2]
-										];
+										];</mark>
+										<mark>
 										var heat = L.heatLayer(points,
 										{
 										minOpacity: 0.95,
@@ -1909,6 +1926,7 @@
 										radius: 15,
 										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
 										}).addTo(mymap);
+										</mark>
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -1918,7 +1936,7 @@
 						</table>
 					</section>
 					<section>
-						<p>blur (unscharf)</p>
+						<p>blur (Wert für die Schärfe der Darstellung des Punktes)</p>
 						<table>
 							<tr>
 								<td>
@@ -2005,28 +2023,37 @@
 										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
 										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
 										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										<mark>&lt;script src="heatmap.js"&gt;&lt;/script&gt;</mark>
+										&lt;script src="leaflet-heatmap.js"&gt;&lt;/script&gt;
 										&lt;/head&gt;
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
 										&lt;script&gt;
-										var mymap = L.map('mapid').setView([50.1555, 7.591838], 10);
-										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var points = [
-										[50.1555, 7.591838, 0.2],
-										[50.0931, 7.664177, 0.2],
-										...
-										[50.088041, 7.652033, 0.2]
-										];
-										var heat = L.heatLayer(points,
-										{
-										minOpacity: 0.95,
-										blur: 15,
-										maxZoom: 15,
-										max: 1,
-										radius: 15,
-										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
-										}).addTo(mymap);
+										var myData={
+										max: 100,
+										data: [
+										{lat: 51.0934, lon:8.666819, value: 99},
+										..
+										{lat: 50.088041, lon:7.652033, value: 23},
+										{lat: 50.088041, lon:7.652033, value: 23}]
+										};
+										var baseLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+										var cfg = {
+										"radius": .1,
+										"maxOpacity": .5,
+										"scaleRadius": true,
+										"useLocalExtrema": true,
+										latField: 'lat',
+										lngField: 'lon',
+										valueField: 'value'
+										};
+										var heatmapLayer = new HeatmapOverlay(cfg);
+										heatmapLayer.setData(myData);
+										var map = new L.Map('mapid', {
+										center: new L.LatLng(50.0586, 7.6568),
+										zoom: 8,
+										layers: [baseLayer, heatmapLayer]
+										});
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -2061,23 +2088,21 @@
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
 										&lt;script&gt;
-										var mymap = L.map('mapid').setView([50.1555, 7.591838], 10);
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 15);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var points = [
-										[50.1555, 7.591838, 0.2],
-										[50.0931, 7.664177, 0.2],
-										...
-										[50.088041, 7.652033, 0.2]
-										];
+										var points = [];
 										var heat = L.heatLayer(points,
 										{
-										minOpacity: 0.95,
 										blur: 15,
 										maxZoom: 15,
-										max: 1,
-										radius: 15,
+										max: 1.0,
+										radius: 25,
 										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
 										}).addTo(mymap);
+										function addpoint(e){
+										heat.addLatLng(e.latlng);
+										}
+										mymap.on('click', addpoint);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -2088,7 +2113,10 @@
 					</section>
 					<section>
 						<p>Animierte Heatmaps</p>
-						<small>todo</small>
+						<small>setInterval() -> Wiederholter Aufruf einer Funktion oder Ausführung eines Codestücks mit
+							einem fest definierten Intervall zwischen den einzelnen Aufrufen
+							(https://developer.mozilla.org/de/docs/Web/API/WindowTimers/setInterval).
+						</small>
 						<table>
 							<tr>
 								<td>
@@ -2108,21 +2136,48 @@
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
 										&lt;script&gt;
-										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 15);
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 10);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 										var points = [];
-										var heat = L.heatLayer(points,
+										var points1 = [
+										[50.1555 , 7.591838 ],
+										..
+										[50.088041 , 7.652033 ],
+										[50.088041 , 7.652033 ]
+										];
+
+										var points2 = [
+										[50.0371 , 7.618306 ],
+										..
+										[50.088041 , 7.652033 ],
+										[50.088041 , 7.652033 ]
+										];
+										var points3 = [
+										[50.088 , 7.65159 ],
+										..
+										[50.088041 , 7.652033 ],
+										[50.088041 , 7.652033 ]
+										];
+										var heat = L.heatLayer(points).addTo(mymap);
+										x=1;
+										var name='';
+										var interval = setInterval(function(){run()},2000);
+										function run(){
+										mymap.removeLayer(heat);
+										name="points"+x.toString();
+										heat = L.heatLayer(
+										window[name],
+										{blur:15,maxZoom:10,radius:25,gradient:{0.4: 'blue', 0.65: 'lime', 1: 'red'}})
+										.addTo(mymap);
+										if (x == 3)
 										{
-										blur: 15,
-										maxZoom: 15,
-										max: 1.0,
-										radius: 25,
-										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
-										}).addTo(mymap);
-										function addpoint(e){
-										heat.addLatLng(e.latlng);
+										x=1;
 										}
-										mymap.on('click', addpoint);
+										else
+										{
+										x++;
+										}
+										}
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -2143,18 +2198,59 @@
 						</ul>
 					</section>
 					<section>
-						<p>http://opendatalab.de/projects/geojson-utilities/</p>
-					</section>
-					<section>
 						<p>todo</p>
 					</section>
 					<section>
-						<p>Landkreise in Deutschland auf einer Choroplethenkarten</p>
-						<small>todo</small>
+						<p>Open Data - GeoJSON Utilities</p>
+						<small>Open Data, also offene Daten, sind Daten die von jedem
+							ohne jegliche Einschränkungen verwendet und weitergegeben
+							werden dürfen.</small>
+						<small>http://opendatalab.de/projects/geojson-utilities/</small>
 						<table>
 							<tr>
 								<td>
-									<iframe data-src="../code/3/index_958.html"></iframe>
+									<iframe data-src="http://opendatalab.de/projects/geojson-utilities/"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										var ct =
+										{
+										"type":"FeatureCollection",
+										"crs":{
+										"type":"name",
+										"properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},
+										"source":"© GeoBasis-DE / BKG 2013 (Daten verändert)",
+										"features":[
+
+										{"type":"Feature",
+										"properties":
+										{
+										"ADE":6,
+										"GF":4,
+										"BSG":1,
+										"RS":"073345001001",
+										"AGS":"07334001","SDV_RS":"073345001001","GEN":"Bellheim",
+										"BEZ":"Gemeinde","IBZ":64,"BEM":"gemeinschaftsangehörig","NBD":"ja",
+										"SN_L":"07","SN_R":"3","SN_K":"34","SN_V1":"50","SN_V2":"01","SN_G":"001",
+										"FK_S3":"K","NUTS":"DEB3E","RS_0":"073345001001","AGS_0":"07334001",
+										"WSK":"2009/01/01","DEBKG_ID":"DEBKGDL20000E5ZS",
+										"destatis":{"RS":"073345001001","area":20.44,"area_date":"31.12.2014","population":8519,"population_m":4198,"population_w":4321,"population_density":417,"zip":"76756","center_lon":"8,284042","center_lat":"49,190542","travel_key":"J16","travel_desc":"Pfalz","density_key":"02","density_desc":"mittlere Besiedlungsdichte"},
+										"wikipedia":{"cid":"http://www.wikidata.org/entity/Q552382","name":"Bellheim","AGS":"07334001","_official_website":"http://www.bellheim.de/","_local_dialing_code":"07272","_postal_code":"76756"}},
+										"geometry":{"type":"Polygon","coordinates":[[[8.276302148832034,49.21145214735215],[8.295112386392997,49.21205183793759],[8.32165101909878,49.20535309521381],[8.348342142736533,49.202754603562894],[8.341595663968588,49.18567131650573],[8.322717376063137,49.18601727965002],[8.31932741219801,49.18387268431313],[8.312390772341198,49.186986159027555],[8.306072256464091,49.17409335925555],[8.295175351708146,49.17527441577822],[8.262647108228787,49.171399375592635],[8.257497919939535,49.18118640693377],[8.259740044810764,49.21103338616947],[8.276302148832034,49.21145214735215]]]}},
+
+										{"type":"Feature","properties":{"ADE":6,"GF":4,"BSG":1,"RS":"073405003205","AGS":"07340205","SDV_RS":"073405003205","GEN":"Bottenbach","BEZ":"Gemeinde","IBZ":64
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Eine Choroplethenkarten die absolute Werte darstellt</p>
+						<small>Landkreise in Rheinland-Pfalz und deren Bevölkerungsanzahl</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_957.html"></iframe>
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
@@ -2165,26 +2261,32 @@
 										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
 										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
 										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										&lt;script src="gemeinden.js"&gt;&lt;/script&gt;
 										&lt;/head&gt;
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
 										&lt;script&gt;
-										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 15);
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([49.9555 , 7.591838], 8);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var points = [];
-										var heat = L.heatLayer(points,
-										{
-										blur: 15,
-										maxZoom: 15,
-										max: 1.0,
-										radius: 25,
-										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
-										}).addTo(mymap);
-										function addpoint(e){
-										heat.addLatLng(e.latlng);
+										function color(x) {
+										return x &gt; 1000 ? '#990000' :
+										x &gt; 750 ? '#d7301f' :
+										x &gt; 500 ? '#ef6548' :
+										x &gt; 250 ? '#fc8d59' :
+										x &gt; 200 ? '#fdbb84' :
+										x &gt; 100 ? '#fdd49e' :
+										x &gt; 0   ? '#fee8c8' :'#fff7ec';
 										}
-										mymap.on('click', addpoint);
+										function myStyle(feature) {
+										return {
+										fillColor: color(feature.properties.destatis.population),
+										weight: 1,
+										opacity: 1,
+										color: 'white',
+										fillOpacity: 0.85
+										};
+										}
+										var geoJsonLayer = L.geoJson(ct, {style: myStyle}).addTo(mymap);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -2192,6 +2294,93 @@
 								</td>
 							</tr>
 						</table>
+					</section>
+					<section>
+						<p>Eine normalisierte Choroplethenkarten</p>
+						<small>Landkreise in Rheinland-Pfalz und deren Bevölkerungsdichte</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_956.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="gemeinden.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;button onclick="total()"&gt;Population&lt;/button&gt;
+										&lt;button onclick="density()"&gt;Population/Fläche&lt;/button&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([49.9555 , 7.591838], 8);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										function color(x) {
+										return x &gt; 1000 ? '#990000' :
+										x &gt; 750 ? '#d7301f' :
+										x &gt; 500 ? '#ef6548' :
+										x &gt; 250 ? '#fc8d59' :
+										x &gt; 200 ? '#fdbb84' :
+										x &gt; 100 ? '#fdd49e' :
+										x &gt; 0   ? '#fee8c8' :'#fff7ec';
+										}
+										function densityColor(x) {
+										return x &gt; 500 ? '#990000' :
+										x &gt; 400 ? '#d7301f' :
+										x &gt; 300 ? '#ef6548' :
+										x &gt; 200 ? '#fc8d59' :
+										x &gt; 100 ? '#fdbb84' :
+										x &gt; 50  ? '#fdd49e' :
+										x &gt; 0   ? '#fee8c8' :'#fff7ec';
+										}
+										function myStyle(feature) {
+										return {
+										fillColor: color(feature.properties.destatis.population),
+										weight: 1,
+										opacity: 1,
+										color: 'white',
+										fillOpacity: 0.85
+										};
+										}
+										function myDensityStyle(feature) {
+										return {
+										fillColor: densityColor(feature.properties.destatis.population/feature.properties.destatis.area),
+										weight: 1,
+										opacity: 1,
+										color: 'white',
+										fillOpacity: 0.85
+										};
+										}
+										function total(){
+										var geoJsonLayer = L.geoJson(ct, {style: myStyle}).addTo(mymap);
+										removeLayer(densitylayer);
+										}
+										function density(){
+										var densitylayer=L.geoJson(ct, {style: myDensityStyle}).addTo(mymap);
+										removeLayer(geoJsonLayer);
+										}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>In diesem Teil haben wir ...</p>
+						<ul>
+							<li>... die in den vorangehenden Kapiteln besprochenen Objekte zum visualisieren eingesetzt.</li>
+							<li class="fragment">... Plugins kennen gelernt, die Sie beim Erstellen von Heatmaps unterstützen</li>
+							<li class="fragment">... gesehen wie mir einer Leaflet Karte interagiert werden kann und wie sie animiert werden kann.</li>
+							<li class="fragment">... Choroplethenkarte von Heatmaps abgegrenzt und auf diesen absolute und relative Werte darstellt.</li>
+						</ul>
 					</section>
 				</section>
 
