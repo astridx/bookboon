@@ -8,51 +8,43 @@
 <link rel="stylesheet" href="dvf.css" />
 <script src="leaflet-dvf.js"></script>
 <script src="leaflet-dvf.markers.js"></script>
-
 </head>
 <body>
-
 <div style="height: 700px;" id="mapid"></div>
 <script>
 var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
-
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-
-var marker = new L.MapMarker([50.27264, 7.26469], {
-    radius: 30,
+var marker = new L.MapMarker([50.27264, 7.26469],
+{
+radius: 30,
 fillOpacity:0.5,
 fillColor:'orange',
 color:'purple',
 innerRadius:7,
 numberOfSides:4,
 rotation:10
-
 });
-
 mymap.addLayer(marker);
-
-
-var polygonmarker = new L.RegularPolygonMarker([50.27264, 6.26469], {
-    numberOfSides: 3,
-    rotation: 10,
-    radius: 10,
+var polygonmarker = new L.RegularPolygonMarker([50.27264, 6.26469],
+{
+numberOfSides: 3,
+rotation: 10,
+radius: 10,
 fillColor:'green',
 fillOpacity:1,
 opacity:1,
 weight:1,
 radius:30
-
 });
-
 mymap.addLayer(polygonmarker);
-
-
-var star = new L.StarMarker([50.27264, 8.26469], {numberOfPoints:8, opacity:1, weight:2, fillOpacity:0,radius:30});
+var star = new L.StarMarker([50.27264, 8.26469],
+{
+numberOfPoints:8,
+opacity:1,
+weight:2,
+fillOpacity:0,
+radius:30});
 mymap.addLayer(star);
-
-
-
 </script>
-
 </body>
 </html>

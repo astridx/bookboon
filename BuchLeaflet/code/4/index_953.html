@@ -13,11 +13,11 @@
 <body>
 <div style="height: 700px;" id="mapid"></div>
 <script>
-var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 9);
+var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 8);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 L.marker([50.27264, 7.26469], {
 icon: L.BeautifyIcon.icon(
-//{iconSize: [50, 50]}
+{iconSize: [50, 50]}
 ),
 draggable: true
 }).addTo(mymap).bindPopup("Ich bin ein beautify Marker");

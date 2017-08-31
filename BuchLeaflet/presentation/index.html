@@ -2414,9 +2414,454 @@
 							Benutzerdefinierte Marker
 						</h2>
 					</section>
+					<section>
+						<p>In diesem Teil werden wir ...</p>
+						<ul>
+							<li>... todo.</li>
+							<li class="fragment">... todo</li>
+							<li class="fragment">... todo.</li>
+							<li class="fragment">... todo.</li>
+						</ul>
+					</section>
 					<section>Vertical Slide 2</section>
+					<section>
+						<p>Ein benutzerdefinierter Marker</p>
+						<small>todo: Optionen erklären</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_955.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 10);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var greenIcon = L.icon({
+										iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
+										shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png',
+										iconSize:     [38, 95],
+										shadowSize:   [50, 64],
+										iconAnchor:   [22, 94],
+										shadowAnchor: [4, 62],
+										popupAnchor:  [-3, -76]
+										});
+										L.marker([50.27264, 7.26469], {icon: greenIcon}).addTo(mymap).bindPopup("Ich bin ein Marker mit einem individuellen Image.");
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Viele benutzerdefinierte Marker</p>
+						<small>... mithilfe der Vererbung schnell erstellt.</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_954.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 9);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var LeafIcon = L.Icon.extend({
+										options: {
+										shadowUrl: 'leaf-shadow.png',
+										iconSize:     [38, 95],
+										shadowSize:   [50, 64],
+										iconAnchor:   [22, 94],
+										shadowAnchor: [4, 62],
+										popupAnchor:  [-3, -76]
+										}
+										});
+										var greenIcon = new LeafIcon({iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png'});
+										var redIcon = new LeafIcon({iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-red.png'});
+										var orangeIcon = new LeafIcon({iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-orange.png'});
+										L.marker([50.27264, 7.26469], {icon: greenIcon}).addTo(mymap).bindPopup("Ich bin ein grüner Marker.");
+										L.marker([50.27264, 6.26469], {icon: redIcon}).addTo(mymap).bindPopup("Ich bin ein roter Marker.");
+										L.marker([50.27264, 8.26469], {icon: orangeIcon}).addTo(mymap).bindPopup("Ich bin ein oranger Marker.");
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Das Plugin BeautifyMarker</p>
+						<small>Leider habt ihr keine schöne Grafik für den Marker
+							und auch keine Zeit eine zu erstellen.<br>
+							https://github.com/marslan390/BeautifyMarker</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_953.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"&gt;
+										&lt;link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"&gt;
+										&lt;link rel="stylesheet" href="leaflet-beautify-marker-icon.css"&gt;
+										&lt;script src="leaflet-beautify-marker-icon.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 8);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										L.marker([50.27264, 7.26469], {
+										icon: L.BeautifyIcon.icon(
+										{iconSize: [50, 50]}
+										),
+										draggable: true
+										}).addTo(mymap).bindPopup("Ich bin ein beautify Marker");
+										options = {
+										icon: 'spinner',
+										spin: 'true',
+										borderColor: '#8A90B4',
+										textColor: 'white',
+										backgroundColor: '#8A90B4'
+										};
+										L.marker([50.27264, 6.26469], {
+										icon: L.BeautifyIcon.icon(options),
+										draggable: true
+										}).addTo(mymap).bindPopup("Ich bin ein beautify Marker");
+										options = {
+										icon: 'plane',
+										iconShape: 'marker',
+										borderColor: '#8D208B',
+										textColor: '#8D208B',
+										backgroundColor: 'transparent'
+										};
+										L.marker([50.27264, 8.26469], {
+										icon: L.BeautifyIcon.icon(options),
+										draggable: true
+										}).addTo(mymap).bindPopup("Ich bin ein beautify Marker");
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Marker Clustern</p>
+						<small>Ihr habt ganz viel Marker ...<br>
+							https://github.com/Leaflet/Leaflet.markercluster</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_952.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;head&gt;
+										...
+										&lt;link rel="stylesheet" href="MarkerCluster.css"/&gt;
+										&lt;link rel="stylesheet" href="MarkerCluster.Default.css"/&gt;
+										&lt;script src="leaflet.markercluster-src.js"&gt;&lt;/script&gt;
+										&lt;script src="points.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.219264, 7.19469], 13);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var markers = L.markerClusterGroup(
+										//{showCoverageOnHover : false}
+										);
+										for (var i = 0; i &lt; points.length; i++) {
+										var a = points[i];
+										var title = a[2];
+										var marker = L.marker(new L.LatLng(a[0], a[1]), { title: title });
+										marker.bindPopup(title);
+										markers.addLayer(marker);
+										}
+										mymap.addLayer(markers);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Animierte Marker 1 - Ein hüfpender Marker</p>
+						<small>https://github.com/maximeh/leaflet.bouncemarker</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_951.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="bouncemarker.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 12);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										L.marker([50.27264, 7.26469],
+										{
+										bounceOnAdd: true,
+										bounceOnAddOptions: {duration: 5000, height: 100},
+										bounceOnAddCallback: function() {alert("Gelandet!");}
+										}
+										).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Animierte Marker 2 - Ein beweglicher Marker</p>
+						<small>https://github.com/openplans/Leaflet.AnimatedMarker<br>
+							distance -> Meter; intervall -> Millisekunden
+						</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_949.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="AnimatedMarker.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;button onclick="start()"&gt;Start&lt;/button&gt;
+										&lt;button onclick="stop()"&gt;Stop&lt;/button&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 9);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var line = L.polyline(
+										[[50.68510, 7.94136],[50.68510, 7.84136],[50.68510, 7.74136],[50.68510, 7.64136],
+										[50.68510, 7.5136],[50.68510, 7.44136],[50.68510, 7.34136],[50.68510, 7.24136]]),
+										animatedMarker = L.animatedMarker(line.getLatLngs(), {
+										autoStart: false,
+										distance: 200,
+										interval: 100
+										});
+										mymap.addLayer(animatedMarker);
+										function start(){animatedMarker.start();}
+										function stop(){animatedMarker.stop();}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Animierte Marker 3 - Der Marker bewegt sich und hüpft aus dem Bild</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_948.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="AnimatedMarker.js"&gt;&lt;/script&gt;
+										&lt;script src="bouncemarker.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;button onclick="start()"&gt;Start&lt;/button&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										b = new L.Marker([51.68649, 6.94165], {bounceOnAdd: true});
+										var line = L.polyline(
+										[[50.68510, 7.94136],[50.68576, 6.94149],[51.68649, 6.94165]]),
+										animatedMarker = L.animatedMarker(line.getLatLngs(), {
+										autoStart: false,
+										distance: 2000,
+										interval: 10,
+										onEnd: function() {
+										b.addTo(mymap);
+										b.bounce({duration: 100, height: 50});
+										mymap.removeLayer(animatedMarker);
+										setTimeout('mymap.removeLayer(b)', 900);
+										}
+										});
+										mymap.addLayer(animatedMarker);
+										function start(){animatedMarker.start();}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Leaflet Data Visualization Framework (DVF)</p>
+						<small>https://github.com/humangeo/leaflet-dvf/<br>
+						Das Ziel dieses Frameworks ist es rohe Daten in überzeugende Karten
+						zu verwandeln.</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_946.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" /&gt;
+										&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"&gt;&lt;/script&gt;
+										&lt;link rel="stylesheet" href="dvf.css" /&gt;
+										&lt;script src="leaflet-dvf.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-dvf.markers.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var options = {
+										data: {
+										'data1': 20,
+										'data2': 50,
+										'data3': 10,
+										'data4': 20
+										},
+										chartOptions: {
+										'data1': {
+										fillColor: 'blue',
+										minValue: 0,
+										maxValue: 50,
+										maxHeight: 30,
+										displayText: function (value) {
+										//return value.toFixed(2);
+										return 'Mein Text';
+										}
+										},
+										'data2': {
+										fillColor: 'red',
+										minValue: 0,
+										maxValue: 50,
+										maxHeight: 30,
+										},
+										'data3': {
+										fillColor: 'green',
+										minValue: 0,
+										maxValue: 50,
+										maxHeight: 30,
+										},
+										'data4': {
+										fillColor: 'yellow',
+										minValue: 0,
+										maxValue: 50,
+										maxHeight: 30,
+										}
+										},
+										weight: 1,
+										color: '#000000',
+										radius:30,
+										fillOpacity:1
+										};
+										var bar = new L.BarChartMarker([50.27264, 7.26469], options);
+										mymap.addLayer(bar);
+										var radial = new L.RadialBarChartMarker([50.27264, 8.26469], options);
+										mymap.addLayer(radial);
+										var pie= new L.PieChartMarker([50.27264, 6.26469], options);
+										mymap.addLayer(pie);
+										var cox = new L.CoxcombChartMarker([50.97264, 7.26469], options);
+										mymap.addLayer(cox);
+										var stack = new L.StackedRegularPolygonMarker([50.97264, 8.26469], options);
+										mymap.addLayer(stack);
+										var radialmeter= new L.RadialMeterMarker([50.97264, 6.26469], options);
+										mymap.addLayer(radialmeter);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
 					<section>Vertical Slide 1</section>
+					<section>
+						<p>In diesem Teil haben wir ...</p>
+						<ul>
+							<li>... todo.</li>
+							<li class="fragment">... todo.</li>
+							<li class="fragment">... todo.</li>
+							<li class="fragment">... todo.</li>
+						</ul>
+					</section>
 				</section>
+
+
+
+
+
+
+
+
+
 
 
 
