@@ -3,29 +3,25 @@
 <head>
 <meta charset="utf-8"/>
 <title>Eine OSM Karte mit Leaflet</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<link rel="stylesheet" href="../leaflet/leaflet.css" />
+<script src="../leaflet/leaflet.js"></script>
 <script src="esri-leaflet.js"></script>
-<link rel="stylesheet" href="esri-leaflet-geocoder.css">
 <script src="esri-leaflet-geocoder.js"></script>
 </head>
 <body>
 <div style="height: 700px;" id="mapid"></div>
 <script>
-var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 3);
-
+var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
 L.esri.basemapLayer('Gray').addTo(mymap);
-
 mymap.on('click', function(e){
 var r = L.marker();
 L.esri.Geocoding.reverseGeocode()
-  .latlng(e.latlng)
-  .run(function(error, result, response){
-	  //alert(result.address);
-	  console.log(result.address);
-	  mymap.removeLayer(r);
-      r = L.marker(result.latlng).addTo(mymap).bindPopup(result.address.Match_addr).openPopup();
-  });
+.latlng(e.latlng)
+.run(function(error, result, response){
+console.log(result.address);
+mymap.removeLayer(r);
+r = L.marker(result.latlng).addTo(mymap).bindPopup(result.address.Match_addr).openPopup();
+});
 });
 </script>
 </body>

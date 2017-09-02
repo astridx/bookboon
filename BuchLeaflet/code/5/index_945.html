@@ -3,28 +3,21 @@
 <head>
 <meta charset="utf-8"/>
 <title>Eine OSM Karte mit Leaflet</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
-<script src="https://unpkg.com/esri-leaflet@2.1.0/dist/esri-leaflet.js"
-    integrity="sha512-Tojl3UMd387f6DdAJlo+fKfJZiP55fYT+6Y58yKbHydnueOdSFOxrgLPuUxm7VW1szEt3hZVwv3V2sSUCuT35w=="
-    crossorigin=""></script>
+<link rel="stylesheet" href="../leaflet/leaflet.css" />
+<script src="../leaflet/leaflet.js"></script>
+<script src="esri-leaflet-debug.js"></script>
 </head>
 <body>
-
 <div style="height: 700px;" id="mapid"></div>
 <script>
 var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
-
 var gray = L.esri.basemapLayer('Gray').addTo(mymap);
-//var imagery = L.esri.basemapLayer('ImageryLabels').addTo(mymap);
-
-gray.setOpacity(1);
+var graylabels = L.esri.basemapLayer('GrayLabels').addTo(mymap);
+gray.setOpacity(0.5);
 gray.on('load', alertme);
 function alertme(){
 alert("Fertig!");
 }
-
 </script>
-
 </body>
 </html>
