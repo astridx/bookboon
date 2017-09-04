@@ -32,7 +32,7 @@
 
 				<!-- Teil 0 Einleitung-->
 				<section>
-					<table>
+					<table style="height:700px">
 						<tr>
 							<td style="border: 0px solid black;">
 								<p>Guten Morgen</p>
@@ -46,7 +46,7 @@
 				<section data-background-color="#679ed4"> <!-- 679ed4 f9b431 85c03c-->
 						<section>
 						<h2>
-							Hier und Jetzt!
+							Fangen wir an!
 						</h2>
 						</section>
 						<section>
@@ -54,7 +54,6 @@
 								<li>Wer bin ich</li>
 								<li class="fragment">Was solltest du mitbringen</li>
 								<li class="fragment">Was machen wir konkret in den nächsten 45 Minuten?</li>
-								<li class="fragment">Link zur Präsentation</li>
 							</ul>
 						</section>
 				</section>
@@ -259,21 +258,21 @@
 						Zoom­stufe 0; Kachelanzahl: 1<br>
 						Kachelbreite 40.038 km; 1 Pixel entspricht 156 km<br>
 						</p>
-						<img data-src="./images/999.png">
+						<img data-src="../999.png">
 					</section>
 					<section>
 						<p>
 						Zoom­stufe 1; Kachelanzahl: 4<br>
 						Kachelbreite 20.019 km; 1 Pixel entspricht 78 km<br>
 						</p>
-						<img data-src="./images/999a.png">
+						<img data-src="../999a.png">
 					</section>
 					<section>
 						<p>
 						Zoom­stufe 2; Kachelanzahl: 16<br>
 						Kachelbreite 5.005 km; 1 Pixel entspricht 39 km<br>
 						</p>
-						<img data-src="./images/999b.png">
+						<img data-src="../999b.png">
 					</section>
 					<section>
 					<table>
@@ -327,7 +326,7 @@
 						<p style="font-size:smaller;">
 						https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=x
 						</p>
-						<img data-src="./images/998.png">
+						<img data-src="../998.png">
 					</section>
 					<section>
 						<p style="font-size:smaller;">
@@ -336,7 +335,7 @@
 						<p style="font-size:smaller;">
 						https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=x
 						</p>
-						<img data-src="./images/998a.png">
+						<img data-src="../998a.png">
 					</section>
 					<section>Tile layer providers</section>
 					<section>
@@ -518,7 +517,7 @@
 					</section>
 					<section>
 						<p>Erinnert ihr euch an den 27. Juli 2017?</p>
-						<img data-src="./images/994.png">
+						<img data-src="../994.png">
 					</section>
 					<section>
 						<p>Weitere Informationen beim
@@ -1229,7 +1228,7 @@
 						<table>
 							<tr>
 								<td>
-									<img data-src="../todo.png">
+									<img data-src="../962b.jpg">
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
@@ -1861,8 +1860,531 @@
 							Heatmaps und Choroplethenkarten
 						</h2>
 					</section>
-					<section>Vertical Slide 2</section>
-					<section>Vertical Slide 1</section>
+					<section>
+						<p>In diesem Teil werden wir ...</p>
+						<ul>
+							<li>... die in den vorangehenden Kapiteln besprochenen Objekte zum visualisieren einsetzen.</li>
+							<li class="fragment">... Plugins kennenlernen, die dich beim Erstellen von Heatmaps unterstützen</li>
+							<li class="fragment">... sehen wie wir mit einer Leaflet Karte interagieren und diese animieren können.</li>
+							<li class="fragment">... Choroplethenkarte von Heatmaps abgegrenzt und auf diesen absolute und relative Werte darstellt.</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Heatmap / Wärmebild</h3>
+					</section>
+					<section>
+						<ul>
+							<li>In der grafischen Darstellung kristallisieren sich besonders markante Werte oft schnell heraus.</li>
+							<li class="fragment">Eine Heatmap ist im Grunde genommen ein Diagramm, mit dem Daten visualisiert werden.</li>
+							<li class="fragment">Heatmaps färben Bereich unterschiedlich, wenn die <b>Intensität</b> oder die <b>Dichte</b> des untersuchten Objektes unterschiedlich ist.</li>
+						</ul>
+					</section>
+					<section>
+						<p>Möchtet ihr gerne wissen, wie die Darstellung einer Heatmap technisch umgesetzt
+							wird? <br>
+							Vereinfacht ausgedrückt wird ein Grid über die Karte gelegt.
+						</p>
+						<img data-src="../946.png">
+					</section>
+					<section>
+						<p>Leaflet.heat - Eine Heatmap die die <b>Dichte</b> darstellt</p>
+						<small>https://github.com/Leaflet/Leaflet.heat</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_965.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										<mark>&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;</mark>
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.1555, 7.591838], 10);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										<mark>var points = [
+										[50.1555, 7.591838, 0.2],
+										[50.0931, 7.664177, 0.2],
+										...
+										[50.088041, 7.652033, 0.2]
+										];</mark>
+										<mark>
+										var heat = L.heatLayer(points,
+										{
+										minOpacity: 0.95,
+										blur: 15,
+										maxZoom: 15,
+										max: 1,
+										radius: 15,
+										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+										}).addTo(mymap);
+										</mark>
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>blur (Wert für die Schärfe der Darstellung des Punktes)</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../980a.png">
+									<p>blur: 1</p>
+								</td>
+								<td>
+									<img data-src="../980b.png">
+									<p>blur: 40</p>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>maxZoom</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../980d.png">
+									<p>maxZoom: 13</p>
+								</td>
+								<td>
+									<img data-src="../980c.png">
+									<p>maxZoom: 6</p>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Die Methoden eines Leaflet.heat Layers</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_963.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										..
+										&lt;body&gt;
+										&lt;button onclick="add()"&gt;Punkt hinzufügen&lt;/button&gt;
+										&lt;br&gt;
+										&lt;button onclick="newPoint()"&gt;Daten neu setzen&lt;/button&gt;
+										&lt;br&gt;
+										&lt;button onclick="reset()"&gt;Reset&lt;/button&gt;
+										&lt;br&gt;
+										&lt;button onclick="setOptions()"&gt;Farben ändern&lt;/button&gt;
+										..
+									</code></pre>
+									<pre><code data-trim data-noescape>
+										..
+										function add() {
+										heat.addLatLng([50.1, 7.1, 0.2]);
+										}
+										function newPoint() {
+										heat.setLatLngs([[50.5, 7, 0.2]]);
+										}
+										function reset() {
+										heat.setLatLngs(points);
+										}
+										function setOptions() {
+										heat.setOptions({gradient: {0.4: 'black', 0.65: 'gray', 1: 'white'}
+										});
+										}
+										..
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>heatmap.js - Eine Heatmap die die <b>Intensität</b> darstellt</p>
+						<small>https://github.com/pa7/heatmap.js</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_961.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										<mark>&lt;script src="heatmap.js"&gt;&lt;/script&gt;</mark>
+										&lt;script src="leaflet-heatmap.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var myData={
+										max: 100,
+										data: [
+										{lat: 51.0934, lon:8.666819, value: 99},
+										..
+										{lat: 50.088041, lon:7.652033, value: 23},
+										{lat: 50.088041, lon:7.652033, value: 23}]
+										};
+										var baseLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+										var cfg = {
+										"radius": .1,
+										"maxOpacity": .5,
+										"scaleRadius": true,
+										"useLocalExtrema": true,
+										latField: 'lat',
+										lngField: 'lon',
+										valueField: 'value'
+										};
+										var heatmapLayer = new HeatmapOverlay(cfg);
+										heatmapLayer.setData(myData);
+										var map = new L.Map('mapid', {
+										center: new L.LatLng(50.0586, 7.6568),
+										zoom: 8,
+										layers: [baseLayer, heatmapLayer]
+										});
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Unterschiedliche Ausprägungen der Intensitätspunkte</p>
+						<img data-src="../949.png">
+					</section>
+					<section>
+						<p>Interaktive Heatmaps</p>
+						<small>todo</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_959.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 15);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var points = [];
+										var heat = L.heatLayer(points,
+										{
+										blur: 15,
+										maxZoom: 15,
+										max: 1.0,
+										radius: 25,
+										gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+										}).addTo(mymap);
+										function addpoint(e){
+										heat.addLatLng(e.latlng);
+										}
+										mymap.on('click', addpoint);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Animierte Heatmaps</p>
+						<small>setInterval() -> Wiederholter Aufruf einer Funktion oder Ausführung eines Codestücks mit
+							einem fest definierten Intervall zwischen den einzelnen Aufrufen
+							(https://developer.mozilla.org/de/docs/Web/API/WindowTimers/setInterval).
+						</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_958.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 10);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var points = [];
+										var points1 = [
+										[50.1555 , 7.591838 ],
+										..
+										[50.088041 , 7.652033 ],
+										[50.088041 , 7.652033 ]
+										];
+
+										var points2 = [
+										[50.0371 , 7.618306 ],
+										..
+										[50.088041 , 7.652033 ],
+										[50.088041 , 7.652033 ]
+										];
+										var points3 = [
+										[50.088 , 7.65159 ],
+										..
+										[50.088041 , 7.652033 ],
+										[50.088041 , 7.652033 ]
+										];
+										var heat = L.heatLayer(points).addTo(mymap);
+										x=1;
+										var name='';
+										var interval = setInterval(function(){run()},2000);
+										function run(){
+										mymap.removeLayer(heat);
+										name="points"+x.toString();
+										heat = L.heatLayer(
+										window[name],
+										{blur:15,maxZoom:10,radius:25,gradient:{0.4: 'blue', 0.65: 'lime', 1: 'red'}})
+										.addTo(mymap);
+										if (x == 3)
+										{
+										x=1;
+										}
+										else
+										{
+										x++;
+										}
+										}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h3>Choroplethenkarten</h3>
+					</section>
+					<section>
+						<ul>
+							<li>Die Choroplethenkarten ist eine Variante der Heatmap.</li>
+							<li class="fragment">In einer Choroplethenkarte folgen die Farbflächen keinem starren Rechteckraster, sondern sind Gebieten auf einer Landkarte zugeordnet.</li>
+							<li class="fragment">Das Schöne ist, dass wir mit Leaflet keine zusätzlichen Plugins benötigen. Leaflet ist wie dafür gemacht, GeoJSON Daten als Choroplethenkarte anzuzeigen.</li>
+							<li class="fragment">Choroplethenkarten werden in Deutschland auch Flächenkartogramme oder Flächenwertstufenkarten genannt.</li>
+						</ul>
+					</section>
+					<section>
+						<p>todo</p>
+					</section>
+					<section>
+						<p>Open Data - GeoJSON Utilities</p>
+						<small>Open Data, also offene Daten, sind Daten die von jedem
+							ohne jegliche Einschränkungen verwendet und weitergegeben
+							werden dürfen.</small>
+						<small>http://opendatalab.de/projects/geojson-utilities/</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="http://opendatalab.de/projects/geojson-utilities/"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										var ct =
+										{
+										"type":"FeatureCollection",
+										"crs":{
+										"type":"name",
+										"properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},
+										"source":"© GeoBasis-DE / BKG 2013 (Daten verändert)",
+										"features":[
+
+										{"type":"Feature",
+										"properties":
+										{
+										"ADE":6,
+										"GF":4,
+										"BSG":1,
+										"RS":"073345001001",
+										"AGS":"07334001","SDV_RS":"073345001001","GEN":"Bellheim",
+										"BEZ":"Gemeinde","IBZ":64,"BEM":"gemeinschaftsangehörig","NBD":"ja",
+										"SN_L":"07","SN_R":"3","SN_K":"34","SN_V1":"50","SN_V2":"01","SN_G":"001",
+										"FK_S3":"K","NUTS":"DEB3E","RS_0":"073345001001","AGS_0":"07334001",
+										"WSK":"2009/01/01","DEBKG_ID":"DEBKGDL20000E5ZS",
+										<mark>"destatis":</mark>{"RS":"073345001001",<mark>"area":20.44</mark>,"area_date":"31.12.2014",<mark>"population":8519</mark>,"population_m":4198,"population_w":4321,"population_density":417,"zip":"76756","center_lon":"8,284042","center_lat":"49,190542","travel_key":"J16","travel_desc":"Pfalz","density_key":"02","density_desc":"mittlere Besiedlungsdichte"},
+										"wikipedia":{"cid":"http://www.wikidata.org/entity/Q552382","name":"Bellheim","AGS":"07334001","_official_website":"http://www.bellheim.de/","_local_dialing_code":"07272","_postal_code":"76756"}},
+										"geometry":{"type":"Polygon","coordinates":[[[8.276302148832034,49.21145214735215],[8.295112386392997,49.21205183793759],[8.32165101909878,49.20535309521381],[8.348342142736533,49.202754603562894],[8.341595663968588,49.18567131650573],[8.322717376063137,49.18601727965002],[8.31932741219801,49.18387268431313],[8.312390772341198,49.186986159027555],[8.306072256464091,49.17409335925555],[8.295175351708146,49.17527441577822],[8.262647108228787,49.171399375592635],[8.257497919939535,49.18118640693377],[8.259740044810764,49.21103338616947],[8.276302148832034,49.21145214735215]]]}},
+
+										{"type":"Feature",
+										"properties":
+										{"ADE":6,
+										...
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Eine Choroplethenkarten die absolute Werte darstellt</p>
+						<small>Landkreise in Rheinland-Pfalz und deren Bevölkerungsanzahl</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_957.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="gemeinden.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([49.9555 , 7.591838], 8);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										function color(x) {
+										return x &gt; 1000 ? '#990000' :
+										x &gt; 750 ? '#d7301f' :
+										x &gt; 500 ? '#ef6548' :
+										x &gt; 250 ? '#fc8d59' :
+										x &gt; 200 ? '#fdbb84' :
+										x &gt; 100 ? '#fdd49e' :
+										x &gt; 0   ? '#fee8c8' :'#fff7ec';
+										}
+										function myStyle(feature) {
+										return {
+										fillColor: color(feature.properties.destatis.population),
+										weight: 1,
+										opacity: 1,
+										color: 'white',
+										fillOpacity: 0.85
+										};
+										}
+										var geoJsonLayer = L.geoJson(ct, {style: myStyle}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Eine normalisierte Choroplethenkarten</p>
+						<small>Landkreise in Rheinland-Pfalz und deren Bevölkerungsdichte</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/3/index_956.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="gemeinden.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;button onclick="total()"&gt;Population&lt;/button&gt;
+										&lt;button onclick="density()"&gt;Population/Fläche&lt;/button&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([49.9555 , 7.591838], 8);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										function color(x) {
+										return x &gt; 1000 ? '#990000' :
+										x &gt; 750 ? '#d7301f' :
+										x &gt; 500 ? '#ef6548' :
+										x &gt; 250 ? '#fc8d59' :
+										x &gt; 200 ? '#fdbb84' :
+										x &gt; 100 ? '#fdd49e' :
+										x &gt; 0   ? '#fee8c8' :'#fff7ec';
+										}
+										function densityColor(x) {
+										return x &gt; 500 ? '#990000' :
+										x &gt; 400 ? '#d7301f' :
+										x &gt; 300 ? '#ef6548' :
+										x &gt; 200 ? '#fc8d59' :
+										x &gt; 100 ? '#fdbb84' :
+										x &gt; 50  ? '#fdd49e' :
+										x &gt; 0   ? '#fee8c8' :'#fff7ec';
+										}
+										function myStyle(feature) {
+										return {
+										fillColor: color(feature.properties.destatis.population),
+										weight: 1,
+										opacity: 1,
+										color: 'white',
+										fillOpacity: 0.85
+										};
+										}
+										function myDensityStyle(feature) {
+										return {
+										fillColor: densityColor(feature.properties.destatis.population/feature.properties.destatis.area),
+										weight: 1,
+										opacity: 1,
+										color: 'white',
+										fillOpacity: 0.85
+										};
+										}
+										function total(){
+										var geoJsonLayer = L.geoJson(ct, {style: myStyle}).addTo(mymap);
+										removeLayer(densitylayer);
+										}
+										function density(){
+										var densitylayer=L.geoJson(ct, {style: myDensityStyle}).addTo(mymap);
+										removeLayer(geoJsonLayer);
+										}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>In diesem Teil haben wir ...</p>
+						<ul>
+							<li>... die in den vorangehenden Kapiteln besprochenen Objekte zum visualisieren eingesetzt.</li>
+							<li class="fragment">... Plugins kennen gelernt, die Sie beim Erstellen von Heatmaps unterstützen</li>
+							<li class="fragment">... gesehen wie mir einer Leaflet Karte interagiert werden kann und wie sie animiert werden kann.</li>
+							<li class="fragment">... Choroplethenkarte von Heatmaps abgegrenzt und auf diesen absolute und relative Werte darstellt.</li>
+						</ul>
+					</section>
 				</section>
 
 
@@ -1892,9 +2414,456 @@
 							Benutzerdefinierte Marker
 						</h2>
 					</section>
+					<section>
+						<p>In diesem Teil werden wir ...</p>
+						<ul>
+							<li>... todo.</li>
+							<li class="fragment">... todo</li>
+							<li class="fragment">... todo.</li>
+							<li class="fragment">... todo.</li>
+						</ul>
+					</section>
 					<section>Vertical Slide 2</section>
+					<section>
+						<p>Ein benutzerdefinierter Marker</p>
+						<small>todo: Optionen erklären</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_955.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 10);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var greenIcon = L.icon({
+										iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
+										shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png',
+										iconSize:     [38, 95],
+										shadowSize:   [50, 64],
+										iconAnchor:   [22, 94],
+										shadowAnchor: [4, 62],
+										popupAnchor:  [-3, -76]
+										});
+										L.marker([50.27264, 7.26469], {icon: greenIcon}).addTo(mymap).bindPopup("Ich bin ein Marker mit einem individuellen Image.");
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Viele benutzerdefinierte Marker</p>
+						<small>... mithilfe der Vererbung schnell erstellt.</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_954.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 9);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var LeafIcon = L.Icon.extend({
+										options: {
+										shadowUrl: 'leaf-shadow.png',
+										iconSize:     [38, 95],
+										shadowSize:   [50, 64],
+										iconAnchor:   [22, 94],
+										shadowAnchor: [4, 62],
+										popupAnchor:  [-3, -76]
+										}
+										});
+										var greenIcon = new LeafIcon({iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png'});
+										var redIcon = new LeafIcon({iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-red.png'});
+										var orangeIcon = new LeafIcon({iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-orange.png'});
+										L.marker([50.27264, 7.26469], {icon: greenIcon}).addTo(mymap).bindPopup("Ich bin ein grüner Marker.");
+										L.marker([50.27264, 6.26469], {icon: redIcon}).addTo(mymap).bindPopup("Ich bin ein roter Marker.");
+										L.marker([50.27264, 8.26469], {icon: orangeIcon}).addTo(mymap).bindPopup("Ich bin ein oranger Marker.");
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Das Plugin BeautifyMarker</p>
+						<small>Leider habt ihr keine schöne Grafik für den Marker
+							und auch keine Zeit eine zu erstellen.<br>
+							https://github.com/marslan390/BeautifyMarker</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_953.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"&gt;
+										&lt;link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"&gt;
+										&lt;link rel="stylesheet" href="leaflet-beautify-marker-icon.css"&gt;
+										&lt;script src="leaflet-beautify-marker-icon.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 8);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										L.marker([50.27264, 7.26469], {
+										icon: L.BeautifyIcon.icon(
+										{iconSize: [50, 50]}
+										),
+										draggable: true
+										}).addTo(mymap).bindPopup("Ich bin ein beautify Marker");
+										options = {
+										icon: 'spinner',
+										spin: 'true',
+										borderColor: '#8A90B4',
+										textColor: 'white',
+										backgroundColor: '#8A90B4'
+										};
+										L.marker([50.27264, 6.26469], {
+										icon: L.BeautifyIcon.icon(options),
+										draggable: true
+										}).addTo(mymap).bindPopup("Ich bin ein beautify Marker");
+										options = {
+										icon: 'plane',
+										iconShape: 'marker',
+										borderColor: '#8D208B',
+										textColor: '#8D208B',
+										backgroundColor: 'transparent'
+										};
+										L.marker([50.27264, 8.26469], {
+										icon: L.BeautifyIcon.icon(options),
+										draggable: true
+										}).addTo(mymap).bindPopup("Ich bin ein beautify Marker");
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Marker Clustern</p>
+						<small>Ihr habt ganz viel Marker ...<br>
+							https://github.com/Leaflet/Leaflet.markercluster</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_952.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;head&gt;
+										...
+										&lt;link rel="stylesheet" href="MarkerCluster.css"/&gt;
+										&lt;link rel="stylesheet" href="MarkerCluster.Default.css"/&gt;
+										&lt;script src="leaflet.markercluster-src.js"&gt;&lt;/script&gt;
+										&lt;script src="points.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.219264, 7.19469], 13);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var markers = L.markerClusterGroup(
+										//{showCoverageOnHover : false}
+										);
+										for (var i = 0; i &lt; points.length; i++) {
+										var a = points[i];
+										var title = a[2];
+										var marker = L.marker(new L.LatLng(a[0], a[1]), { title: title });
+										marker.bindPopup(title);
+										markers.addLayer(marker);
+										}
+										mymap.addLayer(markers);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Animierte Marker 1 - Ein hüfpender Marker</p>
+						<small>https://github.com/maximeh/leaflet.bouncemarker</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_951.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="bouncemarker.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 12);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										L.marker([50.27264, 7.26469],
+										{
+										bounceOnAdd: true,
+										bounceOnAddOptions: {duration: 5000, height: 100},
+										bounceOnAddCallback: function() {alert("Gelandet!");}
+										}
+										).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Animierte Marker 2 - Ein beweglicher Marker</p>
+						<small>https://github.com/openplans/Leaflet.AnimatedMarker<br>
+							distance -> Meter; intervall -> Millisekunden
+						</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_949.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="AnimatedMarker.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;button onclick="start()"&gt;Start&lt;/button&gt;
+										&lt;button onclick="stop()"&gt;Stop&lt;/button&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 9);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var line = L.polyline(
+										[[50.68510, 7.94136],[50.68510, 7.84136],[50.68510, 7.74136],[50.68510, 7.64136],
+										[50.68510, 7.5136],[50.68510, 7.44136],[50.68510, 7.34136],[50.68510, 7.24136]]),
+										animatedMarker = L.animatedMarker(line.getLatLngs(), {
+										autoStart: false,
+										distance: 200,
+										interval: 100
+										});
+										mymap.addLayer(animatedMarker);
+										function start(){animatedMarker.start();}
+										function stop(){animatedMarker.stop();}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Animierte Marker 3 - Der Marker bewegt sich und hüpft aus dem Bild</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_948.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="AnimatedMarker.js"&gt;&lt;/script&gt;
+										&lt;script src="bouncemarker.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;button onclick="start()"&gt;Start&lt;/button&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										b = new L.Marker([51.68649, 6.94165], {bounceOnAdd: true});
+										var line = L.polyline(
+										[[50.68510, 7.94136],[50.68576, 6.94149],[51.68649, 6.94165]]),
+										animatedMarker = L.animatedMarker(line.getLatLngs(), {
+										autoStart: false,
+										distance: 2000,
+										interval: 10,
+										onEnd: function() {
+										b.addTo(mymap);
+										b.bounce({duration: 100, height: 50});
+										mymap.removeLayer(animatedMarker);
+										setTimeout('mymap.removeLayer(b)', 900);
+										}
+										});
+										mymap.addLayer(animatedMarker);
+										function start(){animatedMarker.start();}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Leaflet Data Visualization Framework (DVF)</p>
+						<small>https://github.com/humangeo/leaflet-dvf/<br>
+						Das Ziel dieses Frameworks ist es rohe Daten in überzeugende Karten
+						zu verwandeln.</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/4/index_946.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" /&gt;
+										&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"&gt;&lt;/script&gt;
+										&lt;link rel="stylesheet" href="dvf.css" /&gt;
+										&lt;script src="leaflet-dvf.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-dvf.markers.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var options = {
+										data: {
+										'data1': 20,
+										'data2': 50,
+										'data3': 10,
+										'data4': 20
+										},
+										chartOptions: {
+										'data1': {
+										fillColor: 'blue',
+										minValue: 0,
+										maxValue: 50,
+										maxHeight: 30,
+										displayText: function (value) {
+										//return value.toFixed(2);
+										return 'Mein Text';
+										}
+										},
+										'data2': {
+										fillColor: 'red',
+										minValue: 0,
+										maxValue: 50,
+										maxHeight: 30,
+										},
+										'data3': {
+										fillColor: 'green',
+										minValue: 0,
+										maxValue: 50,
+										maxHeight: 30,
+										},
+										'data4': {
+										fillColor: 'yellow',
+										minValue: 0,
+										maxValue: 50,
+										maxHeight: 30,
+										}
+										},
+										weight: 1,
+										color: '#000000',
+										radius:30,
+										fillOpacity:1
+										};
+										var bar = new L.BarChartMarker([50.27264, 7.26469], options);
+										mymap.addLayer(bar);
+										var radial = new L.RadialBarChartMarker([50.27264, 8.26469], options);
+										mymap.addLayer(radial);
+										var pie= new L.PieChartMarker([50.27264, 6.26469], options);
+										mymap.addLayer(pie);
+										var cox = new L.CoxcombChartMarker([50.97264, 7.26469], options);
+										mymap.addLayer(cox);
+										var stack = new L.StackedRegularPolygonMarker([50.97264, 8.26469], options);
+										mymap.addLayer(stack);
+										var radialmeter= new L.RadialMeterMarker([50.97264, 6.26469], options);
+										mymap.addLayer(radialmeter);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
 					<section>Vertical Slide 1</section>
+					<section>
+						<p>In diesem Teil haben wir ...</p>
+						<ul>
+							<li>... todo.</li>
+							<li class="fragment">... todo.</li>
+							<li class="fragment">... todo.</li>
+							<li class="fragment">... todo.</li>
+						</ul>
+					</section>
 				</section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1911,9 +2880,593 @@
 							ESRI
 						</h2>
 					</section>
-					<section>Vertical Slide 2</section>
-					<section>Vertical Slide 1</section>
+					<section>
+						<p>In diesem Teil werden wir ...</p>
+						<ul>
+							<li>... uns die Karten die ESRI anbietet ansehen.</li>
+							<li class="fragment">... gucken was sich hinter dem Begriff Shapefile versteckt.</li>
+							<li class="fragment">... ESRI Webservices kennen lernen.</li>
+							<li class="fragment"><ul>
+								<li class="fragment">... L.esri.DynamicMapLayer.</li>
+								<li class="fragment">... Geocoding.</li>
+								<li class="fragment">... Mit Query Layern nur die passenden Daten laden.</li>
+							</ul></li>
+						</ul>
+					</section>
+					<section>
+						<p>L.esri.DynamicMapLayer</p>
+						<small>todo</small>
+					</section>
+					<section>
+						<p>BaseLayer 1</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_945.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet-debug.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
+										var gray = L.esri.basemapLayer('Gray').addTo(mymap);
+										var graylabels = L.esri.basemapLayer('GrayLabels').addTo(mymap);
+										gray.setOpacity(0.5);
+										gray.on('load', alertme);
+										function alertme(){
+										alert("Fertig!");
+										}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>BaseLayer 2</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_944.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet-debug.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;select
+										style ="position: absolute;top: 10px;right:10px;z-index: 400;"
+										id="basemaps"
+										onChange="changeBasemap(basemaps)"
+										&gt;
+										&lt;option value="Topographic"&gt;Topographic&lt;/option&gt;
+										&lt;option value="Streets"&gt;Streets&lt;/option&gt;
+										&lt;option value="NationalGeographic"&gt;National Geographic&lt;/option&gt;
+										&lt;option value="Oceans"&gt;Oceans&lt;/option&gt;
+										&lt;option value="Gray"&gt;Gray&lt;/option&gt;
+										&lt;option value="DarkGray"&gt;Dark Gray&lt;/option&gt;
+										&lt;option value="Imagery"&gt;Imagery&lt;/option&gt;
+										&lt;option value="ShadedRelief"&gt;Shaded Relief&lt;/option&gt;
+										&lt;option value="Terrain"&gt;Terrain&lt;/option&gt;
+										&lt;option value="USATopo"&gt;USATopo	&lt;/option&gt;
+										&lt;/select&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
+										var layer = L.esri.basemapLayer('Gray').addTo(mymap);
+										function changeBasemap(basemaps){
+										var basemap = basemaps.value;
+										if (layer) {
+										mymap.removeLayer(layer);
+										}
+										layer = L.esri.basemapLayer(basemap);
+										mymap.addLayer(layer);
+										}
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Shapefiles</p>
+						<small>todo</small>
+					</section>
+					<section>
+						<p>Shapefiles 1</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_943.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="shp.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet.shpfile.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 6);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var shpfile = new L.Shapefile('vg2500_geo84.zip');
+										shpfile.addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Shapefiles 2</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_942.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="shp.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet.shpfile.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 6);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var shpfile = new L.Shapefile('vg2500_geo84.zip',
+										{style:function(feature){return {color:"black",fillColor:"red",fillOpacity:.75}}}
+										);
+										shpfile.addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Shapefiles 3</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_941.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML>
+										&gt;html lang="de">
+										&gt;head>
+										&gt;meta charset="utf-8"/>
+										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
+										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
+										&gt;script src="../leaflet/leaflet.js">&gt;/script>
+										&gt;script src="shp.js">&gt;/script>
+										&gt;script src="leaflet.shpfile.js">&gt;/script>
+										&gt;/head>
+										&gt;body>
+										&gt;div style="height: 700px;" id="mapid">&gt;/div>
+										&gt;script>
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 5);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var shpfile = new L.Shapefile(
+										'vg2500_geo84.zip',
+										{
+										onEachFeature:function(feature, layer)
+										{
+										layer.bindPopup(feature.properties.GEN);
+										}
+										});
+										shpfile.addTo(mymap);
+										&gt;/script>
+										&gt;/body>
+										&gt;/html>
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Shapefiles 4</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_940.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML>
+										&gt;html lang="de">
+										&gt;head>
+										&gt;meta charset="utf-8"/>
+										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
+										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
+										&gt;script src="../leaflet/leaflet.js">&gt;/script>
+										&gt;script src="shp.js">&gt;/script>
+										&gt;script src="leaflet.shpfile.js">&gt;/script>
+										&gt;/head>
+										&gt;body>
+										&gt;div style="height: 700px;" id="mapid">&gt;/div>
+										&gt;script>
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 5);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var shpfile = new L.Shapefile(
+										'vg2500_geo84.zip',
+										{
+										onEachFeature:function(feature, layer)
+										{
+										var holder=[];
+										for (var key in feature.properties){
+										holder.push(key+": "+feature.properties[key]+"&gt;br>");
+										popupContent=holder.join("");
+										layer.bindPopup(popupContent);
+										}
+										}});
+										shpfile.addTo(mymap);
+										&gt;/script>
+										&gt;/body>
+										&gt;/html>
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>ESRI Webservices</p>
+						<small>DynamicMaps, Geocoding, QueryLayer</small>
+					</section>
+					<section>
+						<p>ESRI Webservice</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_939.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML>
+										&gt;html lang="de">
+										&gt;head>
+										&gt;meta charset="utf-8"/>
+										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
+										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
+										&gt;script src="../leaflet/leaflet.js">&gt;/script>
+										&gt;script src="esri-leaflet.js">&gt;/script>
+										&gt;/head>
+										&gt;body>
+										&gt;div style="height: 700px;" id="mapid">&gt;/div>
+										&gt;script>
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
+										//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										L.esri.basemapLayer('Gray').addTo(mymap);
+										var url = "https://geoportal.stadt-koeln.de/arcgis/rest/services/Behindertenparkplaetze/MapServer";
+										var dMap = L.esri.dynamicMapLayer({
+										url: url,
+										opacity : 0.25,
+										useCors: false
+										}).addTo(mymap);
+										dMap.bindPopup(
+										function(err, featureCollection, response){
+										return featureCollection.features[0].properties.Bezeichnung +
+										'&gt;br>Anzahl: ' +
+										featureCollection.features[0].properties.Anzahl;
+										});
+										&gt;/script>
+										&gt;/body>
+										&gt;/html>
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>ESRI Webservice</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_938.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML>
+										&gt;html lang="de">
+										&gt;head>
+										&gt;meta charset="utf-8"/>
+										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
+										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
+										&gt;script src="../leaflet/leaflet.js">&gt;/script>
+										&gt;script src="esri-leaflet.js">&gt;/script>
+										&gt;link rel="stylesheet" href="esri-leaflet-geocoder.css">
+										&gt;script src="esri-leaflet-geocoder.js">&gt;/script>
+										&gt;/head>
+										&gt;body>
+										&gt;div style="height: 700px;" id="mapid">&gt;/div>
+										&gt;script>
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
+										L.esri.basemapLayer('Gray').addTo(mymap);
+										var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
+										var results = L.layerGroup().addTo(mymap);
+										searchControl.on("results", function(data) {
+										results.clearLayers();
+										for (var i = data.results.length - 1; i >= 0; i--) {
+										results.addLayer(L.marker(data.results[i].latlng));
+										}
+										});
+										&gt;/script>
+										&gt;/body>
+										&gt;/html>
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>ESRI Webservice</p>
+						<small>../code/5/index_937.html?a=56751 Gering</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_937.html?a=56751 Gering"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet-geocoder.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var x = location.search;
+										var y = x.split("=");
+										var temp=y[1];
+										var address = decodeURIComponent(temp);
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 3);
+										L.esri.basemapLayer('Gray').addTo(mymap);
+										L.esri.Geocoding.geocode().text(address).run(function(err, result, response){
+										console.log(result.results[0].latlng);
+										L.marker(result.results[0].latlng).addTo(mymap);
+										mymap.setView(result[0].latlng,13);
+										});
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>ESRI Webservice</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_936.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet-geocoder.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
+										L.esri.basemapLayer('Gray').addTo(mymap);
+										mymap.on('click', function(e){
+										var r = L.marker();
+										L.esri.Geocoding.reverseGeocode()
+										.latlng(e.latlng)
+										.run(function(error, result, response){
+										console.log(result.address);
+										mymap.removeLayer(r);
+										r = L.marker(result.latlng).addTo(mymap).bindPopup(result.address.Match_addr).openPopup();
+										});
+										});
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>ESRI Webservice</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_935.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;select id="sicherheitseinrichtungenID"&gt;
+										&lt;option value=""&gt;Reset&lt;/option&gt;
+										&lt;option value="Untertyp='pt_Notrufsaeule'"&gt;Notrufsaeule&lt;/option&gt;
+										&lt;option value="Untertyp='pt_Feuerwache'"&gt;Feuerwache&lt;/option&gt;
+										&lt;option value="Untertyp='pt_Rettungspunkt'"&gt;Rettungspunkt&lt;/option&gt;
+										&lt;option value="Untertyp='pt_Polizeistation'"&gt;Polizeistation&lt;/option&gt;
+										&lt;option value="Untertyp='pt_Sirene'"&gt;Sirene&lt;/option&gt;
+										&lt;option value="Untertyp='pt_Rettungswache'"&gt;Rettungswache&lt;/option&gt;
+										&lt;/select&gt;
+										&lt;div style="height: 700px" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 12);
+										L.esri.basemapLayer('Gray').addTo(mymap);
+										var url = 'http://services.arcgis.com/OLiydejKCZTGhvWg/arcgis/rest/services/OSM_DE_Sicherheitseinrichtungen/FeatureServer/0	';
+										var sicherheitseinrichtungen = document.getElementById('sicherheitseinrichtungenID');
+										var sicherheitseinrichtungenLayer  = L.esri.featureLayer({
+										url: url
+										}).addTo(mymap);
+										var popupTemplate = "&lt;h3&gt;Details:&lt;/h3&gt;\n\
+										Land: {Land}&lt;br&gt;\n\
+										Kreis: {Kreis}&lt;br&gt;\n\
+										Gemeinde: {Gemeinde}&lt;br&gt;\n\
+										Stadt: {Stadt} &lt;br&gt;\n\
+										Typ: {Typ}, {Untertyp}";
+										sicherheitseinrichtungenLayer.bindPopup(function (layer){
+										console.log(layer.feature.properties);
+										return L.Util.template(popupTemplate, layer.feature.properties)
+										});
+										sicherheitseinrichtungen.addEventListener('change', function(){
+										sicherheitseinrichtungenLayer.setWhere(sicherheitseinrichtungen.value);
+										});
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>ESRI Webservice</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_934.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 12);
+										L.esri.basemapLayer('Gray').addTo(mymap);
+										var url = 'http://services.arcgis.com/OLiydejKCZTGhvWg/arcgis/rest/services/OSM_DE_Sicherheitseinrichtungen/FeatureServer/0	';
+										var sicherheitseinrichtungen = document.getElementById('sicherheitseinrichtungenID');
+										var sicherheitseinrichtungenLayer  = L.esri.featureLayer({
+										url: url,
+										pointToLayer: function (geojson, latlng) {
+										return L.circleMarker(latlng);
+										},
+										style:{
+										color: '#5B7CBA',
+										}
+										}).addTo(mymap);
+										var popupTemplate = "&lt;h3&gt;Details:&lt;/h3&gt;\n\
+										Land: {Land}&lt;br&gt;\n\
+										Kreis: {Kreis}&lt;br&gt;\n\
+										Gemeinde: {Gemeinde}&lt;br&gt;\n\
+										Stadt: {Stadt} &lt;br&gt;\n\
+										Typ: {Typ}, {Untertyp}";
+										sicherheitseinrichtungenLayer.bindPopup(function (layer){
+										return L.Util.template(popupTemplate, layer.feature.properties)
+										});
+										var nearbyIds = [];
+										mymap.on('click', function(e){
+										sicherheitseinrichtungenLayer.query().nearby(e.latlng, 5000).ids(function(error, ids){
+										for (var j = 0; j &lt; nearbyIds.length; j++) {
+										sicherheitseinrichtungenLayer.resetStyle(nearbyIds[j]);
+										}
+										nearbyIds = ids;
+										for (var i = 0; i &lt; ids.length; i++) {
+										sicherheitseinrichtungenLayer.setFeatureStyle(ids[i], {
+										color: '#BA454E',
+										});
+										}
+										});
+										});
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>In diesem Teil haben wir ...</p>
+						<ul>
+							<li>... todo.</li>
+							<li class="fragment">... todo.</li>
+							<li class="fragment">... todo.</li>
+							<li class="fragment">... todo.</li>
+						</ul>
+					</section>
 				</section>
+
 
 
 

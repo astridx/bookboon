@@ -51,9 +51,31 @@
 						</section>
 						<section>
 							<ul>
-								<li>Wer bin ich</li>
-								<li class="fragment">Was solltest du mitbringen</li>
-								<li class="fragment">Was machen wir konkret in den nächsten 45 Minuten?</li>
+								<li>Wer bin ich?
+								</li>
+								<li class="fragment">Was ist Leaflet?
+									<small class="fragment">Leaflet.js ist eine <b>Open Source JavaScript-Bibliothek</b>, die euch <b>das Bereitstellen von Karten auf eurer Webseite</b> einfach macht.</small>
+									<small class="fragment">Neben OpenLayers und Google Maps API ist Leaflet eine der verbreitetsten Bibliotheken</small>
+									<small class="fragment">Leaflet wird auf Webseiten wie GitHub, Pinterest, Spiegel Online und Flickr eingesetzt.</small>
+									<small class="fragment">todo mein Beispiel? https://www.kobler-partner.ch/de/karte?zoom=2&lat=20.00000000&lng=0.00000000</small>
+								</li>
+								<li class="fragment">Was solltest du mitbringen?
+								</li>
+							</ul>
+						</section>
+						<section>
+							<ul>
+								<li>Was machen wir konkret in den nächsten 45 Minuten?
+									<small class="fragment">Wir beginnen mit einer einfachen HTML-Datei und ich zeige euch,
+										wie ihr in vier Schritten eine Karte anzeigen könnt!</small>
+									<small class="fragment">Ein bisschen Theorie - Was sind <b>Koordinaten</b> und wie werden Landarten <b>technisch</b> angezeigt?</small>
+									<small class="fragment">Die Karte mit Daten bestücken: Was sind <b>Geodaten</b> und was ist <b>GeoJSON</b>?</small>
+									<small class="fragment">Mit Daten eine Aussage machen: Heatmaps und Choroplethenkarten </small>
+									<small class="fragment">Die Karte <b>individuell</b> gestallten mit <b>benutzerdefinierten Markern</b></small>
+									<small class="fragment">Noch mehr Daten für deine Karte: <b>Wo bekommst du Daten her</b>?</small>
+								</li>
+								<li class="fragment">Downloadlink (todo)
+								</li>
 							</ul>
 						</section>
 				</section>
@@ -71,14 +93,10 @@
 				<section data-background-color="#f9b431"> <!-- 679ed4 f9b431 85c03c-->
 					<section>
 						<h2>
-							Let's learn Leaflet
+							In vier Schritten eine Karte zaubern!
 						</h2>
 					</section>
 
-					<section>
-						<h3>In vier Schritten eine Karte zaubern!
-						</h3>
-					</section>
 					<section>
 						<p>Wir beginnen mit einer ganz einfachen HTML-Datei</p>
 						<table>
@@ -130,7 +148,9 @@
 						</table>
 					</section>
 					<section>
-						<p>Erstelle ein &lt;div&gt;-Element in dem die Karte angezeigt werden soll</p>
+						<p>Erstelle ein &lt;div&gt;-Element in dem die Karte
+							angezeigt werden soll</p>
+						<small>Du musst eine Id und eine Höhe angeben.</small>
 						<table>
 							<tr>
 								<td>
@@ -158,6 +178,7 @@
 					</section>
 					<section>
 						<p>Nun wird es spannend: Erstelle das Karten-Objekt</p>
+						<small>L.map ist Shortcut - Wichtig: Die Id als Parameter übergeben - setView und Zoom ist optional.</small>
 						<table>
 							<tr>
 								<td>
@@ -188,6 +209,7 @@
 					</section>
 					<section>
 						<p>Füge einen Karten-Layer zur Karte hinzu</p>
+						<small>Die Kartenschicht: http://{s}.tile.osm.org/{z}/{x}/{y}.png?</small>
 						<table>
 							<tr>
 								<td>
@@ -212,7 +234,8 @@
 										</mark>
 										&lt;/script&gt;
 										&lt;/body&gt;
-										&lt;/html&gt;									</code></pre>
+										&lt;/html&gt;
+									</code></pre>
 								</td>
 							</tr>
 						</table>
@@ -225,13 +248,45 @@
 
 
 				<!-- Teil 1a Exkurs-->
-				<section>Exkurs 1</section>
+				<section>Exkurs 1 - Koordinaten auf der Erde</section>
 
 				<section data-background-color="#eeeeee"> <!-- 679ed4 f9b431 85c03c-->
 					<section>
 						<h2>
-							Koordinaten todo
+							Koordinaten
 						</h2>
+					</section>
+					<section>
+						<table>
+							<tr>
+							<td style="width:50%!important">
+								<img data-src="../964b.png">
+							</td>
+							<td style="width:50%!important">
+								<ul>
+									<li>
+										<small>Zum Aufbau des Koordinatensystems wird unser Erdball zunächst in <b>180 Breitengrade</b> und <b>360 Längengrade</b> eingeteilt.
+										</small>
+									</li>
+									<li class="fragment">
+										<small>Breitengrade verlaufen parallel zum Äquator.
+										Auf einer eingenordeten Karte sind die Breitengrade etwa waagerecht.
+										</small>
+									</li>
+									<li class="fragment">
+										<small>Längengrade verbinden Nord- und Südpol.
+										Auf einer eingenordeten Karte sind die Längengrade etwa senkrecht.
+										</small>
+									</li>
+								</ul>
+							</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>
+						Längengrade und Breitengrade
+						</p>
 					</section>
 					<section>
 					</section>
