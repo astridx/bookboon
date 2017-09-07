@@ -10,10 +10,7 @@
 <script>
 var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 var dwd = L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms", {
-format: 'image/png',
-transparent: true,
 layers:'dwd:bluemarble',
-attribution: "Deutscher Wetterdienst"
 }).addTo(mymap);
 </script>
 </body>
