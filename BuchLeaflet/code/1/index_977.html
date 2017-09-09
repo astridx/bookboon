@@ -4,16 +4,15 @@
 <title>Eine OSM Karte mit Leaflet</title>
 <link rel="stylesheet" href="../leaflet/leaflet.css" />
 <script src="../leaflet/leaflet.js"></script>
-<meta name="viewport"
-	  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <style>
 body {
-    padding: 0;
-    margin: 0;
+padding: 0;
+margin: 0;
 }
 html, body, #mapid {
-    height: 100vh;
-    width: 100vw;
+height: 100vh;
+width: 100vw;
 }
 </style>
 </head>
@@ -21,9 +20,7 @@ html, body, #mapid {
 <div id="mapid"></div>
 <script>
 var mymap = L.map('mapid', {closePopupOnClick: false}).setView([50.27264, 7.26469], 18);
-
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-
 mymap.locate({setView: true, maxZoom: 18});
 mymap.on('locationfound', onLocationFound);
 mymap.on('locationerror', onLocationError);
@@ -34,11 +31,9 @@ L.marker(e.latlng).addTo(mymap).bindPopup("Sie sind etwa" + radius + " Meter von
 L.circle(e.latlng, radius).addTo(mymap);
 //console.log(e);
 }
-
 function onLocationError(e) {
-    alert(e.message);
+alert(e.message);
 }
-
 </script>
 </body>
 </html>
