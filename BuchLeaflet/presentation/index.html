@@ -52,14 +52,20 @@
 						<section>
 							<ul>
 								<li>Wer bin ich?
+									<small class="fragment">Ich kenne Joomla! noch nicht seit Mambo.</small>
+									<small class="fragment">Habe aber Joomla! in der Version 1.0 einmal installiert und mich mit Version 1.5 auch intensiver beschäftig.</small>
+									<small class="fragment">In der JUG Koblenz bin ich seit zwei Jahren aktiv.</small>
+									<small class="fragment">Ich bin Mapperin bei OSM</small>
 								</li>
 								<li class="fragment">Was ist Leaflet?
 									<small class="fragment">Leaflet.js ist eine <b>Open Source JavaScript-Bibliothek</b>, die euch <b>das Bereitstellen von Karten auf eurer Webseite</b> einfach macht.</small>
-									<small class="fragment">Neben OpenLayers und Google Maps API ist Leaflet eine der verbreitetsten Bibliotheken</small>
+									<small class="fragment">Neben <b>OpenLayers</b> und <b>Google Maps API</b> ist Leaflet eine der verbreitetsten Bibliotheken</small>
 									<small class="fragment">Leaflet wird auf Webseiten wie GitHub, Pinterest, Spiegel Online und Flickr eingesetzt.</small>
 									<small class="fragment">todo mein Beispiel? https://www.kobler-partner.ch/de/karte?zoom=2&lat=20.00000000&lng=0.00000000</small>
 								</li>
 								<li class="fragment">Was solltest du mitbringen?
+									<small class="fragment">Du solltest nicht vor Codebeispielen zurückschecken.</small>
+									<small class="fragment">Meine Beispiele sind aber einfach gehalten - wenn du nur sehen willst, was man alles mit Geodaten auf einer Website machen kann, dann bist du hier auch richtig.</small>
 								</li>
 							</ul>
 						</section>
@@ -68,11 +74,12 @@
 								<li>Was machen wir konkret in den nächsten 45 Minuten?
 									<small class="fragment">Wir beginnen mit einer einfachen HTML-Datei und ich zeige euch,
 										wie ihr in vier Schritten eine Karte anzeigen könnt!</small>
-									<small class="fragment">Ein bisschen Theorie - Was sind <b>Koordinaten</b> und wie werden digitale Karten <b>technisch</b> angezeigt?</small>
-									<small class="fragment">Die Karte mit Daten bestücken: Was sind <b>Geodaten</b> und was ist <b>GeoJSON</b>?</small>
-									<small class="fragment">Mit Daten eine Aussage machen: Heatmaps und Choroplethenkarten </small>
-									<small class="fragment">Die Karte <b>individuell</b> gestallten mit <b>benutzerdefinierten Markern</b></small>
-									<small class="fragment">Noch mehr Daten für deine Karte: <b>Wo bekommst du Daten her</b>?</small>
+									<small class="fragment">Dann gibt es ein bisschen Theorie - Was sind <b>Koordinaten</b> und wie werden digitale Karten <b>technisch</b> angezeigt?</small>
+									<small class="fragment">Danach bestücken wir die Karte mit Daten: Was sind <b>Geodaten</b> und was ist <b>GeoJSON</b>?</small>
+									<small class="fragment">Daten sind kein Selbstzweck, sie sollen eine Frage beantworten: <b>Heatmaps</b> und <b>Choroplethenkarten</b></small>
+									<small class="fragment">Außerdem soll unsere Karte <b>individuell</b> wirken: <b>Benutzerdefinierte Markern</b></small>
+									<small class="fragment"><b>Open Data: </b>Wo bekommst du Daten her, wenn du keine eigenen hast?</small>
+									<small class="fragment">Wenn wir noch Zeit haben sehen wir uns eine Leaflet Joomla! Erweiterung genauer an.</small>
 								</li>
 								<li class="fragment">Downloadlink (todo)
 								</li>
@@ -177,8 +184,12 @@
 						</table>
 					</section>
 					<section>
-						<p>Nun wird es spannend: Erstelle das Karten-Objekt</p>
-						<small>L.map ist Shortcut - Wichtig: Die Id als Parameter übergeben - setView und Zoom ist optional.</small>
+						<ul>
+							<li>Nun wird es spannend: Erstelle das Karten-Objekt
+								<small class="fragment">L.map ist Shortcut</small>
+								<small class="fragment">Wichtig: Die Id als Parameter übergeben - setView und Zoom ist optional.</small>
+							</li>
+						</ul>
 						<table>
 							<tr>
 								<td>
