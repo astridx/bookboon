@@ -51,7 +51,7 @@
 						</section>
 						<section>
 							<ul>
-								<li>Wer bin ich?
+								<li>Wer bin ich?<br>
 									<small class="fragment">Ich kenne Joomla! noch nicht seit Mambo.</small>
 									<small class="fragment">Habe aber Joomla! in der Version 1.0 einmal installiert und mich mit Version 1.5 auch intensiver beschäftig.</small>
 									<small class="fragment">In der JUG Koblenz bin ich seit zwei Jahren aktiv.</small>
@@ -60,10 +60,10 @@
 								<li class="fragment">Was ist Leaflet?
 									<small class="fragment">Leaflet.js ist eine <b>Open Source JavaScript-Bibliothek</b>, die euch <b>das Bereitstellen von Karten auf eurer Webseite</b> einfach macht.</small>
 									<small class="fragment">Neben <b>OpenLayers</b> und <b>Google Maps API</b> ist Leaflet eine der verbreitetsten Bibliotheken</small>
-									<small class="fragment">Leaflet wird auf Webseiten wie GitHub, Pinterest, Spiegel Online und Flickr eingesetzt.</small>
-									<small class="fragment">todo mein Beispiel? https://www.kobler-partner.ch/de/karte?zoom=2&lat=20.00000000&lng=0.00000000</small>
+									<small class="fragment">Leaflet wird auf Webseiten wie GitHub, Pinterest, Spiegel Online und Flickr eingesetzt.</small><br>
+									<small class="fragment"><a target="_blank" href="https://www.kobler-partner.ch/de/karte?zoom=2&lat=20.00000000&lng=0.00000000">Beispiel</a></small>
 								</li>
-								<li class="fragment">Was solltest du mitbringen?
+								<li class="fragment">Was solltest du mitbringen?<br>
 									<small class="fragment">Du solltest nicht vor Codebeispielen zurückschecken.</small>
 									<small class="fragment">Meine Beispiele sind aber einfach gehalten - wenn du nur sehen willst, was man alles mit Geodaten auf einer Website machen kann, dann bist du hier auch richtig.</small>
 								</li>
@@ -595,7 +595,7 @@
 					</section>
 					<section>
 						<h3>
-							Sie haben eine Satellitenaufnahme und möchten diese
+							Du hast eine Satellitenaufnahme und möchten diese
 							als Layer verwenden.
 						</h3>
 						<ul>
@@ -621,7 +621,7 @@
 					<section>
 						<p>
 							Beispielweise bietet der
-							Deutsche Wetterdienst (DWD) WMS Dienste
+							Deutsche Wetterdienst WMS Dienste
 							mithilfe der Open Source Software Geoserver.
 						</p>
 						<p><small>Die Karten des DWD kennt Ihr sicher.
@@ -662,13 +662,15 @@
 							&lt;/body&gt;
 							&lt;/html&gt;
 						</code></pre>
-						<p style="font-size:smaller">Mit obigem Aufruf erhält man ein speziell zusammengestelltes Bild vom DWD Geo Webservice - sofern Warnungen vorhanden sind.</p>
+						<small>Mit obigem Aufruf erhält man ein speziell zusammengestelltes Bild vom DWD Geo Webservice - sofern Warnungen vorhanden sind.</small>
+						<small>Wichtig ist, dass Sie dem Aufruf <b>L.tileLayer.wms</b> richtige Adresse zum WMS Service mitgeben und die Option layers passend setzten. Für alle anderen Parameter setzt Leaflet oder der Service selbst Standardwerte ein.</small>
 					</section>
 					<section>
 						<p>Erinnert ihr euch an den 27. Juli 2017?</p>
 						<img data-src="../994.png">
 					</section>
 					<section>
+						<small>Mehrere Layer: <b>Option transparent</b> mit <code>true</code> übergeben und Option <b>format</b> mit <code>'image/png'</code> belegen.</small>
 						<p>Weitere Informationen beim
 							<a href="http://www.dwd.de/DE/wetter/warnungen_aktuell/objekt_einbindung/einbindung_karten_geowebservice.pdf?__blob=publicationFile&v=2">
 								Deutschen Wetterdienst.
@@ -729,6 +731,7 @@
 
 
 
+
 				<!-- Teil 3 Die Karte mit Daten bestücken -->
 				<section>Teil 3</section>
 
@@ -740,6 +743,7 @@
 					</section>
 					<section>
 						<p>Ein Punkt</p>
+						<small>Objekte vom Typ Point sind in Leaflet nicht zur Anzeige gedacht.</small>
 						<table>
 							<tr>
 								<td>
@@ -759,10 +763,8 @@
 										&lt;script&gt;
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var point = L.point(400, 600);
-										mymap.panBy(point);
-										//mymap.panBy([400, 600]);
-										//mymap.panBy(L.point(400, 600));
+										<mark>var point = L.point(400, 600);
+										mymap.panBy(point);</mark>
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -773,6 +775,7 @@
 					</section>
 					<section>
 						<p>Ein Marker</p>
+						<small>Die Leaflet Klasse Marker wird verwendet, um anklickbare und/oder verschiebbare Symbole auf einer Karte anzuzeigen.</small>
 						<table>
 							<tr>
 								<td>
@@ -792,13 +795,13 @@
 										&lt;script&gt;
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var myMarker = L.marker([50.27264, 7.26469],
+										<mark>var myMarker = L.marker([50.27264, 7.26469],
 										{
 										title:"Gering",
 										alt:"Ein schönes kleines Dorf auf dem Maifeld in der Eifel",
 										draggable:true
 										}
-										).addTo(mymap);
+										).addTo(mymap);</mark>
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -808,7 +811,8 @@
 						</table>
 					</section>
 					<section>
-						<p>Ein Polyline</p>
+						<p>Eine Polyline</p>
+						<small>Linien kannst du in Leaflet mit der Klasse Polyline erstellen. Als Optionen kannst du fast alle CSS-Eigenschaften mitgeben.</small>
 						<table>
 							<tr>
 								<td>
@@ -826,13 +830,13 @@
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
 										&lt;script&gt;
-										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										<mark>var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 										var polyline = L.polyline([
 										[50.27264, 7.26469],
 										[51.27264, 7.26469],
 										[51.27264, 6.26469]],
-										{color: 'red', weight:8}).addTo(mymap);
+										{color: 'red', weight:8}).addTo(mymap);</mark>
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -843,6 +847,8 @@
 					</section>
 					<section>
 						<p>Ein Polygon</p>
+						<small>Ein Polygone ist eine geschlossene Linie – also eine Linie die einen Innenbereich von einem Außenbereich abtrennt.</small>
+						<small>Leaflet schließt automatisch!</small>
 						<table>
 							<tr>
 								<td>
@@ -862,11 +868,11 @@
 										&lt;script&gt;
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var polygon = L.polygon([
+										<mark>var polygon = L.polygon([
 										[50.27264, 7.26469],
 										[51.27264, 7.26469],
 										[51.27264, 6.26469]],
-										{color: 'red', weight:2, fillColor:'green', fillOpacity:0.5}).addTo(mymap);
+										{color: 'red', weight:2, fillColor:'green', fillOpacity:0.5}).addTo(mymap);</mark>
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -876,7 +882,16 @@
 						</table>
 					</section>
 					<section>
-						<p>Ein Rectangle</p>
+						Um einen Kreis oder ein Rechteck zu erstellen benötigt man
+						eigentlich keine eigene Klasse. Man könnten diese
+						mit der Klasse Polygon erzeugen.
+						Beim Kreis wäre dies allerdings sehr mühselig ...
+					</section>
+					<section>
+						<p>Als Parameter gibst du für das Rechteck immer die diagonal
+							versetzten beiden Ecken an. Dabei ist es egal, in welcher
+							Reihenfolge du diese angibst.</p>
+						<small>Leaflet schließt automatisch!</small>
 						<table>
 							<tr>
 								<td>
@@ -896,11 +911,11 @@
 										&lt;script&gt;
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var myRectangle = L.rectangle([
+										<mark>var myRectangle = L.rectangle([
 										[50.27264, 7.26469],
 										[51.27264, 6.26469]
 										],
-										{color: "yellow", weight: 8, fillColor:"purple"}).addTo(mymap);
+										{color: "yellow", weight: 8, fillColor:"purple"}).addTo(mymap);</mark>
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -911,6 +926,7 @@
 					</section>
 					<section>
 						<p>Ein Circle</p>
+						<small>Ein Kreis wird anhand seines Mittelpunktes und seines Radius definiert.</small>
 						<table>
 							<tr>
 								<td>
@@ -930,10 +946,10 @@
 										&lt;script&gt;
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										L.circle(
+										<mark>L.circle(
 										[50.27264, 7.26469],
 										100000,
-										{color: "red", weight: 8, fillColor:"green"}).addTo(mymap);
+										{color: "red", weight: 8, fillColor:"green"}).addTo(mymap);</mark>
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -941,48 +957,27 @@
 								</td>
 							</tr>
 						</table>
+						<small>Die Breite des Rahmens bei unterschiedlichen Zoom-Stufen beachten!.</small>
 					</section>
 					<section>
-						<p>Ein MultiPolygon</p>
-						<table>
-							<tr>
-								<td>
-									<iframe data-src="../code/1/index_982.html"></iframe>
-								</td>
-								<td>
-									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html&gt;
-										&lt;head&gt;
-										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;/head&gt;
-										&lt;body&gt;
-										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-										&lt;script&gt;
-										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
-										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var multipolygone = L.polygon(
-										[
-										[[50.17264, 7.26469],
-										[49.27264, 7.26469],
-										[49.27264, 6.26469]],
-										[[50.37264, 7.26469],
-										[51.27264, 7.26469],
-										[51.27264, 8.26469]]
-										],
-										{color: 'black'}).addTo(mymap).bindPopup("Wir sind auf einer Ebene");
-										&lt;/script&gt;
-										&lt;/body&gt;
-										&lt;/html&gt;
-									</code></pre>
-								</td>
-							</tr>
-						</table>
+						In den vorhergehenden Beispielen haben wir jedes Element auf einem
+						separaten Layer –  also einer separaten Ebenen – abgebildet.
+						Spätestens, wenn du selbst unterschiedliche Geodaten auf einer Karte
+						darstellen möchtest wirst du dir wünschen, Objekte mit gleichen
+						Eigenschaften auf einem Layer gruppieren zu können.
+						<small><br>Achtung: In früheren Leaflet-Versionen gabe es hierfür separate Elemente!</small>
 					</section>
 					<section>
-						<p>Ein MultiPolyline</p>
+						<p>Mehrere Polylines automatisch auf einem Layer</p>
+						<small>
+							Das Setzen von Klammern beim Arbeiten mit Polygon Objekten und
+							Polyline Objekten die mehrere Objekte gleichzeitig auf einem
+							Layer erstellen, kann sehr herausfordernd sein.
+						</small>
+						<small>
+							Vorteil: Styles können zusammen zugewiesen werden
+							und <code>fitBound()</code> ist problemloser.
+						</small>
 						<table>
 							<tr>
 								<td>
@@ -1002,7 +997,7 @@
 										&lt;script&gt;
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var multipolyline = L.polyline(
+										<mark>var multipolyline = L.polyline(
 										[
 										[[50.17264, -7.26469],
 										[49.27264, -7.26469],
@@ -1012,7 +1007,7 @@
 										[51.27264, -8.26469]]
 										],
 										{color: 'black'}).addTo(mymap);
-										mymap.fitBounds(multipolyline.getBounds());
+										mymap.fitBounds(multipolyline.getBounds());</mark>
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -1022,7 +1017,61 @@
 						</table>
 					</section>
 					<section>
-						<p>Ein LayerGroup</p>
+						<p>Mehrere Polygone automatisch auf einem Layer</p>
+						<small>
+							In diesem Beispiel siehst du nun auch, wie du mit der Methode
+							<code>bindPopup()</code> ein Pop-up zu einem Element hinzufügen kannst.
+							Anwendungsbeispiel: Länder mit Kolonien.
+						</small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/1/index_982.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										<mark>var multipolygone = L.polygon(
+										[
+										[[50.17264, 7.26469],
+										[49.27264, 7.26469],
+										[49.27264, 6.26469]],
+										[[50.37264, 7.26469],
+										[51.27264, 7.26469],
+										[51.27264, 8.26469]]
+										],
+										{color: 'black'}).addTo(mymap).bindPopup("Wir sind auf einer Ebene");</mark>
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						In den vorherigen Kapitel hast du gesehen, dass du mehrere Polygone
+						Objekte oder mehrere Polyline Objekte zusammen auf einem Layer
+						positionieren kannst. Es wird aber sicher auch einmal vorkommen,
+						dass du <b>Elemente unterschiedlicher Typen auf einem Layer zusammen
+						gruppieren</b> möchtest.
+					</section>
+					<section>
+						<p>Eine LayerGroup</p>
+						<small>
+
+						</small>
 						<table>
 							<tr>
 								<td>
