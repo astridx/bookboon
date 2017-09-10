@@ -157,7 +157,7 @@
 					<section>
 						<p>Erstelle ein &lt;div&gt;-Element in dem die Karte
 							angezeigt werden soll</p>
-						<small>Du musst eine Id und eine Höhe angeben.</small>
+						<small>Du musst dem &lt;div&gt;-Element eine <b>ID</b> und eine <b>Höhe</b> angeben.</small>
 						<table>
 							<tr>
 								<td>
@@ -185,9 +185,10 @@
 					</section>
 					<section>
 						<ul>
-							<li>Nun wird es spannend: Erstelle das Karten-Objekt
+							<li>Nun wird es spannend: Erstelle das Karten-Objekt<br>
 								<small class="fragment">L.map ist Shortcut</small>
-								<small class="fragment">Wichtig: Die Id als Parameter übergeben - setView und Zoom ist optional.</small>
+								<small class="fragment">Wichtig: Die ID als Parameter übergeben</small>
+								<small class="fragment">Das Anfügen der Methode <b>setView()</b> und das Festelegen der <b>Zoom-Stufe</b> ist optional.</small>
 							</li>
 						</ul>
 						<table>
@@ -220,7 +221,7 @@
 					</section>
 					<section>
 						<p>Füge einen Karten-Layer zur Karte hinzu</p>
-						<small>Die Kartenschicht: http://{s}.tile.osm.org/{z}/{x}/{y}.png?</small>
+						<small>Die Kartenschicht: http://{s}.tile.osm.org/<b>{z}/{x}/{y}</b>.png</small>
 						<table>
 							<tr>
 								<td>
@@ -271,7 +272,7 @@
 						<table>
 							<tr>
 							<td style="width:50%!important">
-								<img data-src="../964b.png">
+								<img data-src="../964er.png">
 							</td>
 							<td style="width:50%!important">
 								<ul>
@@ -280,14 +281,65 @@
 										</small>
 									</li>
 									<li class="fragment">
-										<small>Breitengrade verlaufen parallel zum Äquator.
-										Auf einer eingenordeten Karte sind die Breitengrade etwa waagerecht.
-										</small>
+										Die Breitengrade verlaufen parallel zum Äquator.
 									</li>
 									<li class="fragment">
-										<small>Längengrade verbinden Nord- und Südpol.
-										Auf einer eingenordeten Karte sind die Längengrade etwa senkrecht.
-										</small>
+										Die Längengrade verbinden Nord- und Südpol.
+									</li>
+									<li class="fragment">
+										Um die Genauigkeit zu erhöhen, wird jeder Kreis weiter unterteilt.
+									</li>
+								</ul>
+							</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Breitengrade oder Breitenkreise</p>
+						<table>
+							<tr>
+							<td style="width:50%!important">
+								<img data-src="../964br.png">
+							</td>
+							<td style="width:50%!important">
+								<ul>
+									<li>
+										Die Breitenkreise verlaufen von <b>Osten nach Westen.</b>
+									</li>
+									<li class="fragment">
+										Der Äquator verläuft im rechten Winkel zur Erdachse.
+									</li>
+									<li class="fragment">
+										Im geografischen Koordinatensystem gilt der Äquator als <b>Ausganspunkt</b> und ihm wird der Winkel 0 Grad zugeordnet.
+									</li>
+									<li class="fragment">
+										Die Höhste Gradzahl eines Breitenkreises ist <b>90</b> !
+									</li>
+								</ul>
+							</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Längengrade oder Längenkreise</p>
+						<table>
+							<tr>
+							<td style="width:50%!important">
+								<img data-src="../964la.png">
+							</td>
+							<td style="width:50%!important">
+								<ul>
+									<li>
+										Die Längenkreise verlaufen von <b>Norden nach Süden.</b>
+									</li>
+									<li class="fragment">
+										Die Längenkreise umspannen die Erde - eine Längenhälfte heißt Meridian.
+									</li>
+									<li class="fragment">
+										Längenkreise haben keinen natürlichen <b>Ausganspunkt.</b>Der Meridian, der Greenwich durchläuft gilt als Nullmeridian.
+									</li>
+									<li class="fragment">
+										Die Höhste Gradzahl eines Längenkreise ist <b>180</b> !
 									</li>
 								</ul>
 							</td>
@@ -296,10 +348,31 @@
 					</section>
 					<section>
 						<p>
-						Längengrade und Breitengrade
+						Schreibweise von geografischen Koordinaten
 						</p>
+							<ul>
+								<li>Normalerweise eine von zwei Schreibweisen
+									<small class="fragment">Das Sexagesimalsystem basiert auf der Zahl <b>60</b><br>
+									So hat beispielsweise die Zugspitze die Koordinaten <b>47°25′16″N, 10°59′7″O</b>.</small>
+									<small class="fragment">Das Dezimalsystem basiert auf der Zahl <b>10.</b> <br>
+									Beispielsweise werden die Koordinaten der Zugspitze mit <b>47.4211, 10.9852</b> angegeben.</small>
+								</li>
+								<li class="fragment">Koordinaten noch weiter vereinfachen
+									<small class="fragment">Orten auf der West- und Südhalbkugel wird in der Regel ein Minus (-) vorangestellt.</small>
+									<small class="fragment">Einem Ort, der auf dem westlichen Teil der Südhalbkugel liegt, könnten die Koordinaten -13.163333, -72.545556 zugeordnet werden.</small>
+								</li>
+								<li class="fragment">Historisch gewachsen: Die Reihenfolge bei der Angabe von Latitude und Longitude?
+									<small class="fragment">Früher war es üblich, dass die erste Stelle einer Koordinate den Breitengrad und die zweite Stelle den Längengrad beschrieb.</small>
+									<small class="fragment">In der Mathematik ist die übliche Reihenfolge beim Arbeiten mit Koordinatensystemen: X-Wert | Y-Wert.</small>
+									<small class="fragment">Reihenfolge lat, lon: Leaflet, Google Maps API ...<br>
+										Reihenfolge lon, lat: GeoJSON, OpenLayers ...
+									</small>
+								</li>
+							</ul>
 					</section>
 					<section>
+						<p>Ein Problem bei der Arbeit mit sphärischen Koordinantensystemen:</p>
+						<img data-src="../964er.png">
 					</section>
 				</section>
 
@@ -317,7 +390,17 @@
 						</h2>
 					</section>
 					<section>
-						Vektor oder Pixelgrafik? todo
+						<p>Vektor oder Pixelgrafik?</p>
+						<img data-src="../930.png">
+						<p>Theoretisch ist dies für Vektorkarten möglich. Praktisch ist dies aber problematisch.</p>
+						<ul>
+							<li>Browserkompatibilität</li>
+							<li>Rechenzeit - Objekte die über die ganze Welt verteilt sind ...</li>
+						</ul>
+					</section>
+					<section>
+						<p>Aus diesem Grund werden die Karten in der Regel in kleinen Ausschnitten im Vorfeld berechnet und in einem Rasterformat gespeichert.</p>
+						<small>Dies macht übrigens auch Google Maps so.</small>
 					</section>
 					<section>
 						<p>
