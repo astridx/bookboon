@@ -1017,7 +1017,7 @@
 						</table>
 					</section>
 					<section>
-						<p>Mehrere Polygone automatisch auf einem Layer</p>
+						<p>Mehrere Polygone auf einem Layer sind praktisch ein Polygon</p>
 						<small>
 							In diesem Beispiel siehst du nun auch, wie du mit der Methode
 							<code>bindPopup()</code> ein Pop-up zu einem Element hinzufügen kannst.
@@ -1061,7 +1061,57 @@
 						</table>
 					</section>
 					<section>
-						In den vorherigen Kapitel hast du gesehen, dass du mehrere Polygone
+						<small>
+							In diesem Beispiel siehst du, wie Polygone die auf einem Layer
+							gruppiert sind, Innen- und Außenbereich definieren.
+						</small>
+						<table>
+							<tr>
+								<td>
+									<img style="width:250px" data-src="../928b.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										L.polygon([
+										[ [1, 1], [1, 10], [10, 10], [10, 1] ],
+										<mark>[ [2, 2], [2, 5], [5, 5], [5, 2] ]</mark>
+										])
+									</code></pre>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img style="width:250px" data-src="../928c.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										L.polygon([
+										[ [1, 1], [1, 10], [10, 10], [10, 1] ],
+										[ [2, 2], [2, 5], [5, 5], [5, 2] ],
+										<mark>[ [3, 3], [3, 4], [4, 4], [4, 3] ]</mark>
+										])
+									</code></pre>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img style="width:250px" data-src="../928d.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										L.polygon([
+										[ [1, 1], [1, 10], [10, 10], [10, 1] ],
+										[ [2, 2], [2, 5], [5, 5], [5, 2] ],
+										[ [3, 3], [3, 4], [4, 4], [4, 3] ],
+										<mark>[ [9, 9], [11, 9], [11, 11], [9, 11] ]</mark>
+										])
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						Du hast nun gesehen, dass du mehrere Polygon
 						Objekte oder mehrere Polyline Objekte zusammen auf einem Layer
 						positionieren kannst. Es wird aber sicher auch einmal vorkommen,
 						dass du <b>Elemente unterschiedlicher Typen auf einem Layer zusammen
@@ -2078,7 +2128,7 @@
 						</ul>
 					</section>
 					<section>
-						<p>Möchtet ihr gerne wissen, wie die Darstellung einer Heatmap technisch umgesetzt
+						<p>Möchtet ihr gerne wissen, wie die Darstellung einer Heatmap die die Dichte visualisiert technisch umgesetzt
 							wird? <br>
 							Vereinfacht ausgedrückt wird ein Grid über die Karte gelegt.
 						</p>

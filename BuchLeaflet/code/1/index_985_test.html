@@ -8,11 +8,21 @@
 <body>
 <div style="height: 700px;" id="mapid"></div>
 <script>
-var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+var mymap = L.map('mapid').setView([1, 1], 5);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 var polygon = L.polygon([
-[[50.7264, 7.26469], [51.27264, 7.26469], [51.27264, 6.26469]],
-[[50.37264, 7.26469], [51.27264, 7.16469], [51.27264, 6.36469]]
+[
+[1, 1], [1, 10], [10, 10], [10, 1]
+],
+[
+[2, 2], [2, 5], [5, 5], [5, 2]
+],
+[
+[3, 3], [3, 4], [4, 4], [4, 3]
+],
+[
+[9, 9], [11, 9], [11, 11], [9, 11]
+],
 ],
 {color: 'red', weight:2, fillColor:'green', fillOpacity:0.5}).addTo(mymap);
 </script>
