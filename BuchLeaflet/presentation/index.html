@@ -595,7 +595,7 @@
 
 
 
-				<!-- Teil 1 WMS Service-->
+				<!-- Weiter Teil 1 WMS Service-->
 				<section>Teil 1 WMS Service</section>
 
 				<section data-background-color="#85c03c"> <!-- 679ed4 f9b431 85c03c-->
@@ -1652,7 +1652,7 @@
 					</section>
 
 					<section>
-						<p>Marker</p>
+						<p>Ein Feature</p>
 						<table>
 							<tr>
 								<td>
@@ -1660,17 +1660,7 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html lang="de"&gt;
-										&lt;head&gt;
-										&lt;meta charset="utf-8"/&gt;
-									</code></pre>
-									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html lang="de"&gt;
-										&lt;head&gt;
-										&lt;meta charset="utf-8"/&gt;
-										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										..
 										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
 										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
 										&lt;/head&gt;
@@ -1680,16 +1670,16 @@
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 										var geojsonFeature1 = {
-										"type": "Feature",
+										"type": "<mark>Feature</mark>",
 										"geometry": {
-										"type": "Point",
+										"type": "<mark>Point</mark>",
 										"coordinates": [7.26469, 50.27264]
 										},
 										"properties": {
 										"name": "Gering"
 										}
 										};
-										L.geoJSON(geojsonFeature1).addTo(mymap);
+										<mark>L.geoJSON(geojsonFeature1)</mark>.addTo(mymap);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -1698,7 +1688,7 @@
 						</table>
 					</section>
 					<section>
-						<p>FeatureCollection</p>
+						<p>Eine FeatureCollection</p>
 						<table>
 							<tr>
 								<td>
@@ -1706,47 +1696,25 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html lang="de"&gt;
-										&lt;head&gt;
-										&lt;meta charset="utf-8"/&gt;
-										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;/head&gt;
-										&lt;body&gt;
-										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-										&lt;script&gt;
-										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
-										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										...
 										var geojsonFeatureCollection =
-										{
-										"type": "FeatureCollection",
-										"features":
-										[
-										{
-										"type": "Feature",
-										"geometry": {"type": "Point", "coordinates": [7, 50]},
+										{ "type": "<mark>FeatureCollection</mark>",
+										"<mark>features</mark>":
+										[{
+										"type": "<mark>Feature</mark>",
+										"geometry": {"type": "<mark>Point</mark>", "coordinates": [7, 50]},
 										"properties": {"prop0": "value0"}
-										},
-										{
-										"type": "Feature",
-										"geometry": { "type": "LineString", "coordinates": [
-										[7, 50], [7, 51], [6, 51], [6, 52]
-										]},
+										}, {
+										"type": "<mark>Feature</mark>",
+										"geometry": { "type": "<mark>LineString</mark>", "coordinates": [ [7, 50], [7, 51], [6, 51], [6, 52] ]},
 										"properties": { "prop0": "value0", "prop1": 0.0 }
-										},
-										{ "type": "Feature",
-										"geometry": { "type": "Polygon", "coordinates": [
-										[ [6, 49], [5, 49], [5, 48], [4, 49], [4, 50] ]
-										]
-										},
+										}, {
+										"type": "<mark>Feature</mark>",
+										"geometry": { "type": "<mark>Polygon</mark>", "coordinates": [ [ [6, 49], [5, 49], [5, 48], [4, 49], [4, 50] ]]},
 										"properties": { "prop0": "value0", "prop1": {"this": "that"}
 										}
-										}
-										]
-										}
-										L.geoJSON(geojsonFeatureCollection).addTo(mymap);
+										}]}
+										<mark>L.geoJSON(geojsonFeatureCollection)</mark>.addTo(mymap);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
