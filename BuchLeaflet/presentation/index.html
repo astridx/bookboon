@@ -100,7 +100,7 @@
 				<section data-background-color="#f9b431"> <!-- 679ed4 f9b431 85c03c-->
 					<section>
 						<h2>
-							In vier Schritten eine Karte zaubern!
+							In vier Schritten entsteht eine Karte!
 						</h2>
 					</section>
 					<section>
@@ -1723,9 +1723,9 @@
 							</tr>
 						</table>
 					</section>
-					<section>addData() - GeoJSON aus Leaflet exportieren</section>
-					<section>
-						<p>Marker</p>
+					<section><code data-trim data-noescape>toGeoJSON()</code> - GeoJSON aus Leaflet exportieren
+						<br>und <br>
+							<code data-trim data-noescape>addData()</code> - Daten nachträglich zu einem GeoJSON Layer hinzufügen.
 						<table>
 							<tr>
 								<td>
@@ -1746,10 +1746,11 @@
 										&lt;script&gt;
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var myMarker=L.marker([50.27264, 7.26469]);
-										var markerAsGeoJSON = myMarker.toGeoJSON();
+										var myMarker = L.marker([50.27264, 7.26469]);
+										var markerAsGeoJSON = <mark>myMarker.toGeoJSON()</mark>;
 										var geoJsonLayer = L.geoJson().addTo(mymap);
-										geoJsonLayer.addData(markerAsGeoJSON).bindPopup("Ich bin mit der Methode .addData() zur Karte hinzugefügt worden. In GeoJson sehe ich so aus:&lt;br&gt; " + JSON.stringify(markerAsGeoJSON));
+										geoJsonLayer.<mark>addData(markerAsGeoJSON)</mark>.bindPopup("Ich bin mit der Methode .addData() zur Karte hinzugefügt worden.
+										In GeoJson sehe ich so aus:&lt;br&gt; " + <mark>JSON.stringify(markerAsGeoJSON)</mark>);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -2085,10 +2086,9 @@
 					<section>
 						<p>In diesem Teil haben wir ...</p>
 						<ul>
-							<li>... todo.</li>
 							<li class="fragment">Als Erstes haben wir GeoJSON genauer angesehen.</li>
 							<li class="fragment">Als Nächstes haben wir die Geoobjekte in GeoJSON und Leaflet verglichen.</li>
-							<li class="fragment">Und zu guter Letzt haben wir GeoJSON in Leaflet eingesetzt..</li>
+							<li class="fragment">Und zu guter Letzt haben wir GeoJSON in Leaflet eingesetzt.</li>
 						</ul>
 					</section>
 				</section>
