@@ -1210,8 +1210,8 @@
 					<section>
 						<p>Ein FeatureGroup</p>
 						<small>
-							 Eine FeatureGroup erweitert die LayerGroup und macht es einfach
-							 gleiche Dinge auf alle Mitglieder anzuwenden.
+							 Eine FeatureGroup erweitert die LayerGroup, macht es einfach
+							 Stylesheets auf alle Mitglieder anzuwenden und ermöglicht es Ereignisse zu verarbeiten.
 						</small>
 						<table>
 							<tr>
@@ -1237,9 +1237,9 @@
 										var <mark>polyline</mark> = L.polyline([
 											[50.27264, 7.26469], [51.27264, 7.26469], [51.27264, 6.26469]],
 										);
-										var myfeatureGroup=<mark>L.featureGroup</mark>([marker1, polyline]).addTo(mymap);
+										var myfeatureGroup=<mark>L.featureGroup</mark>([marker1, marker2, polyline]).addTo(mymap);
+										myfeatureGroup.<mark>bindPopup</mark>('Wir haben alle das gleiche Popup!');
 										myfeatureGroup.<mark>setStyle({color:'red', opacity:0.5, weight:8})</mark>
-										myfeatureGroup.<mark>addLayer</mark>(marker2);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -1249,7 +1249,6 @@
 						</table>
 						<small>
 							myfeatureGroup.on('click', function() { alert('Ein Gruppenmitglied wurde angeklickt!'); })
-							myfeatureGroup.on('click', function() { myfeatureGroup.removeLayer(polyline); })
 						</small>
 					</section>
 					<section>
@@ -1298,10 +1297,6 @@
 								</td>
 							</tr>
 						</table>
-						<small>
-							In einem Pop-up Fenster könnt ihr alle HTML-Tag nutzen.<br>
-							Pop-ups werden automatisch geschlossen.
-						</small>
 					</section>
 				</section>
 
@@ -1325,7 +1320,7 @@
 						<ul>
 							<li class="fragment">Als Erstes sehen wir uns an, warum GeoJSON entwickelt wurde.</li>
 							<li class="fragment">Als Nächstes vergleichen wir die einzelnen Elemente mit den Objekten, die uns Leaflet zur Verfügung stellt.</li>
-							<li class="fragment">Und zu guter Letzt probieren wir die Methoden aus, die Leaflet dir – spezielle für das Verarbeiten von GeoJSON-Daten – anbietet.</li>
+							<li class="fragment">Und zu guter Letzt probieren wir die Methoden aus, die Leaflet euch – spezielle für das Verarbeiten von GeoJSON-Daten – anbietet.</li>
 						</ul>
 					</section>
 				</section>
@@ -1361,16 +1356,24 @@
 								</code></pre>
 							</li>
 							<li class="fragment">Da JSON selbst gültiges Javascript darstellt, kann es direkt ausgeführt werden.</li>
-							<li class="fragment">Im Gegensatz zu XML ist JSON nicht beschreibend oder deklarativ.</li>
+							<li class="fragment">Im Gegensatz zu XML ist JSON nicht beschreibend oder deklarativ sondern eine eine Syntax-Konvention.</li>
 							<li class="fragment">GeoJSON ist ein JSON Format, dass sich auf Geodaten spezialisiert hat - wieder beschreibend ist ....</li>
 						</ul>
 					</section>
 					<section>
-						<h2>
-							GeoJSON Objekte
-						</h2>
+						<p>
+							JSON
+						</p>
 						<small>
-							Im Juni 2008 wurde die Formatspezifikation verabschiedet.<br>
+							Im Dezember 1999 wurde die erste Formatspezifikation verabschiedet.<br>
+							Im Juni 2017 wurde die 8. Edition des Standards ECMA-262 veröffentlicht.<br>
+							<a href="http://json.org">http://json.org/</a>
+						</small>
+						<p>
+							GeoJSON
+						</p>
+						<small>
+							Im Juni 2008 wurde die erste Formatspezifikation verabschiedet.<br>
 							Im August 2016 wurde die RFC (Requests for Comments) 7946 veröffentlicht.<br>
 							<a href="http://geojson.org">http://geojson.org/</a>
 						</small>
@@ -1626,6 +1629,7 @@
 						<h2>
 							GeoJSON in Leaflet
 						</h2>
+						<p>L.geoJSON erweitert L.featureGroup</p>
 					</section>
 
 					<section>
@@ -1750,27 +1754,10 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html lang="de"&gt;
-										&lt;head&gt;
-										&lt;meta charset="utf-8"/&gt;
-										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;/head&gt;
-										&lt;body&gt;
-										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+										...
 										&lt;script&gt;
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										function <mark>styleFunction</mark>(feature)
-										{
-										<mark>switch </mark>(feature.geometry.type)
-										{
-										case 'LineString': return {color: "red"};
-										case 'Polygon':   return {color: "purple"};
-										}
-										}
 										var geojsonFeatureCollection =
 										{
 										"type": "FeatureCollection",
@@ -1794,11 +1781,17 @@
 										]
 										},
 										"properties": { "prop0": "value0", "prop1": {"this": "that"}
-										}
-										}
-										]
+										}}]
 										}
 										var geoJsonLayer = L.geoJson(geojsonFeatureCollection,{<mark>style:styleFunction</mark>}).addTo(mymap);
+										function <mark>styleFunction</mark>(feature)
+										{
+										<mark>switch </mark>(feature.geometry.type)
+										{
+										case 'LineString': return {color: "red"};
+										case 'Polygon':   return {color: "purple"};
+										}
+										}
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -1848,8 +1841,8 @@
 					<section>
 						<p>onEachFeature()</p>
 						<small>
-							onEachFeature()ist eine Methode die einmal für jedes im Layer vorhandene GeoJSON Objekt vom Typ Feature aufgerufen wird.<br>
-							Zusätzlich siehst du in diesem Beispiel, wie du auf die Eigenschaften eines Features zugreifen kannst.
+							<code data-trim data-noescape>onEachFeature</code> ist eine Option die einmal für jedes im Layer vorhandene GeoJSON Objekt vom Typ Feature aufgerufen wird.<br>
+							Zusätzlich seht ihr in diesem Beispiel, wie ihr auf die Eigenschaften eines Features zugreifen könnt.
 						</small>
 						<table>
 							<tr>
@@ -1886,10 +1879,10 @@
 						</table>
 						</section>
 					<section>
-						<p>Leaflet bietet dir noch weitere Optionen. Vielleicht magst du
-						Marker selbst indiduell erstellen. Dann solltest du dir pointToLayer ansehen.<br>
-						Daten filtern kannst du mit der Option filter<br>
-						Falls du Koordinaten umrechnen musst hilft dir coordsToLatLng.</p>
+						<p>Leaflet bietet euch noch weitere Optionen. Vielleicht mögt ihr
+						Marker selbst individuell erstellen. Dann solltet ihr euch <code>pointToLayer</code> ansehen.<br>
+						Daten filtern könnt ihr mit der Option <code>filter</code><br>
+						Falls ihr Koordinaten umrechnen müsst hilft euch <code>coordsToLatLng</code>.</p>
 					</section>
 					<section>
 						<p>In diesem Teil haben wir ...</p>
@@ -1922,7 +1915,7 @@
 						<p>In diesem Teil werden wir ...</p>
 						<ul>
 							<li>... die in den vorangehenden Kapiteln besprochenen Objekte zum visualisieren einsetzen.</li>
-							<li class="fragment">... Plugins kennenlernen, die dich beim Erstellen von Heatmaps unterstützen</li>
+							<li class="fragment">... Plugins kennenlernen, die uns beim Erstellen von Heatmaps unterstützen</li>
 							<li class="fragment">... sehen wie wir mit einer Leaflet Karte interagieren und diese animieren können.</li>
 							<li class="fragment">... Choroplethenkarte von Heatmaps abgegrenzt und auf diesen absolute und relative Werte darstellt.</li>
 						</ul>
@@ -1946,7 +1939,7 @@
 						</ul>
 					</section>
 					<section>
-						<p>Möchtet ihr gerne wissen, wie die Darstellung einer Heatmap die die Dichte visualisiert technisch umgesetzt
+						<p>Möchtet ihr gerne wissen, wie die Darstellung einer Heatmap die die <b>Dichte<b> visualisiert technisch umgesetzt
 							wird? <br>
 							Vereinfacht ausgedrückt wird ein Grid über die Karte gelegt.
 						</p>
