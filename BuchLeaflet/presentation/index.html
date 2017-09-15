@@ -746,6 +746,14 @@
 							</tr>
 						</table>
 					</section>
+					<section>
+						<p>In diesem Teil haben wir ...</p>
+						<ul>
+							<li class="fragment">Als erstes habenw ir mit 5 Zeilen Code eine Karte erstellt</li>
+							<li class="fragment">Wir haben uns geografische Koordinaten genauer angesehen </li>
+							<li class="fragment">und wir wissen nun Karten erstellt werden.</li>
+						</ul>
+					</section>
 				</section>
 
 
@@ -932,7 +940,6 @@
 						<p>Als Parameter gibst du für das Rechteck immer die diagonal
 							versetzten beiden Ecken an. Dabei ist es egal, in welcher
 							Reihenfolge du diese angibst.</p>
-						<small>Leaflet schließt automatisch!</small>
 						<table>
 							<tr>
 								<td>
@@ -1297,6 +1304,12 @@
 								</td>
 							</tr>
 						</table>
+					</section>
+					<section>
+						<p>In diesem Teil haben wir ...</p>
+						<ul>
+							<li class="fragment">Wir kennen nun die wichtigsten Leaflet-Objekt und können diese voneinander abgrenzen.</li>
+						</ul>
 					</section>
 				</section>
 
@@ -1939,7 +1952,7 @@
 						</ul>
 					</section>
 					<section>
-						<p>Möchtet ihr gerne wissen, wie die Darstellung einer Heatmap die die <b>Dichte<b> visualisiert technisch umgesetzt
+						<p>Möchtet ihr gerne wissen, wie die Darstellung einer Heatmap die die <b>Dichte</b> visualisiert technisch umgesetzt
 							wird? <br>
 							Vereinfacht ausgedrückt wird ein Grid über die Karte gelegt.
 						</p>
@@ -2122,12 +2135,12 @@
 						</table>
 					</section>
 					<section>
-						<p>Unterschiedliche Ausprägungen der Intensitätspunkte</p>
+						<p>Intensitätspunkte bei einem maximalen Wert von 100</p>
 						<img data-src="../949.png">
 					</section>
 					<section>
 						<p>Interaktive Heatmaps</p>
-						<small>todo</small>
+						<small>Ihr könnte es Benutzern ermöglichen Punkte hinzuzufügen.</small>
 						<table>
 							<tr>
 								<td>
@@ -2141,8 +2154,8 @@
 										&lt;script&gt;
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 15);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var points = [];
-										var heat = L.heatLayer(points,
+										var <mark>points = []</mark>;
+										var heat = L.heatLayer(<mark>points</mark	>,
 										{
 										blur: 15,
 										maxZoom: 15,
@@ -2174,57 +2187,28 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html lang="de"&gt;
-										&lt;head&gt;
-										&lt;meta charset="utf-8"/&gt;
-										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="leaflet-heat.js"&gt;&lt;/script&gt;
-										&lt;/head&gt;
-										&lt;body&gt;
-										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
 										&lt;script&gt;
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.1555 , 7.591838], 10);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var points = [];
-										var points1 = [
-										[50.1555 , 7.591838 ],
-										..
-										[50.088041 , 7.652033 ],
-										[50.088041 , 7.652033 ]
-										];
+										var <mark>points</mark> = [];
+										var <mark>points1</mark> = [[50.1555 , 7.591838 ], .. [50.088041 , 7.652033 ], [50.088041 , 7.652033 ]];
+										var <mark>points1</mark> = [[51.1555 , 7.491838 ], .. [50.088041 , 7.652033 ], [50.088041 , 7.652033 ]];
+										var <mark>points1</mark> = [[50.255 , 7.391838 ], .. [50.088041 , 7.652033 ], [50.088041 , 7.652033 ]];
 
-										var points2 = [
-										[50.0371 , 7.618306 ],
-										..
-										[50.088041 , 7.652033 ],
-										[50.088041 , 7.652033 ]
-										];
-										var points3 = [
-										[50.088 , 7.65159 ],
-										..
-										[50.088041 , 7.652033 ],
-										[50.088041 , 7.652033 ]
-										];
 										var heat = L.heatLayer(points).addTo(mymap);
 										<mark>x=1;</mark>
 										var name='';
 										var <mark>interval</mark> = setInterval(function(){run()},2000);
 										function run(){
-										mymap.removeLayer(heat);
+										mymap.<mark>removeLayer(heat)</mark>;
 										name="points"+x.toString();
-										heat = L.heatLayer(
+										<mark>heat</mark> = L.heatLayer(
 										window[name],
 										{blur:15,maxZoom:10,radius:25,gradient:{0.4: 'blue', 0.65: 'lime', 1: 'red'}})
 										.addTo(mymap);
-										if (x == 3)
-										{
+										if (x == 3){
 										x=1;
-										}
-										else
-										{
+										} else {
 										x++;
 										}
 										}
@@ -2248,9 +2232,6 @@
 						</ul>
 					</section>
 					<section>
-						<p>todo</p>
-					</section>
-					<section>
 						<p>Open Data - GeoJSON Utilities</p>
 						<small>Open Data, also offene Daten, sind Daten die von jedem
 							ohne jegliche Einschränkungen verwendet und weitergegeben
@@ -2263,30 +2244,23 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										var ct =
-										{
-										"type":"FeatureCollection",
+										var ct = {
+										"type":"<mark>FeatureCollection</mark>",
 										"crs":{
 										"type":"name",
 										"properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},
 										"source":"© GeoBasis-DE / BKG 2013 (Daten verändert)",
-										"features":[
-
+										"<mark>features</mark>":[
 										{"type":"Feature",
-										"properties":
-										{
-										"ADE":6,
-										"GF":4,
-										"BSG":1,
-										"RS":"073345001001",
-										"AGS":"07334001","SDV_RS":"073345001001","GEN":"Bellheim",
+										"properties": { ...
 										"BEZ":"Gemeinde","IBZ":64,"BEM":"gemeinschaftsangehörig","NBD":"ja",
 										"SN_L":"07","SN_R":"3","SN_K":"34","SN_V1":"50","SN_V2":"01","SN_G":"001",
 										"FK_S3":"K","NUTS":"DEB3E","RS_0":"073345001001","AGS_0":"07334001",
 										"WSK":"2009/01/01","DEBKG_ID":"DEBKGDL20000E5ZS",
-										<mark>"destatis":</mark>{"RS":"073345001001",<mark>"area":20.44</mark>,"area_date":"31.12.2014",<mark>"population":8519</mark>,"population_m":4198,"population_w":4321,"population_density":417,"zip":"76756","center_lon":"8,284042","center_lat":"49,190542","travel_key":"J16","travel_desc":"Pfalz","density_key":"02","density_desc":"mittlere Besiedlungsdichte"},
+										<mark>"destatis":</mark>{"RS":"073345001001",<mark>"area":20.44</mark>,
+										"area_date":"31.12.2014",<mark>"population":8519</mark>,"population_m":4198,"population_w":4321,"population_density":417,"zip":"76756","center_lon":"8,284042","center_lat":"49,190542","travel_key":"J16","travel_desc":"Pfalz","density_key":"02","density_desc":"mittlere Besiedlungsdichte"},
 										"wikipedia":{"cid":"http://www.wikidata.org/entity/Q552382","name":"Bellheim","AGS":"07334001","_official_website":"http://www.bellheim.de/","_local_dialing_code":"07272","_postal_code":"76756"}},
-										"geometry":{"type":"Polygon","coordinates":[[[8.276302148832034,49.21145214735215],[8.295112386392997,49.21205183793759],[8.32165101909878,49.20535309521381],[8.348342142736533,49.202754603562894],[8.341595663968588,49.18567131650573],[8.322717376063137,49.18601727965002],[8.31932741219801,49.18387268431313],[8.312390772341198,49.186986159027555],[8.306072256464091,49.17409335925555],[8.295175351708146,49.17527441577822],[8.262647108228787,49.171399375592635],[8.257497919939535,49.18118640693377],[8.259740044810764,49.21103338616947],[8.276302148832034,49.21145214735215]]]}},
+										"<mark>geometry</mark>":{"type":"Polygon","coordinates":[[[8.276302148832034,49.21145214735215],[8.295112386392997,49.21205183793759],[8.32165101909878,49.20535309521381],[8.348342142736533,49.202754603562894],[8.341595663968588,49.18567131650573],[8.322717376063137,49.18601727965002],[8.31932741219801,49.18387268431313],[8.312390772341198,49.186986159027555],[8.306072256464091,49.17409335925555],[8.295175351708146,49.17527441577822],[8.262647108228787,49.171399375592635],[8.257497919939535,49.18118640693377],[8.259740044810764,49.21103338616947],[8.276302148832034,49.21145214735215]]]}},
 
 										{"type":"Feature",
 										"properties":
@@ -2307,21 +2281,11 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html lang="de"&gt;
-										&lt;head&gt;
-										&lt;meta charset="utf-8"/&gt;
-										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="gemeinden.js"&gt;&lt;/script&gt;
-										&lt;/head&gt;
-										&lt;body&gt;
-										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-										&lt;script&gt;
-										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([49.9555 , 7.591838], 8);
+										...
+										<mark><script src="gemeinden.js"></script></mark>
+										...
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										function color(x) {
+										function <mark>color(x)</mark> {
 										return x &gt; 1000 ? '#990000' :
 										x &gt; 750 ? '#d7301f' :
 										x &gt; 500 ? '#ef6548' :
@@ -2330,16 +2294,16 @@
 										x &gt; 100 ? '#fdd49e' :
 										x &gt; 0   ? '#fee8c8' :'#fff7ec';
 										}
-										function myStyle(feature) {
+										function <mark>myStyle(feature)</mark>{
 										return {
-										fillColor: color(feature.properties.destatis.population),
+										fillColor: color(<mark>feature.properties.destatis.population</mark>),
 										weight: 1,
 										opacity: 1,
 										color: 'white',
 										fillOpacity: 0.85
 										};
 										}
-										var geoJsonLayer = L.geoJson(ct, {style: myStyle}).addTo(mymap);
+										var <mark>geoJsonLayer</mark> = L.geoJson(ct, {style: <mark>myStyle</mark>}).addTo(mymap);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -2349,7 +2313,7 @@
 						</table>
 					</section>
 					<section>
-						<p>Eine normalisierte Choroplethenkarten</p>
+						<p>Eine <mark>normalisierte</mark> Choroplethenkarten</p>
 						<small>Landkreise in Rheinland-Pfalz und deren Bevölkerungsdichte</small>
 						<table>
 							<tr>
@@ -2358,56 +2322,37 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html lang="de"&gt;
-										&lt;head&gt;
-										&lt;meta charset="utf-8"/&gt;
-										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="gemeinden.js"&gt;&lt;/script&gt;
+										<mark>&lt;script src="gemeinden.js"&gt;&lt;/script&gt;</mark>
 										&lt;/head&gt;
 										&lt;body&gt;
-										&lt;button onclick="total()"&gt;Population&lt;/button&gt;
-										&lt;button onclick="density()"&gt;Population/Fläche&lt;/button&gt;
+										&lt;<mark>button onclick="total()</mark>"&gt;Population&lt;/button&gt;
+										&lt;<mark>button onclick="density()</mark>"&gt;Population/Fläche&lt;/button&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
 										&lt;script&gt;
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([49.9555 , 7.591838], 8);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										function color(x) {
+										function <mark>color</mark>(x) {
 										return x &gt; 1000 ? '#990000' :
 										x &gt; 750 ? '#d7301f' :
-										x &gt; 500 ? '#ef6548' :
-										x &gt; 250 ? '#fc8d59' :
-										x &gt; 200 ? '#fdbb84' :
-										x &gt; 100 ? '#fdd49e' :
+										...
 										x &gt; 0   ? '#fee8c8' :'#fff7ec';
 										}
 										function densityColor(x) {
 										return x &gt; 500 ? '#990000' :
 										x &gt; 400 ? '#d7301f' :
-										x &gt; 300 ? '#ef6548' :
-										x &gt; 200 ? '#fc8d59' :
-										x &gt; 100 ? '#fdbb84' :
-										x &gt; 50  ? '#fdd49e' :
+										...
 										x &gt; 0   ? '#fee8c8' :'#fff7ec';
 										}
-										function myStyle(feature) {
+										function <mark>myStyle</mark>(feature) {
 										return {
-										fillColor: color(feature.properties.destatis.population),
-										weight: 1,
-										opacity: 1,
-										color: 'white',
-										fillOpacity: 0.85
+										fillColor: color(<mark>feature.properties.destatis.population</mark>),
+										...
 										};
 										}
-										function myDensityStyle(feature) {
+										function <mark>myDensityStyle</mark>(feature) {
 										return {
-										fillColor: densityColor(feature.properties.destatis.population/feature.properties.destatis.area),
-										weight: 1,
-										opacity: 1,
-										color: 'white',
-										fillOpacity: 0.85
+										fillColor: densityColor(<mark>feature.properties.destatis.population/feature.properties.destatis.area</mark>),
+										...
 										};
 										}
 										function total(){
@@ -2431,7 +2376,7 @@
 						<ul>
 							<li>... die in den vorangehenden Kapiteln besprochenen Objekte zum visualisieren eingesetzt.</li>
 							<li class="fragment">... Plugins kennen gelernt, die Sie beim Erstellen von Heatmaps unterstützen</li>
-							<li class="fragment">... gesehen wie mir einer Leaflet Karte interagiert werden kann und wie sie animiert werden kann.</li>
+							<li class="fragment">... gesehen wie mit einer Leaflet Karte interagiert werden kann und wie sie animiert werden kann.</li>
 							<li class="fragment">... Choroplethenkarte von Heatmaps abgegrenzt und auf diesen absolute und relative Werte darstellt.</li>
 						</ul>
 					</section>
@@ -2468,12 +2413,10 @@
 						<p>In diesem Teil werden wir ...</p>
 						<ul>
 							<li>... todo.</li>
-							<li class="fragment">... todo</li>
-							<li class="fragment">... todo.</li>
-							<li class="fragment">... todo.</li>
+							<li class="fragment">Wir werden uns einen benutzerdefinierten Marker in Leaflet ansehen.</li>
+							<li class="fragment">Wir werden verschiedene Plugins ausprobieren.</li>
 						</ul>
 					</section>
-					<section>Vertical Slide 2</section>
 					<section>
 						<p>Ein benutzerdefinierter Marker</p>
 						<small>todo: Optionen erklären</small>
@@ -3559,7 +3502,24 @@
 
 
 				<!-- Das war es-->
-				<section>Das war mein Beitrag!</section>
+				<section>
+						<section>
+							<ul>
+								<li>Was haben wir gemacht
+									<small class="fragment">Wir haben zu Beginn in vier Schritten eine einfache Karte erstellt!</small>
+									<small class="fragment">Dann gab es ein bisschen Theorie - Was sind <b>Koordinaten</b> und wie werden digitale Karten <b>technisch</b> angezeigt?</small>
+									<small class="fragment">Danach bestückten wir die Karte mit Daten und haben uns <b>Geodaten</b> und <b>GeoJSON</b> angeshen</small>
+									<small class="fragment">Im Anschluss haben wir die Daten visualisiert und Frage beantworten mit <b>Heatmaps</b> und <b>Choroplethenkarten</b> beantwortet</small>
+									<small class="fragment"><b>Benutzerdefinierte Markern</b> waren ein weiteres Thema. Wir wollen Karten individuell gestalten.</small>
+									<small class="fragment">Open Data und ESRI bieten Daten, wenn wir selbst keine haben.</small>
+									<small class="fragment">Wie ihr das alles in eine Erweiterung einbaut, zeigt euch der Workshop.</small>
+								</li>
+							</ul>
+						</section>
+						<section>
+							Das war mein Beitrag!
+						</section>
+				</section>
 
 
 
