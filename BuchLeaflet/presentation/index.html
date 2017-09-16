@@ -3074,11 +3074,21 @@
 						</table>
 					</section>
 					<section>
-						<p>ESRI Webservices</p>
+						<p>ESRI Webservices -</p>
 						<small>Geocoding, DynamicMaps, QueryLayer</small>
 					</section>
 					<section>
-						<p>ESRI Webservice</p>
+						<p>
+							Was ist Geocoding?
+						</p>
+						<p class="fragment">
+							Geocoding bezeichnet die Umwandlung von Adressen wie
+							„Kirchstraße 13, 56571 Muster“ in geografische Koordinaten
+							wie „50.423021 Breite und -7.083739 Länge“.
+						</p>
+					</section>
+					<section>
+						<p>ESRI Webservice - Geocoding.geosearch()</p>
 						<small></small>
 						<table>
 							<tr>
@@ -3095,15 +3105,15 @@
 										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
 										&gt;script src="../leaflet/leaflet.js">&gt;/script>
 										&gt;script src="esri-leaflet.js">&gt;/script>
-										&gt;link rel="stylesheet" href="esri-leaflet-geocoder.css">
-										&gt;script src="esri-leaflet-geocoder.js">&gt;/script>
+										<mark>&gt;link rel="stylesheet" href="esri-leaflet-geocoder.css">
+										&gt;script src="esri-leaflet-geocoder.js">&gt;/script></mark>
 										&gt;/head>
 										&gt;body>
 										&gt;div style="height: 700px;" id="mapid">&gt;/div>
 										&gt;script>
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
 										L.esri.basemapLayer('Gray').addTo(mymap);
-										var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
+										var searchControl = L.esri.Geocoding.<mark>geosearch()</mark>.addTo(mymap);
 										var results = L.layerGroup().addTo(mymap);
 										searchControl.on("results", function(data) {
 										results.clearLayers();
@@ -3120,8 +3130,8 @@
 						</table>
 					</section>
 					<section>
-						<p>ESRI Webservice</p>
-						<small>../code/5/index_937.html?a=56751 Gering</small>
+						<p>ESRI Webservices - Geocoding.geocode().text(address).run()</p>
+						<small><mark>../code/5/index_937.html?a=56751 Gering</mark></small>
 						<table>
 							<tr>
 								<td>
@@ -3136,8 +3146,8 @@
 										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
 										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
 										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="esri-leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="esri-leaflet-geocoder.js"&gt;&lt;/script&gt;
+										<mark>&lt;script src="esri-leaflet.js"&gt;&lt;/script&gt;</mark>
+										<mark>&lt;script src="esri-leaflet-geocoder.js"&gt;&lt;/script&gt;</mark>
 										&lt;/head&gt;
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
@@ -3149,7 +3159,6 @@
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 3);
 										L.esri.basemapLayer('Gray').addTo(mymap);
 										L.esri.Geocoding.geocode().text(address).run(function(err, result, response){
-										console.log(result.results[0].latlng);
 										L.marker(result.results[0].latlng).addTo(mymap);
 										mymap.setView(result[0].latlng,13);
 										});
@@ -3162,7 +3171,7 @@
 						</table>
 					</section>
 					<section>
-						<p>ESRI Webservice</p>
+						<p>ESRI Webservices - Geocoding.reverseGeocode()</p>
 						<small></small>
 						<table>
 							<tr>
@@ -3178,8 +3187,8 @@
 										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
 										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
 										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="esri-leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="esri-leaflet-geocoder.js"&gt;&lt;/script&gt;
+										<mark>&lt;script src="esri-leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet-geocoder.js"&gt;&lt;/script&gt;</mark>
 										&lt;/head&gt;
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
@@ -3188,10 +3197,9 @@
 										L.esri.basemapLayer('Gray').addTo(mymap);
 										mymap.on('click', function(e){
 										var r = L.marker();
-										L.esri.Geocoding.reverseGeocode()
+										L.esri.Geocoding.<mark>reverseGeocode()</mark>
 										.latlng(e.latlng)
 										.run(function(error, result, response){
-										console.log(result.address);
 										mymap.removeLayer(r);
 										r = L.marker(result.latlng).addTo(mymap).bindPopup(result.address.Match_addr).openPopup();
 										});
@@ -3221,7 +3229,7 @@
 										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
 										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
 										&gt;script src="../leaflet/leaflet.js">&gt;/script>
-										&gt;script src="esri-leaflet.js">&gt;/script>
+										<mark>&gt;script src="esri-leaflet.js">&gt;/script><mark>
 										&gt;/head>
 										&gt;body>
 										&gt;div style="height: 700px;" id="mapid">&gt;/div>
@@ -3230,7 +3238,7 @@
 										//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 										L.esri.basemapLayer('Gray').addTo(mymap);
 										var url = "https://geoportal.stadt-koeln.de/arcgis/rest/services/Behindertenparkplaetze/MapServer";
-										var dMap = L.esri.dynamicMapLayer({
+										var dMap = L.esri.<mark>dynamicMapLayer</mark>({
 										url: url,
 										opacity : 0.25,
 										useCors: false
@@ -3250,7 +3258,7 @@
 						</table>
 					</section>
 					<section>
-						<p>ESRI Webservice</p>
+						<p>ESRI Webservices - FeatureServer</p>
 						<small></small>
 						<table>
 							<tr>
@@ -3284,7 +3292,7 @@
 										L.esri.basemapLayer('Gray').addTo(mymap);
 										var url = 'http://services.arcgis.com/OLiydejKCZTGhvWg/arcgis/rest/services/OSM_DE_Sicherheitseinrichtungen/FeatureServer/0	';
 										var sicherheitseinrichtungen = document.getElementById('sicherheitseinrichtungenID');
-										var sicherheitseinrichtungenLayer  = L.esri.featureLayer({
+										var sicherheitseinrichtungenLayer  = L.esri.<mark>featureLayer</mark>({
 										url: url
 										}).addTo(mymap);
 										var popupTemplate = "&lt;h3&gt;Details:&lt;/h3&gt;\n\
