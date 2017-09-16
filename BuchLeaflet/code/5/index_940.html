@@ -22,8 +22,8 @@ var holder=[];
 for (var key in feature.properties){
 holder.push(key+": "+feature.properties[key]+"<br>");
 popupContent=holder.join("");
-layer.bindPopup(popupContent);
 }
+layer.bindPopup(popupContent);
 }});
 shpfile.addTo(mymap);
 </script>

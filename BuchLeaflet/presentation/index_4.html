@@ -2845,7 +2845,7 @@
 					<section>
 						<p>In diesem Teil werden wir ...</p>
 						<ul>
-							<li>... uns die Karten die ESRI (Environmental Systems Research Institute) anbietet ansehen.</li>
+							<li>... uns die Karten die ESRI anbietet ansehen.</li>
 							<li class="fragment">... gucken was sich hinter dem Begriff Shapefile versteckt.</li>
 							<li class="fragment">... ESRI Webservices kennen lernen.</li>
 							<li class="fragment"><ul>
@@ -2864,12 +2864,6 @@
 						</h2>
 					</section>
 					<section>
-						<p>ESRI ist ein US-amerikanischer Softwarehersteller.
-							ESRI hat sich auf Geoinformationssystemen (GIS) spezialisiert.
-							Das Unternehmen hat unter anderem die Anwendung <mark>ArcGIS</mark> erstellt und
-							das Dateiformat <mark>Shapefiles</mark> eingeführt.
-					</section>
-					<section>
 						<p>BaseLayer</p>
 						<small></small>
 						<table>
@@ -2879,8 +2873,14 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										..
-										<mark>&lt;script src="esri-leaflet-debug.js"&gt;&lt;/script&gt;</mark>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html lang="de"&gt;
+										&lt;head&gt;
+										&lt;meta charset="utf-8"/&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="esri-leaflet-debug.js"&gt;&lt;/script&gt;
 										&lt;/head&gt;
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
@@ -2890,11 +2890,19 @@
 										onChange="changeBasemap(basemaps)"
 										&gt;
 										&lt;option value="Topographic"&gt;Topographic&lt;/option&gt;
-										...
+										&lt;option value="Streets"&gt;Streets&lt;/option&gt;
+										&lt;option value="NationalGeographic"&gt;National Geographic&lt;/option&gt;
+										&lt;option value="Oceans"&gt;Oceans&lt;/option&gt;
+										&lt;option value="Gray"&gt;Gray&lt;/option&gt;
+										&lt;option value="DarkGray"&gt;Dark Gray&lt;/option&gt;
+										&lt;option value="Imagery"&gt;Imagery&lt;/option&gt;
+										&lt;option value="ShadedRelief"&gt;Shaded Relief&lt;/option&gt;
+										&lt;option value="Terrain"&gt;Terrain&lt;/option&gt;
+										&lt;option value="USATopo"&gt;USATopo	&lt;/option&gt;
 										&lt;/select&gt;
 										&lt;script&gt;
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
-										<mark>var layer = L.esri.basemapLayer('Gray').addTo(mymap);</mark>
+										var layer = L.esri.basemapLayer('Gray').addTo(mymap);
 										function changeBasemap(basemaps){
 										var basemap = basemaps.value;
 										if (layer) {
@@ -2913,23 +2921,11 @@
 					</section>
 					<section>
 						<p>Shapefiles</p>
-						<small>Das Dateiformat Shapefile wurde von der Firma ESRI für die
-							Software ArcView entwickelt. Shape Dateien speziell für die
-							Verarbeitung von Geodaten entwickelt worden.
-						</small>
-						<small>
-							Ein Shapefile ist keine einzelne Datei.
-							<br>Eine Datei mit der Endung <mark>.shp</mark> dient zur Speicherung der Geometriedaten.
-							<br>Eine Datei mit der Endung <mark>.dbf</mark> enthält Attribute oder Eigenschaften.
-							<br>Eine Datei mit der Endung <mark>.shx</mark> dient als eine Art Index. Mithilfe dieser Datei sind die Geometriedaten in der Datei .shp mit den Eigenschaften in der .dbf-Datei verknüpft.
-						</small>
+						<small>todo</small>
 					</section>
-
 					<section>
 						<p>Shapefiles 1</p>
-						<small><a href="http://data.deutschebahn.com/dataset/geo-strecke" target="_blank">Schienennetz der Deutschen Bahn</a></small>
-						<small><a href="https://lvermgeo.rlp.de/ fileadmin/lvermgeo/pdf/open-data/Download_von_Verwaltungsgrenzen.pdf" target="_blank">Verwaltungsgrenzen Rheinland Pfalz</a></small>
-						<small><a href="https://www.arcgis.com/home/item.html?id=ae25571c60d94ce5b7fcbf74e27c00e0" target="_blank">Verwaltungsgrenzen Deutschland bei ESRI selbst</a></small>
+						<small></small>
 						<table>
 							<tr>
 								<td>
@@ -2944,15 +2940,15 @@
 										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
 										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
 										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										<mark>&lt;script src="shp.js"&gt;&lt;/script&gt;</mark>
-										<mark>&lt;script src="leaflet.shpfile.js"&gt;&lt;/script&gt;</mark>
+										&lt;script src="shp.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet.shpfile.js"&gt;&lt;/script&gt;
 										&lt;/head&gt;
 										&lt;body&gt;
 										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
 										&lt;script&gt;
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 6);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										<mark>var shpfile = new L.Shapefile('vg2500_geo84.zip');</mark>
+										var shpfile = new L.Shapefile('vg2500_geo84.zip');
 										shpfile.addTo(mymap);
 										&lt;/script&gt;
 										&lt;/body&gt;
@@ -2987,9 +2983,9 @@
 										&lt;script&gt;
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 6);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										<mark>var shpfile = new L.Shapefile('vg2500_geo84.zip',
+										var shpfile = new L.Shapefile('vg2500_geo84.zip',
 										{style:function(feature){return {color:"black",fillColor:"red",fillOpacity:.75}}}
-										);</mark>
+										);
 										shpfile.addTo(mymap);
 										&lt;/script&gt;
 										&lt;/body&gt;
@@ -3009,7 +3005,13 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										...
+										&lt;!DOCTYPE HTML>
+										&gt;html lang="de">
+										&gt;head>
+										&gt;meta charset="utf-8"/>
+										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
+										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
+										&gt;script src="../leaflet/leaflet.js">&gt;/script>
 										&gt;script src="shp.js">&gt;/script>
 										&gt;script src="leaflet.shpfile.js">&gt;/script>
 										&gt;/head>
@@ -3021,10 +3023,10 @@
 										var shpfile = new L.Shapefile(
 										'vg2500_geo84.zip',
 										{
-										<mark>onEachFeature:function(feature, layer)
+										onEachFeature:function(feature, layer)
 										{
 										layer.bindPopup(feature.properties.GEN);
-										}</mark>
+										}
 										});
 										shpfile.addTo(mymap);
 										&gt;/script>
@@ -3045,7 +3047,15 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										...
+										&lt;!DOCTYPE HTML>
+										&gt;html lang="de">
+										&gt;head>
+										&gt;meta charset="utf-8"/>
+										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
+										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
+										&gt;script src="../leaflet/leaflet.js">&gt;/script>
+										&gt;script src="shp.js">&gt;/script>
+										&gt;script src="leaflet.shpfile.js">&gt;/script>
 										&gt;/head>
 										&gt;body>
 										&gt;div style="height: 700px;" id="mapid">&gt;/div>
@@ -3055,15 +3065,15 @@
 										var shpfile = new L.Shapefile(
 										'vg2500_geo84.zip',
 										{
-										<mark>onEachFeature:function(feature, layer)
+										onEachFeature:function(feature, layer)
 										{
 										var holder=[];
 										for (var key in feature.properties){
 										holder.push(key+": "+feature.properties[key]+"&gt;br>");
 										popupContent=holder.join("");
-										}
 										layer.bindPopup(popupContent);
-										}</mark>});
+										}
+										}});
 										shpfile.addTo(mymap);
 										&gt;/script>
 										&gt;/body>
@@ -3075,7 +3085,52 @@
 					</section>
 					<section>
 						<p>ESRI Webservices</p>
-						<small>Geocoding, DynamicMaps, QueryLayer</small>
+						<small>DynamicMaps, Geocoding, QueryLayer</small>
+					</section>
+					<section>
+						<p>ESRI Webservice</p>
+						<small></small>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_939.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML>
+										&gt;html lang="de">
+										&gt;head>
+										&gt;meta charset="utf-8"/>
+										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
+										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
+										&gt;script src="../leaflet/leaflet.js">&gt;/script>
+										&gt;script src="esri-leaflet.js">&gt;/script>
+										&gt;/head>
+										&gt;body>
+										&gt;div style="height: 700px;" id="mapid">&gt;/div>
+										&gt;script>
+										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
+										//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										L.esri.basemapLayer('Gray').addTo(mymap);
+										var url = "https://geoportal.stadt-koeln.de/arcgis/rest/services/Behindertenparkplaetze/MapServer";
+										var dMap = L.esri.dynamicMapLayer({
+										url: url,
+										opacity : 0.25,
+										useCors: false
+										}).addTo(mymap);
+										dMap.bindPopup(
+										function(err, featureCollection, response){
+										return featureCollection.features[0].properties.Bezeichnung +
+										'&gt;br>Anzahl: ' +
+										featureCollection.features[0].properties.Anzahl;
+										});
+										&gt;/script>
+										&gt;/body>
+										&gt;/html>
+									</code></pre>
+								</td>
+							</tr>
+						</table>
 					</section>
 					<section>
 						<p>ESRI Webservice</p>
@@ -3199,51 +3254,6 @@
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
-									</code></pre>
-								</td>
-							</tr>
-						</table>
-					</section>
-					<section>
-						<p>ESRI Webservice</p>
-						<small></small>
-						<table>
-							<tr>
-								<td>
-									<iframe data-src="../code/5/index_939.html"></iframe>
-								</td>
-								<td>
-									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML>
-										&gt;html lang="de">
-										&gt;head>
-										&gt;meta charset="utf-8"/>
-										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
-										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
-										&gt;script src="../leaflet/leaflet.js">&gt;/script>
-										&gt;script src="esri-leaflet.js">&gt;/script>
-										&gt;/head>
-										&gt;body>
-										&gt;div style="height: 700px;" id="mapid">&gt;/div>
-										&gt;script>
-										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
-										//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										L.esri.basemapLayer('Gray').addTo(mymap);
-										var url = "https://geoportal.stadt-koeln.de/arcgis/rest/services/Behindertenparkplaetze/MapServer";
-										var dMap = L.esri.dynamicMapLayer({
-										url: url,
-										opacity : 0.25,
-										useCors: false
-										}).addTo(mymap);
-										dMap.bindPopup(
-										function(err, featureCollection, response){
-										return featureCollection.features[0].properties.Bezeichnung +
-										'&gt;br>Anzahl: ' +
-										featureCollection.features[0].properties.Anzahl;
-										});
-										&gt;/script>
-										&gt;/body>
-										&gt;/html>
 									</code></pre>
 								</td>
 							</tr>
