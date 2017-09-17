@@ -1,17 +1,20 @@
-iframe {
-  height: 500px;
-  width: 700px;
-
-}
 .reveal td {
 	vertical-align: middle!important;
+	max-width: 50vh;
+}
+.reveal td iframe{
+	width: 100%;
+	min-height:  400px;
+}
+.reveal td pre{
+	width: 100%;
+	font-size: 15px;
 }
 
-.reveal td pre {
-	max-width: 700px;
-	font-size: 16px;
-}
 table{
 	width:100%;
 }
-
+#koenigstein {
+  height: 500px;
+  width: 700px;
+}
