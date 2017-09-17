@@ -2914,7 +2914,8 @@
 					<section>
 						<p>Shapefiles</p>
 						<small>Das Dateiformat Shapefile wurde von der Firma ESRI für die
-							Software ArcView entwickelt. Shape Dateien speziell für die
+							Software ArcView entwickelt. <br>
+							Shape Dateien sind speziell für die
 							Verarbeitung von Geodaten entwickelt worden.
 						</small>
 						<small>
@@ -3083,13 +3084,14 @@
 						</p>
 						<p class="fragment">
 							Geocoding bezeichnet die Umwandlung von Adressen wie
-							„Kirchstraße 13, 56571 Muster“ in geografische Koordinaten
-							wie „50.423021 Breite und -7.083739 Länge“.
+							<br><b>Kirchstraße 13, 56571 Muster</b>
+							<br>in geografische Koordinaten wie
+							<br><b>50.423021 Breite und 7.083739 Länge</b>.
 						</p>
 					</section>
 					<section>
 						<p>ESRI Webservice - Geocoding.geosearch()</p>
-						<small></small>
+						<small>Es gibt jede Menge Optionen - beispielsweise useMapBounds</small>
 						<table>
 							<tr>
 								<td>
@@ -3097,16 +3099,10 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML>
-										&gt;html lang="de">
-										&gt;head>
-										&gt;meta charset="utf-8"/>
-										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
-										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
-										&gt;script src="../leaflet/leaflet.js">&gt;/script>
+										...
 										&gt;script src="esri-leaflet.js">&gt;/script>
-										<mark>&gt;link rel="stylesheet" href="esri-leaflet-geocoder.css">
-										&gt;script src="esri-leaflet-geocoder.js">&gt;/script></mark>
+										&gt;link rel="stylesheet" href="<mark>esri-leaflet-geocoder.css</mark>">
+										&gt;script src="<mark>esri-leaflet-geocoder.js</mark>">&gt;/script>
 										&gt;/head>
 										&gt;body>
 										&gt;div style="height: 700px;" id="mapid">&gt;/div>
@@ -3115,12 +3111,14 @@
 										L.esri.basemapLayer('Gray').addTo(mymap);
 										var searchControl = L.esri.Geocoding.<mark>geosearch()</mark>.addTo(mymap);
 										var results = L.layerGroup().addTo(mymap);
+										<mark>
 										searchControl.on("results", function(data) {
 										results.clearLayers();
 										for (var i = data.results.length - 1; i >= 0; i--) {
 										results.addLayer(L.marker(data.results[i].latlng));
 										}
 										});
+										</mark>
 										&gt;/script>
 										&gt;/body>
 										&gt;/html>
@@ -3222,32 +3220,23 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML>
-										&gt;html lang="de">
-										&gt;head>
-										&gt;meta charset="utf-8"/>
-										&gt;title>Eine OSM Karte mit Leaflet&gt;/title>
-										&gt;link rel="stylesheet" href="../leaflet/leaflet.css" />
-										&gt;script src="../leaflet/leaflet.js">&gt;/script>
-										<mark>&gt;script src="esri-leaflet.js">&gt;/script><mark>
-										&gt;/head>
-										&gt;body>
-										&gt;div style="height: 700px;" id="mapid">&gt;/div>
-										&gt;script>
+										&lt;script src="../leaflet/leaflet.js">&gt;/script>
+										<mark>&gt;script src="esri-leaflet.js">&gt;/script></mark>
+										&lt;/head>
+										&lt;body>
+										&lt;div style="height: 700px;" id="mapid">&gt;/div>
+										&lt;script>
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
-										//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 										L.esri.basemapLayer('Gray').addTo(mymap);
-										var url = "https://geoportal.stadt-koeln.de/arcgis/rest/services/Behindertenparkplaetze/MapServer";
+										var <mark>url</mark> = "https://geoportal.stadt-koeln.de/arcgis/rest/services/Behindertenparkplaetze/MapServer";
 										var dMap = L.esri.<mark>dynamicMapLayer</mark>({
-										url: url,
-										opacity : 0.25,
-										useCors: false
+										url: url, opacity : 0.25, useCors: false
 										}).addTo(mymap);
-										dMap.bindPopup(
+										dMap.<mark>bindPopup</mark>(
 										function(err, featureCollection, response){
-										return featureCollection.features[0].properties.Bezeichnung +
+										return <mark>featureCollection.features[0].properties.Bezeichnung</mark> +
 										'&gt;br>Anzahl: ' +
-										featureCollection.features[0].properties.Anzahl;
+										<mark>featureCollection.features[0].properties.Anzahl</mark>;
 										});
 										&gt;/script>
 										&gt;/body>
@@ -3259,7 +3248,10 @@
 					</section>
 					<section>
 						<p>ESRI Webservices - FeatureServer</p>
-						<small></small>
+						<small>
+							<small>Für das nachfolgende Beispiel habe ich Daten des </mark>Geoportals</mark> Köln genutzt.</small>
+							<small><a href="https://geoportal.stadt-koeln.de/arcgis/">https://geoportal.stadt-koeln.de/arcgis/</a></small>
+						</small>
 						<table>
 							<tr>
 								<td>
