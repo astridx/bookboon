@@ -6,9 +6,9 @@
 <script src="../leaflet/leaflet.js"></script>
 </head>
 <body>
-<div style="height: 700px;" id="mapid"></div>
+<div style="height: 300px;" id="mapid"></div>
 <script>
-var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+var mymap = L.map('mapid').setView([50.27264, 7.26469], 15);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 var multipolyline = L.polyline(
 [
