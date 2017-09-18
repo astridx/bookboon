@@ -70,7 +70,7 @@
 					<section>
 					<h2>
 						Teil 1
-					</h2>
+					</h2><small>10:05</small>
 					</section>
 					<section>
 						<p>In diesem Teil werden wir ...</p>
@@ -250,7 +250,7 @@
 					</section>
 
 
-					<section>
+					<section data-background-color="#FAF7E3">
 						<table>
 							<tr>
 								<td>
@@ -266,7 +266,7 @@
 							</tr>
 						</table>
 					</section>
-					<section>
+					<section data-background-color="#FAF7E3">
 					<table id="kachelanzahl">
 						<thead>
 							<tr>
@@ -311,7 +311,7 @@
 					</table>
 					<small>Die vollständige Tabelle findet Ihr unter der Adresse <a target="_blank" href="http://wiki.openstreetmap.org/wiki/Zoom_levels">http://wiki.openstreetmap.org/wiki/Zoom_levels</a>.</small>
 					</section>
-					<section>
+					<section data-background-color="#FAF7E3">
 						<p style="font-size:smaller;">
 						http://{s}.tile.osm.org/{z}/{x}/{y}.png
 						</p>
@@ -417,6 +417,7 @@
 					<h2>
 						Teil 2
 					</h2>
+					</h2><small>10:15</small>
 					</section>
 					<section>
 						<p>In diesem Teil werden wir ...</p>
@@ -809,6 +810,7 @@
 					<h2>
 						Teil 3
 					</h2>
+					<small>10:20</small>
 					</section>
 					<section>
 						<p>In diesem Teil werden wir ...</p>
@@ -1252,6 +1254,7 @@
 					<h2>
 						Teil 4
 					</h2>
+					<small>10:30</small>
 					</section>
 					<section>
 						<p>In diesem Teil werden wir ...</p>
@@ -1461,7 +1464,7 @@
 					</section>
 					<section>
 						<p>Choroplethenkarten</p>
-						<small><a href="http://opendatalab.de/projects/geojson-utilities/">Datenquelle</a></small>
+						<small><a target="_blank" href="http://opendatalab.de/projects/geojson-utilities/">Datenquelle: opendatalab.de</a></small>
 						<table>
 							<tr>
 								<td>
@@ -1503,7 +1506,7 @@
 								<td>
 									<pre><code data-trim data-noescape>
 										...
-										<mark><script src="gemeinden.js"></script></mark>
+										<mark>&lt;script src="gemeinden.js"&gt;&lt;/script&gt;</mark>
 										...
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 										function <mark>color(x)</mark> {
@@ -1517,8 +1520,11 @@
 										}
 										function <mark>myStyle(feature)</mark>{
 										return {
-										fillColor: color(<mark>feature.properties.destatis.population</mark>),
-										//fillColor: color(<mark>feature.properties.destatis.population/feature.properties.destatis.area</mark>),
+										fillColor: color(
+										<mark>feature.properties.destatis.population</mark>),
+										//fillColor: color(
+										//feature.properties.destatis.population/
+										//feature.properties.destatis.area),
 										weight: 1,
 										opacity: 1,
 										color: 'white',
@@ -1568,6 +1574,7 @@
 					<h2>
 						Teil 5
 					</h2>
+					<small>10:35</small>
 					</section>
 					<section>
 						<p>In diesem Teil werden wir ...</p>
@@ -1987,6 +1994,7 @@
 						<h2>
 							Teil 6
 						</h2>
+						<small>10:40</small>
 					</section>
 					<section>
 						<p>In diesem Teil werden wir ...</p>
