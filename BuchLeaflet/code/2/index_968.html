@@ -33,10 +33,6 @@ var geojsonFeatureCollection =
 }
 ]
 };
-var options = {
-draggable: true,
-title: "Ein Dorf in der Nähe von Gering"
-};
 L.geoJson(geojsonFeatureCollection, {
 onEachFeature: function(feature, layer) {
 layer.bindPopup(feature.properties.name);
