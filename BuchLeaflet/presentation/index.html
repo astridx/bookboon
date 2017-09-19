@@ -52,11 +52,7 @@
 							</li>
 							<li class="fragment">Was solltest du mitbringen?<br>
 							</li>
-							<li class="fragment">Was machen wir konkret in den nächsten 40 Minuten?<br>
-								<small class="fragment">Eine einfache Karte</small><br>
-								<small class="fragment">Geodaten in <b>Leaflet</b> und <b>GeoJSON</b></small><br>
-								<small class="fragment">Benutzerdefinierte Markern</small><br>
-								<small class="fragment">Geocoding und ESRI</small><br>
+							<li class="fragment">Was machen wir konkret?<br>
 							</li>
 						</ul>
 					</section>
@@ -638,11 +634,7 @@
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html&gt;
-										&lt;head&gt;
-										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										...										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
 										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
 										&lt;/head&gt;
 										&lt;body&gt;
@@ -660,7 +652,7 @@
 										[51.27264, -8.26469]]
 										],
 										{color: 'black'}).addTo(mymap);
-										mymap.fitBounds(multipolyline.getBounds());
+										mymap.fitBounds(multipolyline.<mark>getBounds()</mark>);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
