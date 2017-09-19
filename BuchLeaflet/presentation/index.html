@@ -77,7 +77,6 @@
 							<li class="fragment">Karte erstelle</li>
 							<li class="fragment">Geografische Koordinaten</li>
 							<li class="fragment">Kartenkacheln</li>
-							<li class="fragment">Georeferenzierte Bilder</li>
 						</ul>
 					</section>
 
@@ -175,7 +174,8 @@
 										&lt;div style="height: 180px;" id="mapid"&gt;&lt;/div&gt;
 										<mark>
 										&lt;script&gt;
-										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										var mymap = L.map('mapid')
+										.setView([50.27264, 7.26469], 13);
 										&lt;/script&gt;
 										</mark>
 										&lt;/body&gt;
@@ -248,7 +248,7 @@
 
 					<section data-background-color="#FAF7E3">
 					<small>http://{s}.tile.osm.org/{z}/{x}/{y}.png</small>
-					<img data-src="../999z.png">
+					<img data-src="../999x.png">
 					<table id="kachelanzahl">
 						<thead>
 							<tr>
@@ -356,15 +356,6 @@
 					<section>
 						<p>Erinnert ihr euch an den 27. Juli 2017?</p>
 						<img data-src="../994.png">
-					</section>
-					<section>
-						<table>
-							<tr>
-								<td>
-									<iframe data-src="../code/1/index_990.html"></iframe>
-								</td>
-							</tr>
-						</table>
 					</section>
 					<section>
 						<p>In diesem Teil haben wir ...</p>
@@ -620,14 +611,14 @@
 										var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 										var multipolyline = <mark>L.polyline</mark>(
-										[
+										<mark>[</mark>
 										[[50.17264, -7.26469],
 										[49.27264, -7.26469],
 										[49.27264, -6.26469]],
 										[[50.37264, -7.26469],
 										[51.27264, -7.26469],
 										[51.27264, -8.26469]]
-										],
+										<mark>]</mark>,
 										{color: 'black'}).addTo(mymap);
 										mymap.fitBounds(multipolyline.<mark>getBounds()</mark>);
 										&lt;/script&gt;
@@ -1498,120 +1489,6 @@
 						</table>
 					</section>
 					<section>
-						<p title="948">Plugins kombinieren</p>
-						<small></small>
-						<table>
-							<tr>
-								<td>
-									<iframe data-src="../code/4/index_948.html"></iframe>
-								</td>
-								<td>
-									<pre><code data-trim data-noescape>
-										&lt;!DOCTYPE HTML&gt;
-										&lt;html lang="de"&gt;
-										&lt;head&gt;
-										&lt;meta charset="utf-8"/&gt;
-										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
-										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-										&lt;script src="<mark>AnimatedMarker.js</mark>"&gt;&lt;/script&gt;
-										&lt;script src="<mark>bouncemarker.js</mark>"&gt;&lt;/script&gt;
-										&lt;/head&gt;
-										&lt;body&gt;
-										&lt;button onclick="start()"&gt;Start&lt;/button&gt;
-										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-										&lt;script&gt;
-										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
-										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										b = new L.Marker([51.68649, 6.94165], {bounceOnAdd: true});
-										var line = L.polyline(
-										[[50.68510, 7.94136],[50.68576, 6.94149],[51.68649, 6.94165]]),
-										animatedMarker = L.animatedMarker(line.getLatLngs(), {
-										autoStart: false,
-										distance: 2000,
-										interval: 10,
-										onEnd: function() {
-										b.addTo(mymap);
-										b.bounce({duration: 100, height: 50});
-										mymap.removeLayer(animatedMarker);
-										setTimeout('mymap.removeLayer(b)', 900);
-										}
-										});
-										mymap.addLayer(animatedMarker);
-										function start(){animatedMarker.start();}
-										&lt;/script&gt;
-										&lt;/body&gt;
-										&lt;/html&gt;
-									</code></pre>
-								</td>
-							</tr>
-						</table>
-					</section>
-					<section>
-						<p title="946	">Leaflet Data Visualization Framework (DVF)</p>
-						<table>
-							<tr>
-								<td>
-									<iframe data-src="../code/4/index_946.html"></iframe>
-								</td>
-								<td>
-									<pre><code data-trim data-noescape>
-										&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" /&gt;
-										&lt;script src="http://cdn.leafletjs.com/<mark>leaflet-0.7.2</mark>/leaflet.js"&gt;&lt;/script&gt;
-										&lt;link rel="stylesheet" href="dvf.css" /&gt;
-										&lt;script src="<mark>leaflet-dvf.js</mark>"&gt;&lt;/script&gt;
-										&lt;script src="<mark>leaflet-dvf.markers.js</mark>"&gt;&lt;/script&gt;
-										&lt;/head&gt;
-										&lt;body&gt;
-										&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-										&lt;script&gt;
-										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 7);
-										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var options = {
-										<mark>data</mark>: {
-										'data1': 20, 'data2': 50, 'data3': 10, 'data4': 20
-										},
-										<mark>chartOptions</mark>: {
-										'data1': {
-										fillColor: 'blue', minValue: 0, maxValue: 50, maxHeight: 30,
-										displayText: function (value) {
-										//return value.toFixed(2);
-										return 'Mein Text';
-										}
-										},
-										'data2': {
-										fillColor: 'red', minValue: 0, maxValue: 50, maxHeight: 30,
-										},
-										'data3': {
-										fillColor: 'green', minValue: 0, maxValue: 50, maxHeight: 30,
-										},
-										'data4': {
-										fillColor: 'yellow', minValue: 0, maxValue: 50, maxHeight: 30,
-										}
-										},
-										weight: 1, color: '#000000', radius:30, fillOpacity:1
-										};
-										var bar = new <mark>L.BarChartMarker</mark>([50.27264, 7.26469], options);
-										mymap.addLayer(bar);
-										var radial = <mark>new L.RadialBarChartMarker</mark>([50.27264, 8.26469], options);
-										mymap.addLayer(radial);
-										var pie= new <mark>L.PieChartMarker</mark>([50.27264, 6.26469], options);
-										mymap.addLayer(pie);
-										var cox = new <mark>L.CoxcombChartMarker</mark>([50.97264, 7.26469], options);
-										mymap.addLayer(cox);
-										var stack = new <mark>L.StackedRegularPolygonMarker</mark>([50.97264, 8.26469], options);
-										mymap.addLayer(stack);
-										var radialmeter= new <mark>L.RadialMeterMarker</mark>([50.97264, 6.26469], options);
-										mymap.addLayer(radialmeter);
-										&lt;/script&gt;
-										&lt;/body&gt;
-										&lt;/html&gt;
-									</code></pre>
-								</td>
-							</tr>
-						</table>
-					</section>
-					<section>
 						<p>In diesem Teil haben wir ...</p>
 						<ul>
 							<li class="fragment">Benutzerdefinierten Marker</li>
@@ -1879,45 +1756,6 @@
 						</table>
 					</section>
 					<section>
-						<p title="929">Routing - Das Ergebnis ansehen</p>
-						<table>
-							<tr>
-								<td>
-									<iframe data-src="../code/5/index_929.html"></iframe>
-								</td>
-								<td>
-									<pre><code data-trim data-noescape>
-										...
-										&lt;/head&gt;
-										&lt;body&gt;
-										&lt;div style="height: 400px;" id="mapid"&gt;&lt;/div&gt;
-										&lt;script&gt;
-										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
-										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-										var control = L.Routing.control({
-										waypoints: [
-										L.latLng(50.273543, 7.262993),
-										L.latLng(50.281168, 7.276211)
-										],
-										router: new L.Routing.osrmv1({
-										language: 'de',
-										}),
-										geocoder: L.Control.Geocoder.nominatim({})
-										})
-										<mark>.on('routeselected',</mark> function(e) {
-										var route = e.route;
-										alert(JSON.stringify(route.instructions, null, 2));
-										})
-										.addTo(mymap);
-										&lt;/script&gt;
-										&lt;/body&gt;
-										&lt;/html&gt;
-									</code></pre>
-								</td>
-							</tr>
-						</table>
-					</section>
-					<section>
 						<p title="928">Routing - Mapbox</p>
 						<table>
 							<tr>
@@ -1937,7 +1775,7 @@
 										L.latLng(50.273543, 7.262993),
 										L.latLng(50.281168, 7.276211)
 										],
-										<mark>router:</mark> L.Routing.mapbox('pk.eyJ1IjoiYXNlbG5pZ3UiLCJhIjoiVi0zVHJBQSJ9.9fUKqRI4g5v59l9C-tM55w',
+										<mark>router:</mark> L.Routing.mapbox('pk.key',
 										{
 										profile: 'mapbox/walking',
 										language: 'de'
