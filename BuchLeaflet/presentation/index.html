@@ -1672,6 +1672,7 @@
 						<p>In diesem Teil werden wir den ...</p>
 						<ul>
 							<li class="fragment">ESRI (Environmental Systems Research Institute) Service <b>Geocoding</b> ansehen.</li>
+							<li class="fragment">Leaflet Routing Machine</li>
 						</ul>
 					</section>
 					<section>
@@ -1773,7 +1774,6 @@
 										L.esri.Geocoding.<mark>reverseGeocode()</mark>
 										.latlng(e.latlng)
 										.run(function(error, result, response){
-										mymap.removeLayer(r);
 										r = L.marker(result.latlng).addTo(mymap)
 										<mark>.bindPopup</mark>(result.address.Match_addr).openPopup();
 										});
@@ -1787,9 +1787,201 @@
 						</table>
 					</section>
 					<section>
+						<p title="932">Routing Leaflet Routing Machine</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_932.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										&lt;!DOCTYPE HTML&gt;
+										&lt;html&gt;
+										&lt;head&gt;
+										&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="<mark>leaflet-routing-machine.js</mark>"&gt;&lt;/script&gt;
+										&lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 400px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										console.log(mymap);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var control = <mark>L.Routing.control</mark>({
+										waypoints: [
+										L.latLng(50.273543, 7.262993),
+										L.latLng(50.281168, 7.276211)
+										]
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p title="931">Routing - Options</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_931.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										...
+										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+										&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+										&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
+										&lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 400px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										console.log(mymap);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var control = L.Routing.control({
+										waypoints: [
+										L.latLng(50.273543, 7.262993),
+										L.latLng(50.281168, 7.276211)
+										],
+										router: new L.Routing.osrmv1({
+										language: '<mark>de</mark>',
+										}),
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p title="930">Routing - Geocoding</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_930.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										...
+										&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
+										&lt;script src="<mark>Control.Geocoder.js</mark>"&gt;&lt;/script&gt;
+										&lt;link rel="stylesheet" href="<mark>Control.Geocoder.css</mark>" /&gt;
+										&lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 400px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										console.log(mymap);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var control = L.Routing.control({
+										waypoints: [
+										L.latLng(50.273543, 7.262993),
+										L.latLng(50.281168, 7.276211)
+										],
+										router: new L.Routing.osrmv1({
+										language: 'de',
+										}),
+										<mark>geocoder:</mark> L.Control.Geocoder.nominatim({})
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p title="929">Routing - Das Ergebnis ansehen</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_929.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										...
+										&lt;/head&gt;
+										&lt;body&gt;
+										&lt;div style="height: 400px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var control = L.Routing.control({
+										waypoints: [
+										L.latLng(50.273543, 7.262993),
+										L.latLng(50.281168, 7.276211)
+										],
+										router: new L.Routing.osrmv1({
+										language: 'de',
+										}),
+										geocoder: L.Control.Geocoder.nominatim({})
+										})
+										<mark>.on('routeselected',</mark> function(e) {
+										var route = e.route;
+										alert(JSON.stringify(route.instructions, null, 2));
+										})
+										.addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p title="928">Routing - Mapbox</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/5/index_928.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										...
+										&lt;body&gt;
+										&lt;div style="height: 400px;" id="mapid"&gt;&lt;/div&gt;
+										&lt;script&gt;
+										var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+										L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+										var control = L.Routing.control({
+										waypoints: [
+										L.latLng(50.273543, 7.262993),
+										L.latLng(50.281168, 7.276211)
+										],
+										<mark>router:</mark> L.Routing.mapbox('pk.eyJ1IjoiYXNlbG5pZ3UiLCJhIjoiVi0zVHJBQSJ9.9fUKqRI4g5v59l9C-tM55w',
+										{
+										profile: 'mapbox/walking',
+										language: 'de'
+										}),
+										geocoder: L.Control.Geocoder.nominatim({})
+										})
+										.addTo(mymap);
+										//https://www.mapbox.com/api-documentation/#batch-requests
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
 						<p>In diesem Teil haben wir den ...</p>
 						<ul>
-							<li>... ESRI Service Geocoding angesehen.</li>
+							<li>... Geocoding und Routing Plugins angesehen.</li>
 						</ul>
 					</section>
 				</section>
@@ -1821,13 +2013,22 @@
 				<!-- Das war es-->
 				<section>
 						<section>
-							<p>
-								Was haben wir gemacht<br>
-									<small class="fragment">Eine einfache Karte</small><br>
-									<small class="fragment">Geodaten in <b>Leaflet</b> und <b>GeoJSON</b></small><br>
-									<small class="fragment">Benutzerdefinierte Markern</small><br>
-									<small class="fragment">Geocoding und ESRI</small><br>
-							</p>
+							<h2>
+								Was haben wir gemacht
+							</h2>
+							<small class="fragment">
+								Eine einfache Karte
+							</small><br>
+							<small class="fragment">
+								Geodaten in <b>Leaflet</b> und <b>GeoJSON</b>
+							</small><br>
+							<small class="fragment">
+								Benutzerdefinierte Markern
+							</small><br>
+							<small class="fragment">
+								Geocoding und Routing
+							</small><br>
+
 						</section>
 						<section>
 							Das war mein Beitrag! Habt ihr noch Fragen?
