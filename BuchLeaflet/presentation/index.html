@@ -44,18 +44,6 @@
 							</tr>
 						</table>
 					</section>
-					<section>
-						<ul>
-							<li>Wer bin ich?<br>
-							</li>
-							<li class="fragment">Was ist Leaflet?
-							</li>
-							<li class="fragment">Was solltest du mitbringen?<br>
-							</li>
-							<li class="fragment">Was machen wir konkret?<br>
-							</li>
-						</ul>
-					</section>
 			</section>
 
 
@@ -1539,13 +1527,13 @@
 								<td>
 									<pre><code data-trim data-noescape>
 										...
-										&gt;script src="esri-leaflet.js">&gt;/script>
-										&gt;link rel="stylesheet" href="<mark>esri-leaflet-geocoder.css</mark>">
-										&gt;script src="<mark>esri-leaflet-geocoder.js</mark>">&gt;/script>
-										&gt;/head>
-										&gt;body>
-										&gt;div style="height: 700px;" id="mapid">&gt;/div>
-										&gt;script>
+										&lt;script src="esri-leaflet.js">&gt;/script>
+										&lt;link rel="stylesheet" href="<mark>esri-leaflet-geocoder.css</mark>">
+										&lt;script src="<mark>esri-leaflet-geocoder.js</mark>">&lt;/script&gt;
+										&lt;/head>
+										&lt;body>
+										&lt;div style="height: 700px;" id="mapid">&gt;/div>
+										&lt;script>
 										var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
 										L.esri.basemapLayer('Gray').addTo(mymap);
 										var <mark>searchControl</mark> =
@@ -1558,9 +1546,9 @@
 										results.addLayer(L.marker(data.results[i].latlng));
 										}
 										});
-										&gt;/script>
-										&gt;/body>
-										&gt;/html>
+										&lt;/script>
+										&lt;/body>
+										&lt;/html>
 									</code></pre>
 								</td>
 							</tr>
@@ -1642,12 +1630,22 @@
 					</section>
 					<section>
 						<p title="932">Routing Leaflet Routing Machine</p>
+						<script>
+							function myFunction932() {
+								var x = document.getElementById('display932');
+								if (x.style.display === 'none') {
+									x.style.display = 'block';
+								} else {
+									x.style.display = 'none';
+								}
+							}
+						</script>
 						<table>
 							<tr>
 								<td>
 									<iframe data-src="../code/5/index_932.html"></iframe>
 								</td>
-								<td>
+								<td id="display932">
 									<pre><code data-trim data-noescape>
 										&lt;!DOCTYPE HTML&gt;
 										&lt;html&gt;
@@ -1677,15 +1675,26 @@
 								</td>
 							</tr>
 						</table>
+					<button onclick="myFunction932()">x</button>
 					</section>
 					<section>
 						<p title="931">Routing - Options</p>
+						<script>
+							function myFunction931() {
+								var x = document.getElementById('display931');
+								if (x.style.display === 'none') {
+									x.style.display = 'block';
+								} else {
+									x.style.display = 'none';
+								}
+							}
+						</script>
 						<table>
 							<tr>
 								<td>
 									<iframe data-src="../code/5/index_931.html"></iframe>
 								</td>
-								<td>
+								<td id="display931">
 									<pre><code data-trim data-noescape>
 										...
 										&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
@@ -1715,15 +1724,26 @@
 								</td>
 							</tr>
 						</table>
+					<button onclick="myFunction931()">x</button>
 					</section>
 					<section>
 						<p title="930">Routing - Geocoding</p>
+						<script>
+							function myFunction930() {
+								var x = document.getElementById('display930');
+								if (x.style.display === 'none') {
+									x.style.display = 'block';
+								} else {
+									x.style.display = 'none';
+								}
+							}
+						</script>
 						<table>
 							<tr>
 								<td>
 									<iframe data-src="../code/5/index_930.html"></iframe>
 								</td>
-								<td>
+								<td id="display930">
 									<pre><code data-trim data-noescape>
 										...
 										&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
@@ -1754,15 +1774,26 @@
 								</td>
 							</tr>
 						</table>
+					<button onclick="myFunction930()">x</button>
 					</section>
 					<section>
 						<p title="928">Routing - Mapbox</p>
+						<script>
+							function myFunction928() {
+								var x = document.getElementById('display928');
+								if (x.style.display === 'none') {
+									x.style.display = 'block';
+								} else {
+									x.style.display = 'none';
+								}
+							}
+						</script>
 						<table>
 							<tr>
 								<td>
 									<iframe data-src="../code/5/index_928.html"></iframe>
 								</td>
-								<td>
+								<td id="display928">
 									<pre><code data-trim data-noescape>
 										...
 										&lt;body&gt;
@@ -1791,6 +1822,7 @@
 								</td>
 							</tr>
 						</table>
+					<button onclick="myFunction928()">x</button>
 					</section>
 
 					<section>
