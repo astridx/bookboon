@@ -791,119 +791,153 @@
 						<small>GeoJSON ist JSON das Geodaten beschreibt</small>
 					</section>
 					<section>
+						<p>
+							Position - Koordinate - [Länge, Breite, Höhe]
+						</p>
+						<pre><code data-trim data-noescape>
+							{ "type": "Point",
+								"coordinates": <mark>[30, 10]</mark>
+							}
+						</code></pre>
+					</section>
+					<section>
+						<p>Point | Multipoint</p>
 						<table>
 							<tr>
 								<td>
-									Position - Koordinate - [Länge, Breite, Höhe]
-									<pre><code data-trim data-noescape>
-										[30, 10]
-									</code></pre>
+									<img data-src="../963point.png">
 								</td>
 								<td>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Point
 									<pre><code data-trim data-noescape>
-									  { "type": "Point",
-									    "coordinates": <mark>[30, 10]</mark>
-									</code></pre>
-								</td>
-								<td>
-									Multipoint
-									<pre><code data-trim data-noescape>
-									  { "type": "MultiPoint",
-									    "coordinates": <mark>[</mark>
-									      [10, 40], [40, 30], [20, 20], [30, 10]
-									    <mark>]</mark>
-									  }
+										{ "type": "Point",
+											"coordinates": [30, 10]
+										}
 									</code></pre>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									LineStrings
-									<pre><code data-trim data-noescape>
-									  { "type": "LineString",
-									    "coordinates": [
-									      [30, 10], [10, 30], [40, 40]
-									    ]
-									  }
-									</code></pre>
+									<img data-src="../963multipoint.png">
 								</td>
 								<td>
-									MultiLineString
 									<pre><code data-trim data-noescape>
-									  { "type": "MultiLineString",
-									    "coordinates": [
-									      <mark>[</mark>[10, 10], [20, 20], [10, 40]<mark>]</mark>,
-									      <mark>[</mark>[40, 40], [30, 30], [40, 20], [30, 10]<mark>]</mark>
-									    ]
-									  }
+										{ "type": "MultiPoint",
+											"coordinates": <mark>[</mark>
+												[10, 40], [40, 30], [20, 20], [30, 10]
+											<mark>]</mark>
+										}
 									</code></pre>
 								</td>
 							</tr>
 						</table>
 					</section>
 					<section>
-						<p style="margin:0">Polygone & Multipolygon</p>
+						<p>LineStrings | MultiLineString</p>
 						<table>
 							<tr>
 								<td>
-									<img style="margin:0" data-src="../963polygon.png">
+									<img data-src="../963linestring.png">
+								</td>
+								<td>
 									<pre><code data-trim data-noescape>
-										{ "type": "Polygon",
-										  "coordinates": [
-										    [[30, 10], [40, 40], [20, 40], [10, 20], [30, 10]]
-										  ]
+										{ "type": "LineString",
+											"coordinates": [
+												[30, 10], [10, 30], [40, 40]
+											]
 										}
 									</code></pre>
 								</td>
+							</tr>
+							<tr>
 								<td>
-									<img style="margin:0" data-src="../963polygondonut.png">
+									<img data-src="../963multilinesstring.png">
+								</td>
+								<td>
 									<pre><code data-trim data-noescape>
-									{ "type": "Polygon",
-									  "coordinates": [
-									    [[35, 10], [45, 45], [15, 40], [35, 10]],
-									    [[20, 30], [35, 35], [30, 20], [20, 30]]
-									    ]
-									}
+										{ "type": "MultiLineString",
+											"coordinates": [
+												<mark>[</mark>[10, 10], [20, 20], [10, 40]<mark>]</mark>,
+												<mark>[</mark>[40, 40], [30, 30], [40, 20], [30, 10]<mark>]</mark>
+											]
+										}
 									</code></pre>
 								</td>
 							</tr>
 						</table>
+					</section>
+					<section>
+						<p>Polygone</p>
 						<table>
 							<tr>
 								<td>
-									<img style="margin:0" data-src="../963multipolygon.png">
-									<pre><code data-trim data-noescape>
-									{ "type": "MultiPolygon",
-									  "coordinates": [
-									    [
-									      [[30, 20], [45, 40], [10, 40], [30, 20]]
-									    ],
-									    [
-									      [[15, 5], [40, 10], [10, 20], [15, 5]]
-									    ]
-									  ]
-									}
-									</code></pre>
+									<img data-src="../963polygon.png">
 								</td>
 								<td>
-									<img style="margin:0" data-src="../963multipolygondonut.png">
 									<pre><code data-trim data-noescape>
-									{ "type": "MultiPolygon",
-									  "coordinates": [
-									    [
-									    [[40, 40], [20, 45], [45, 30], [40, 40]]
-									    ],
-									    [
-									    [[20, 35], [10, 30], [10, 10]],
-									    [[30, 20], [20, 15], [20, 25]]
-									    ]
-									  ]
-									}
+										{ "type": "Polygon",
+											"coordinates": [
+												[[30, 10], [40, 40], [20, 40], [10, 20], [30, 10]]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img data-src="../963polygondonut.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "Polygon",
+											"coordinates": [
+												[[35, 10], [45, 45], [15, 40], [10, 20], [35, 10]],
+												[[20, 30], [35, 35], [30, 20], [20, 30]]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p>Multipolygon</p>
+						<table>
+							<tr>
+								<td>
+									<img data-src="../963multipolygon.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "MultiPolygon",
+											"coordinates": [
+												[
+													[[30, 20], [45, 40], [10, 40], [30, 20]]
+												],
+												[
+													[[15, 5], [40, 10], [10, 20], [5, 10], [15, 5]]
+												]
+											]
+										}
+									</code></pre>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img data-src="../963multipolygondonut.png">
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										{ "type": "MultiPolygon",
+											"coordinates": [
+												[
+													[[40, 40], [20, 45], [45, 30], [40, 40]]
+												],
+												[
+													[[20, 35], [10, 30], [10, 10], [30, 5], [45, 20], [20, 35]],
+													[[30, 20], [20, 15], [20, 25], [30, 20]]
+												]
+											]
+										}
 									</code></pre>
 								</td>
 							</tr>
@@ -955,10 +989,10 @@
 						</p>
 						<ul>
 							<li>Komprimierung</li>
-							<li>Datentypen</li>
-							<li>Pop-up Fenster</li>
-							<li>Kreise und Kurven</li>
-							<li>Eigenschaften für Positionen</li>
+							<li class="fragment">Datentypen</li>
+							<li class="fragment">Pop-up Fenster</li>
+							<li class="fragment">Kreise und Kurven</li>
+							<li class="fragment">Eigenschaften für Positionen</li>
 						</ul>
 					</section>
 
@@ -1038,29 +1072,30 @@
 						</table>
 					</section>
 					<section>
-						<p title="968">onEachFeature()</p>
+						<p title="970">Style</p>
 						<table>
 							<tr>
 								<td>
-									<iframe data-src="../code/2/index_968.html"></iframe>
+									<iframe data-src="../code/2/index_970.html"></iframe>
 								</td>
 								<td>
 									<pre><code data-trim data-noescape>
 										...
-										"properties": {"name": "Dorf 2"}
-										},
+										"properties": { "prop0": "value0", "prop1": {"this": "that"}
+										}}]
+										}
+										var geoJsonLayer =
+										L.geoJson(geojsonFeatureCollection,
+										{<mark>style:styleFunction</mark>}).addTo(mymap);
+
+										function <mark>styleFunction</mark>(feature)
 										{
-										"type": "<mark>Feature</mark>",
-										"geometry": {"type": "Point", "coordinates": [7, 51]},
-										"<mark>properties</mark>": {"<mark>name</mark>": "Dorf 3"}
+										<mark>switch </mark>(feature.geometry.type)
+										{
+										case 'LineString': return {color: "red"};
+										case 'Polygon':   return {color: "purple"};
 										}
-										]
-										};
-										L.geoJson(geojsonFeatureCollection, {
-										<mark>onEachFeature</mark>: function(feature, layer) {
-										layer.bindPopup(<mark>feature.properties.name</mark>);
 										}
-										}).addTo(mymap);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
@@ -1070,7 +1105,7 @@
 						</table>
 					</section>
 					<section>
-						<p title="969">Ereignisse und CSS</p>
+						<p title="969">Ereignisse</p>
 						<table>
 							<tr>
 								<td>
@@ -1104,6 +1139,38 @@
 							</tr>
 						</table>
 					</section>
+					<section>
+						<p title="968">onEachFeature()</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_968.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										...
+										"properties": {"name": "Dorf 2"}
+										},
+										{
+										"type": "<mark>Feature</mark>",
+										"geometry": {"type": "Point", "coordinates": [7, 51]},
+										"<mark>properties</mark>": {"<mark>name</mark>": "Dorf 3"}
+										}
+										]
+										};
+										L.geoJson(geojsonFeatureCollection, {
+										<mark>onEachFeature</mark>: function(feature, layer) {
+										layer.bindPopup(<mark>feature.properties.name</mark>);
+										}
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+						</section>
 					<section>
 						<p>Resümee</p>
 						<ul>
