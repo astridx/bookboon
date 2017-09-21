@@ -1000,6 +1000,38 @@
 						</table>
 					</section>
 					<section>
+						<p title="968">onEachFeature()</p>
+						<table>
+							<tr>
+								<td>
+									<iframe data-src="../code/2/index_968.html"></iframe>
+								</td>
+								<td>
+									<pre><code data-trim data-noescape>
+										...
+										"properties": {"name": "Dorf 2"}
+										},
+										{
+										"type": "<mark>Feature</mark>",
+										"geometry": {"type": "Point", "coordinates": [7, 51]},
+										"<mark>properties</mark>": {"<mark>name</mark>": "Dorf 3"}
+										}
+										]
+										};
+										L.geoJson(geojsonFeatureCollection, {
+										<mark>onEachFeature</mark>: function(feature, layer) {
+										layer.bindPopup(<mark>feature.properties.name</mark>);
+										}
+										}).addTo(mymap);
+										&lt;/script&gt;
+										&lt;/body&gt;
+										&lt;/html&gt;
+									</code></pre>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section>
 						<p title="971">
 							toGeoJSON() und addData()
 						</p>
@@ -1029,38 +1061,6 @@
 										geoJsonLayer.<mark>addData(markerAsGeoJSON)</mark>.bindPopup("Ich bin mit der Methode .addData() zur Karte hinzugefügt worden.
 										In GeoJson sehe ich so aus:&lt;br&gt; " +
 										<mark>JSON.stringify(markerAsGeoJSON)</mark>);
-										&lt;/script&gt;
-										&lt;/body&gt;
-										&lt;/html&gt;
-									</code></pre>
-								</td>
-							</tr>
-						</table>
-					</section>
-					<section>
-						<p title="968">onEachFeature()</p>
-						<table>
-							<tr>
-								<td>
-									<iframe data-src="../code/2/index_968.html"></iframe>
-								</td>
-								<td>
-									<pre><code data-trim data-noescape>
-										...
-										"properties": {"name": "Dorf 2"}
-										},
-										{
-										"type": "<mark>Feature</mark>",
-										"geometry": {"type": "Point", "coordinates": [7, 51]},
-										"<mark>properties</mark>": {"<mark>name</mark>": "Dorf 3"}
-										}
-										]
-										};
-										L.geoJson(geojsonFeatureCollection, {
-										<mark>onEachFeature</mark>: function(feature, layer) {
-										layer.bindPopup(<mark>feature.properties.name</mark>);
-										}
-										}).addTo(mymap);
 										&lt;/script&gt;
 										&lt;/body&gt;
 										&lt;/html&gt;
