@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package unique-identifier="uid" version="3.0" xmlns="http://www.idpf.org/2007/opf">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="uid">9783746015637</dc:identifier>
+    <dc:title>Leaflet</dc:title>
+    <dc:language>de</dc:language>
+    <dc:creator id="creator1">Astrid Günther</dc:creator>
+    <meta property="dcterms:modified">2017-10-29T21:20:23Z</meta>
+    <meta content="0.9.5" name="Sigil version"/>
+  </metadata>
+  <manifest>
+    <item href="Text/nav.xhtml" id="htmltoc" media-type="application/xhtml+xml" properties="nav"/>
+    <item href="Text/page-1.xhtml" id="page-1" media-type="application/xhtml+xml"/>
+    <item href="Images/Bild3.png" id="img-1" media-type="image/png"/>
+    <item href="Images/Bild12.png" id="img-2" media-type="image/png"/>
+    <item href="Images/Bild13.png" id="img-3" media-type="image/png"/>
+    <item href="Images/Bild14.png" id="img-4" media-type="image/png"/>
+    <item href="Images/Bild15.png" id="img-5" media-type="image/png"/>
+    <item href="Images/Bild16.png" id="img-6" media-type="image/png"/>
+    <item href="Images/Bild17.png" id="img-7" media-type="image/png"/>
+    <item href="Images/Bild18.png" id="img-8" media-type="image/png"/>
+    <item href="Images/Bild19.png" id="img-9" media-type="image/png"/>
+    <item href="Images/Bild2.png" id="img-10" media-type="image/png"/>
+    <item href="Images/Bild20.png" id="img-11" media-type="image/png"/>
+    <item href="Images/Bild21.png" id="img-12" media-type="image/png"/>
+    <item href="Images/Bild22.png" id="img-13" media-type="image/png"/>
+    <item href="Images/Bild23.png" id="img-14" media-type="image/png"/>
+    <item href="Images/Bild24.png" id="img-15" media-type="image/png"/>
+    <item href="Images/Bild25.png" id="img-16" media-type="image/png"/>
+    <item href="Images/Bild26.png" id="img-17" media-type="image/png"/>
+    <item href="Images/Bild27.png" id="img-18" media-type="image/png"/>
+    <item href="Images/Bild28.png" id="img-19" media-type="image/png"/>
+    <item href="Images/Bild29.png" id="img-20" media-type="image/png"/>
+    <item href="Images/Bild30.png" id="img-21" media-type="image/png"/>
+    <item href="Images/Bild31.png" id="img-22" media-type="image/png"/>
+    <item href="Images/Bild32.png" id="img-23" media-type="image/png"/>
+    <item href="Images/Bild33.png" id="img-24" media-type="image/png"/>
+    <item href="Images/Bild34.png" id="img-25" media-type="image/png"/>
+    <item href="Images/Bild35.png" id="img-26" media-type="image/png"/>
+    <item href="Images/Bild36.png" id="img-27" media-type="image/png"/>
+    <item href="Images/Bild37.png" id="img-28" media-type="image/png"/>
+    <item href="Images/Bild38.png" id="img-29" media-type="image/png"/>
+    <item href="Images/Bild4.png" id="img-30" media-type="image/png"/>
+    <item href="Images/Bild44.png" id="img-31" media-type="image/png"/>
+    <item href="Images/Bild5.png" id="img-32" media-type="image/png"/>
+    <item href="Images/Bild51.png" id="img-33" media-type="image/png"/>
+    <item href="Images/Bild53.png" id="img-34" media-type="image/png"/>
+    <item href="Images/Bild54.png" id="img-35" media-type="image/png"/>
+    <item href="Images/Bild55.png" id="img-36" media-type="image/png"/>
+    <item href="Images/Bild6.png" id="img-37" media-type="image/png"/>
+    <item href="Images/Bild7.png" id="img-38" media-type="image/png"/>
+    <item href="Images/Bild74.png" id="img-39" media-type="image/png"/>
+    <item href="Images/Bild79.png" id="img-40" media-type="image/png"/>
+    <item href="Images/Bild8.png" id="img-41" media-type="image/png"/>
+    <item href="Images/Bild94.png" id="img-42" media-type="image/png"/>
+    <item href="Images/Bild98.png" id="img-43" media-type="image/png"/>
+    <item href="Images/964er.png" id="img-44" media-type="image/png"/>
+    <item href="Images/964br.png" id="img-45" media-type="image/png"/>
+    <item href="Images/964la.png" id="img-46" media-type="image/png"/>
+    <item href="Images/930.png" id="img-47" media-type="image/png"/>
+    <item href="Images/929a.png" id="img-48" media-type="image/png"/>
+    <item href="Images/929b.png" id="img-49" media-type="image/png"/>
+    <item href="Images/929c.png" id="img-50" media-type="image/png"/>
+    <item href="Images/929d.png" id="img-51" media-type="image/png"/>
+    <item href="Images/928a.png" id="img-52" media-type="image/png"/>
+    <item href="Images/928b.png" id="img-53" media-type="image/png"/>
+    <item href="Images/928d.png" id="img-54" media-type="image/png"/>
+    <item href="Images/984.png" id="img-55" media-type="image/png"/>
+    <item href="Images/984a.png" id="img-56" media-type="image/png"/>
+    <item href="Images/984b.png" id="img-57" media-type="image/png"/>
+    <item href="Images/983.png" id="img-58" media-type="image/png"/>
+    <item href="Images/982.png" id="img-59" media-type="image/png"/>
+    <item href="Images/928c.png" id="img-60" media-type="image/png"/>
+    <item href="Images/981.png" id="img-61" media-type="image/png"/>
+    <item href="Images/946.png" id="img-62" media-type="image/png"/>
+    <item href="Images/954.png" id="img-63" media-type="image/png"/>
+    <item href="Images/980a.png" id="img-64" media-type="image/png"/>
+    <item href="Images/980b.png" id="img-65" media-type="image/png"/>
+    <item href="Images/980c.png" id="img-66" media-type="image/png"/>
+    <item href="Images/980d.png" id="img-67" media-type="image/png"/>
+    <item href="Images/953.png" id="img-68" media-type="image/png"/>
+    <item href="Images/980.png" id="img-69" media-type="image/png"/>
+    <item href="Images/952.png" id="img-70" media-type="image/png"/>
+    <item href="Images/949.png" id="img-71" media-type="image/png"/>
+    <item href="Images/951.png" id="img-72" media-type="image/png"/>
+    <item href="Images/950.png" id="img-73" media-type="image/png"/>
+    <item href="Images/947.png" id="img-74" media-type="image/png"/>
+    <item href="Images/948.png" id="img-75" media-type="image/png"/>
+    <item href="Images/945.png" id="img-76" media-type="image/png"/>
+    <item href="Images/928.png" id="img-77" media-type="image/png"/>
+    <item href="Images/974.png" id="img-78" media-type="image/png"/>
+    <item href="Images/975.png" id="img-79" media-type="image/png"/>
+    <item href="Images/973.png" id="img-80" media-type="image/png"/>
+    <item href="Images/972.png" id="img-81" media-type="image/png"/>
+    <item href="Images/943.png" id="img-82" media-type="image/png"/>
+    <item href="Images/944.png" id="img-83" media-type="image/png"/>
+    <item href="Images/942.png" id="img-84" media-type="image/png"/>
+    <item href="Images/969.png" id="img-85" media-type="image/png"/>
+    <item href="Images/970.png" id="img-86" media-type="image/png"/>
+    <item href="Images/967.png" id="img-87" media-type="image/png"/>
+    <item href="Images/968.png" id="img-88" media-type="image/png"/>
+    <item href="Images/966.png" id="img-89" media-type="image/png"/>
+    <item href="Images/938.png" id="img-90" media-type="image/png"/>
+    <item href="Images/937.png" id="img-91" media-type="image/png"/>
+    <item href="Images/936.png" id="img-92" media-type="image/png"/>
+    <item href="Images/935.png" id="img-93" media-type="image/png"/>
+    <item href="Images/933.png" id="img-94" media-type="image/png"/>
+    <item href="Images/934.png" id="img-95" media-type="image/png"/>
+    <item href="Images/927.png" id="img-96" media-type="image/png"/>
+    <item href="Images/926.png" id="img-97" media-type="image/png"/>
+    <item href="Images/925.png" id="img-98" media-type="image/png"/>
+    <item href="Styles/style.css" id="css" media-type="text/css"/>
+    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="htmltoc" linear="no"/>
+    <itemref idref="page-1" linear="yes"/>
+  </spine>
+</package>
