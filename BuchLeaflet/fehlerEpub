@@ -1,21 +1,382 @@
-OPF-073
-OEBPS/toc.ncx[3,50]
-Externe Doctype-Deklarationen (SYSTEM/PUBLIC) sind nicht erlaubt.
-RSC-007
-OEBPS/toc.ncx[18,46]
-Die referenzierte Datei wurde im EPUB nicht gefunden. 
 
-
-SC-005
-OEBPS/content.opf[5,103]
-Validierungsfehler: attribute "opf:file-as" not allowed here; expected attribute "dir", "id" or "xml:lang"
 RSC-005
-OEBPS/content.opf[5,103]
-Validierungsfehler: attribute "opf:role" not allowed here; expected attribute "dir", "id" or "xml:lang"
+metadata.opf[115,10]
+Validierungsfehler: element "spine" missing required attribute "toc"
 RSC-005
-OEBPS/content.opf[9,82]
-Validierungsfehler: attribute "opf:scheme" not allowed here; expected attribute "id" 
-
+index.html[37,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[55,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[63,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[75,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[89,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[105,68]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[211,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[273,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[311,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[321,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[397,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[445,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[501,75]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[575,77]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[625,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[641,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[675,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[687,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[719,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[727,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[743,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[989,70]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1035,77]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1158,77]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1246,69]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1344,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1430,70]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1504,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1512,77]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1542,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1670,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1748,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1820,76]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[1884,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2018,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2076,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2178,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2327,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2423,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2511,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2613,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2733,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2851,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[2985,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3061,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3069,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3087,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3127,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3167,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3175,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3211,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3231,69]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3255,69]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3279,69]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3307,69]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3379,69]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3441,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3487,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3559,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3609,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3635,76]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3733,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3845,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[3919,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4063,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4225,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4349,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4489,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4617,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4625,69]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4643,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4677,76]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4870,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[4984,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5120,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5226,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5476,69]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5568,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5686,77]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5702,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5802,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5836,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5870,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[5966,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6122,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6132,77]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6148,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6300,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6404,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6564,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6732,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6766,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6790,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6864,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[6936,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7014,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7100,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7230,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7402,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7410,77]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7434,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7486,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7516,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7609,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7721,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7749,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7773,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7855,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[7927,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8009,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8099,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8231,76]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "class", "dir", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8353,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8451,35]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8533,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8661,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8791,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8801,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8819,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8837,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[8937,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[9023,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[9117,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+RSC-005
+index.html[9125,36]
+Validierungsfehler: attribute "value" not allowed here; expected attribute "dir", "id", "lang", "style", "title" or "xml:lang"
+NCX-002
+metadata.opf[-1,-1]
+Das 'spine'-Element enthält kein 'toc'-Attribut! 
 
 
 Bevor Sie ein ePub aus Ihrer Textdatei erzeugen, beachten Sie diese Hinweise zur Formatierung:
