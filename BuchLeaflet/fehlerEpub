@@ -6,6 +6,18 @@ OEBPS/toc.ncx[18,46]
 Die referenzierte Datei wurde im EPUB nicht gefunden. 
 
 
+SC-005
+OEBPS/content.opf[5,103]
+Validierungsfehler: attribute "opf:file-as" not allowed here; expected attribute "dir", "id" or "xml:lang"
+RSC-005
+OEBPS/content.opf[5,103]
+Validierungsfehler: attribute "opf:role" not allowed here; expected attribute "dir", "id" or "xml:lang"
+RSC-005
+OEBPS/content.opf[9,82]
+Validierungsfehler: attribute "opf:scheme" not allowed here; expected attribute "id" 
+
+
+
 Bevor Sie ein ePub aus Ihrer Textdatei erzeugen, beachten Sie diese Hinweise zur Formatierung:
 
     überflüssige Seiten-/Zeilenumbrüche und Leerzeichen entfernen
